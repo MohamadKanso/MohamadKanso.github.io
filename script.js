@@ -238,15 +238,6 @@ function seedCharts() {
   setInterval(draw, 900);
 }
 
-function seedMemoryGrid() {
-  const grid = document.querySelector(".memory-grid");
-  for (let i = 0; i < 190; i += 1) {
-    const cell = document.createElement("i");
-    if ((i % 7 === 0) || (i % 13 === 0) || i > 168) cell.classList.add("dim");
-    grid.append(cell);
-  }
-}
-
 function jumpTo(id) {
   const target = document.getElementById(id);
   if (!target) return;
@@ -339,7 +330,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-9", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-10", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)
@@ -367,14 +358,6 @@ async function renderRepos() {
   } catch (error) {
     archive.textContent = "Repository metadata could not be loaded. Use github.com/MohamadKanso for the live archive.";
   }
-}
-
-function animatePing() {
-  const ping = document.getElementById("ping-value");
-  setInterval(() => {
-    const value = 12 + Math.floor(Math.random() * 12);
-    ping.textContent = `${value}ms`;
-  }, 1800);
 }
 
 function drawGlobe() {
@@ -446,10 +429,8 @@ function drawGlobe() {
 
 setClock();
 setInterval(setClock, 1000);
-seedMemoryGrid();
 seedCharts();
 bindNavigation();
 renderRepos();
-animatePing();
 drawGlobe();
 runBootSequence();

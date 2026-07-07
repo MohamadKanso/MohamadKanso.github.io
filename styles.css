@@ -639,7 +639,7 @@ button {
 
 .spark-row {
   display: grid;
-  grid-template-columns: 58px 1fr;
+  grid-template-columns: 84px 1fr;
   align-items: center;
   gap: 8px;
   margin-top: 7px;
@@ -694,44 +694,44 @@ button {
   font-weight: 500;
 }
 
-.memory-grid {
+.cv-skill-list {
   display: grid;
-  grid-template-columns: repeat(38, 1fr);
-  gap: 3px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
   margin: 12px 0;
 }
 
-.memory-grid i {
-  height: 5px;
-  background: rgba(200, 246, 251, 0.9);
-  box-shadow: 0 0 5px rgba(200, 246, 251, 0.26);
-}
-
-.memory-grid i.dim {
-  background: rgba(126, 163, 168, 0.42);
-  box-shadow: none;
-}
-
-.swap-line {
-  display: grid;
-  grid-template-columns: min-content 1fr min-content;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 12px;
+.cv-skill-list span {
+  min-width: 0;
+  padding: 5px 7px;
+  border: 1px solid rgba(171, 218, 221, 0.2);
+  color: #bfe9ed;
+  background: rgba(169, 220, 224, 0.055);
+  font-size: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-.swap-line div {
-  height: 5px;
-  background: rgba(172, 218, 222, 0.15);
-  border-left: 3px solid var(--accent);
+.cv-stack-line {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 11px;
 }
 
-.swap-line i {
-  display: block;
-  height: 100%;
-  background: var(--accent);
+.cv-stack-line span {
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.cv-stack-line strong {
+  color: #9dbfc3;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .process-module ol {
