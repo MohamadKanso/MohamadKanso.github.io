@@ -76,27 +76,13 @@ function points(count, height, seed, phase = 0) {
   }).join(" ");
 }
 
-function trafficPoints(count, yBase, amp, seed, phase = 0) {
-  const width = 320;
-  return Array.from({ length: count }, (_, index) => {
-    const x = (width / (count - 1)) * index;
-    const pulse = index === 2 ? amp * 2.1 : 0;
-    const y = yBase + Math.sin(index * 0.8 + seed + phase) * amp + Math.cos(index * 0.38) * 9 + pulse;
-    return `${x.toFixed(1)},${Math.max(6, Math.min(174, y)).toFixed(1)}`;
-  }).join(" ");
-}
-
 function seedCharts() {
   const a = document.getElementById("spark-a");
   const b = document.getElementById("spark-b");
-  const ta = document.getElementById("traffic-a");
-  const tb = document.getElementById("traffic-b");
   let phase = 0;
   const draw = () => {
     a.setAttribute("points", points(30, 44, 1.3, phase));
     b.setAttribute("points", points(30, 44, 3.9, phase * 0.8));
-    ta.setAttribute("points", trafficPoints(18, 104, 18, 2.2, phase));
-    tb.setAttribute("points", trafficPoints(18, 112, 11, 5.1, phase * 1.2));
     phase += 0.06;
   };
   draw();
@@ -200,7 +186,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-2", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-3", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)
@@ -243,7 +229,7 @@ function drawGlobe() {
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
   const containerWidth = canvas.parentElement ? canvas.parentElement.clientWidth : 320;
-  const size = Math.max(220, Math.min(320, containerWidth - 20));
+  const size = Math.max(176, Math.min(286, containerWidth - 24));
   canvas.width = size * dpr;
   canvas.height = size * dpr;
   canvas.style.width = `${size}px`;
@@ -262,7 +248,7 @@ function drawGlobe() {
     ctx.clearRect(0, 0, size, size);
     const cx = size / 2;
     const cy = size / 2;
-    const radius = 108;
+    const radius = size * 0.36;
     const rot = time * 0.00018;
 
     ctx.strokeStyle = "rgba(187, 235, 239, 0.14)";

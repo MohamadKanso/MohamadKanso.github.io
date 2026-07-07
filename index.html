@@ -15,7 +15,7 @@
     >
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#071014">
-    <link rel="stylesheet" href="styles.css?v=20260707-2">
+    <link rel="stylesheet" href="styles.css?v=20260707-3">
   </head>
   <body>
     <div class="screen-noise" aria-hidden="true"></div>
@@ -101,15 +101,14 @@
 
         <section class="mini-module process-module">
           <div class="module-title">
-            <span>TOP PROCESSES</span>
-            <span>PID | NAME | CPU | MEM</span>
+            <span>READOUT</span>
+            <span>RECRUITER SNAPSHOT</span>
           </div>
           <ol>
-            <li><span>5636</span><b>rag-search</b><em>18.7%</em><em>11%</em></li>
-            <li><span>2404</span><b>ai-agents</b><em>14.2%</em><em>9%</em></li>
-            <li><span>1137</span><b>databricks</b><em>12.8%</em><em>7%</em></li>
-            <li><span>2316</span><b>local-llm</b><em>9.6%</em><em>6%</em></li>
-            <li><span>0567</span><b>portfolio</b><em>4.1%</em><em>2%</em></li>
+            <li><span>01</span><b>Commercial AI</b><em>Cognizant AIA</em></li>
+            <li><span>02</span><b>Data pipelines</b><em>Databricks / ADF</em></li>
+            <li><span>03</span><b>Public builds</b><em>Repos + demos</em></li>
+            <li><span>04</span><b>Research</b><em>ML dissertation</em></li>
           </ol>
         </section>
       </aside>
@@ -164,20 +163,20 @@
             </div>
 
             <div class="hero-grid">
-              <article>
-                <h1>Data systems, AI agents, and local-first intelligence.</h1>
+              <article class="hero-statement">
+                <h1>Data and AI engineering, shipped with evidence.</h1>
                 <p>
                   I build practical AI systems: retrieval tools over enterprise data, production data pipelines,
                   local LLM workflows, and open-source utilities that turn messy context into structured execution.
                 </p>
               </article>
-              <article>
-                <h2>Signal</h2>
-                <p>Commercial Cognizant experience, public AI tooling, privacy-first local systems, and applied ML research.</p>
-              </article>
-              <article>
-                <h2>Mode</h2>
-                <p>Source-grounded, traceable, security-aware, and built so people can actually run it.</p>
+              <article class="hero-readout">
+                <h2>Best first clicks</h2>
+                <ul>
+                  <li><span>CV</span> latest data and AI engineering packet</li>
+                  <li><span>Demos</span> hosted project pages and GitHub repos</li>
+                  <li><span>Dissertation</span> ML trading-bot research report</li>
+                </ul>
               </article>
             </div>
           </section>
@@ -505,45 +504,49 @@
         </div>
         <section class="network-status">
           <div class="module-title">
-            <span>NETWORK STATUS</span>
+            <span>PORTFOLIO STATUS</span>
             <span>IF: github.io</span>
           </div>
           <div class="status-grid">
             <span>STATE</span><strong>ONLINE</strong>
-            <span>IPv4</span><strong>portfolio</strong>
-            <span>PING</span><strong id="ping-value">16ms</strong>
+            <span>ROUTE</span><strong>GitHub Pages</strong>
+            <span>PUBLIC REPOS</span><strong>21</strong>
+            <span>HTML DEMOS</span><strong>8</strong>
+            <span>CHECK</span><strong id="ping-value">16ms</strong>
           </div>
         </section>
 
         <section class="world-module">
           <div class="module-title">
             <span>WORLDVIEW</span>
-            <span>GLOBAL NETWORK MAP</span>
+            <span>PUBLIC SIGNAL MAP</span>
           </div>
           <div class="coords">
-            <span>ENDPOINT LAT/LON</span>
-            <span>51.5072, -0.1276</span>
+            <span>BASE LAT/LON</span>
+            <span>London, UK / 51.5072, -0.1276</span>
           </div>
           <canvas id="globe" width="320" height="320" aria-label="Animated dotted world globe"></canvas>
         </section>
 
-        <section class="traffic-module">
+        <section class="world-facts">
           <div class="module-title">
-            <span>NETWORK TRAFFIC</span>
-            <span>UP / DOWN, MB/S</span>
+            <span>WORLDVIEW SIGNALS</span>
+            <span>WHAT THE MAP POINTS TO</span>
           </div>
-          <div class="traffic-total">
-            <span>TOTAL</span>
-            <span>CV + GitHub + LinkedIn</span>
+          <div class="world-fact-grid">
+            <div><span>Role</span><strong>Python, Data and AI Engineer</strong></div>
+            <div><span>Base</span><strong>London, UK</strong></div>
+            <div><span>Current</span><strong>Cognizant AIA</strong></div>
+            <div><span>Focus</span><strong>RAG, agents, data pipelines</strong></div>
+            <div><span>Evidence</span><strong>CV, awards, demos, dissertation</strong></div>
+            <div><span>Mode</span><strong>Source-grounded and practical</strong></div>
           </div>
-          <svg class="traffic-chart" viewBox="0 0 320 180" aria-hidden="true">
-            <g class="chart-grid">
-              <path d="M0 30H320M0 70H320M0 110H320M0 150H320"></path>
-              <path d="M40 0V180M120 0V180M200 0V180M280 0V180"></path>
-            </g>
-            <polyline id="traffic-a" points=""></polyline>
-            <polyline id="traffic-b" points=""></polyline>
-          </svg>
+          <div class="world-links" aria-label="Portfolio route shortcuts">
+            <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>CV</a>
+            <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">Dissertation</a>
+            <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
         </section>
       </aside>
 
@@ -569,44 +572,22 @@
         </div>
       </section>
 
-      <section class="panel keyboard-panel" aria-label="Terminal keyboard navigation">
-        <div class="keyboard-grid">
-          <button type="button" data-jump="overview">ESC</button>
-          <button type="button" data-jump="skills">1</button>
-          <button type="button" data-jump="projects">2</button>
-          <button type="button" data-jump="awards">3</button>
-          <button type="button" data-jump="cv">4</button>
-          <button type="button" data-jump="contact">5</button>
-          <button type="button" data-jump="overview">BACK</button>
-          <button type="button" data-jump="projects">TAB</button>
-          <button type="button" data-command="q">Q</button>
-          <button type="button" data-command="w">W</button>
-          <button type="button" data-command="e">E</button>
-          <button type="button" data-command="r">R</button>
-          <button type="button" data-command="t">T</button>
-          <button type="button" data-jump="cv">ENTER</button>
-          <button type="button" data-jump="awards">CAPS</button>
-          <button type="button" data-command="a">A</button>
-          <button type="button" data-command="s">S</button>
-          <button type="button" data-command="d">D</button>
-          <button type="button" data-command="f">F</button>
-          <button type="button" data-command="g">G</button>
-          <button type="button" data-jump="contact">LINK</button>
-          <button type="button" data-jump="experience">SHIFT</button>
-          <button type="button" data-command="z">Z</button>
-          <button type="button" data-command="x">X</button>
-          <button type="button" data-command="c">C</button>
-          <button type="button" data-command="v">V</button>
-          <button type="button" data-command="b">B</button>
-          <button type="button" data-jump="projects">SHIFT</button>
-          <button type="button" data-jump="overview">CTRL</button>
-          <button type="button" class="space-key" data-jump="projects">SPACE</button>
-          <button type="button" data-jump="awards">ALT</button>
-          <button type="button" data-jump="cv">CTRL</button>
+      <section class="panel quick-panel" aria-label="Quick portfolio commands">
+        <div class="panel-ribbon compact">
+          <span>QUICK COMMANDS</span>
+          <span>RECRUITER ROUTES</span>
+        </div>
+        <div class="quick-command-grid">
+          <button type="button" data-jump="overview"><span>00</span><strong>Profile</strong><small>whoami + focus</small></button>
+          <button type="button" data-jump="projects"><span>01</span><strong>Projects</strong><small>demos + repos</small></button>
+          <button type="button" data-jump="awards"><span>02</span><strong>Awards</strong><small>recognition vault</small></button>
+          <button type="button" data-jump="cv"><span>03</span><strong>CV</strong><small>download packet</small></button>
+          <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener"><span>04</span><strong>Dissertation</strong><small>ML report</small></a>
+          <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener"><span>05</span><strong>LinkedIn</strong><small>featured link</small></a>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=20260707-2" defer></script>
+    <script src="script.js?v=20260707-3" defer></script>
   </body>
 </html>
