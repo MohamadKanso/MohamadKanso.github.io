@@ -1,1 +1,365 @@
-[{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"MohamadKanso","primaryLanguage":null,"repositoryTopics":null,"stargazerCount":1,"updatedAt":"2026-07-07T04:44:49Z","url":"https://github.com/MohamadKanso/MohamadKanso"},{"description":"Public static preview build for the private Life Orbit app.","forkCount":0,"homepageUrl":"https://mohamadkanso.github.io/life-orbit-preview/","isArchived":false,"isPrivate":false,"name":"life-orbit-preview","primaryLanguage":{"name":"HTML"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2026-07-02T17:43:40Z","url":"https://github.com/MohamadKanso/life-orbit-preview"},{"description":"Self-hosted AI workspace. ","forkCount":0,"homepageUrl":"https://pewdiepie-archdaemon.github.io/odysseus/","isArchived":false,"isPrivate":false,"name":"odysseus","primaryLanguage":{"name":"Python"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2026-06-28T11:01:12Z","url":"https://github.com/MohamadKanso/odysseus"},{"description":"Privacy and safety checker for local voice assistant transcripts before they reach an LLM.","forkCount":0,"homepageUrl":"https://mohamadkanso.github.io/VoiceSafeKit/","isArchived":false,"isPrivate":false,"name":"VoiceSafeKit","primaryLanguage":{"name":"Python"},"repositoryTopics":[{"name":"generative-ai"},{"name":"llm-safety"},{"name":"local-ai"},{"name":"openvoiceos"},{"name":"privacy"},{"name":"python"},{"name":"voice-assistant"},{"name":"wyoming"}],"stargazerCount":1,"updatedAt":"2026-06-21T16:57:16Z","url":"https://github.com/MohamadKanso/VoiceSafeKit"},{"description":"Visual open-source demo for teaching business teams how AI workflows work","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"ai-workflow-lifecycle","primaryLanguage":{"name":"CSS"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2026-06-03T19:34:15Z","url":"https://github.com/MohamadKanso/ai-workflow-lifecycle"},{"description":"An AI code review and auto fix tool. It automatically detects and corrects Python syntax errors, logic bugs and security risks using local LLMs via Ollama.","forkCount":0,"homepageUrl":"https://mohamadkanso.github.io/CodeSentry/","isArchived":false,"isPrivate":false,"name":"CodeSentry","primaryLanguage":{"name":"Python"},"repositoryTopics":null,"stargazerCount":1,"updatedAt":"2026-06-01T17:10:48Z","url":"https://github.com/MohamadKanso/CodeSentry"},{"description":"Autonomous AI analyst workspace for executive research briefings using LangGraph, RAG, Tavily, Pydantic, Streamlit, and Plotly.","forkCount":0,"homepageUrl":"https://mohamadkanso.github.io/SignalBrief/","isArchived":false,"isPrivate":false,"name":"SignalBrief","primaryLanguage":{"name":"Python"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2026-06-01T16:24:21Z","url":"https://github.com/MohamadKanso/SignalBrief"},{"description":"Open-source workflow intelligence for turning messy operational context into structured execution systems.","forkCount":0,"homepageUrl":"https://mohamadkanso.github.io/WorkflowForge/","isArchived":false,"isPrivate":false,"name":"WorkflowForge","primaryLanguage":{"name":"Python"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2026-05-08T17:29:43Z","url":"https://github.com/MohamadKanso/WorkflowForge"},{"description":"Synthetic production incidents and RCA evaluation for AI SRE agents.","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"IncidentForge","primaryLanguage":{"name":"Python"},"repositoryTopics":[{"name":"ai-sre"},{"name":"evaluation"},{"name":"incident-response"},{"name":"observability"},{"name":"python"},{"name":"root-cause-analysis"},{"name":"sre"},{"name":"synthetic-data"}],"stargazerCount":1,"updatedAt":"2026-05-02T13:22:02Z","url":"https://github.com/MohamadKanso/IncidentForge"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"MLT-Journal","primaryLanguage":{"name":"JavaScript"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2026-03-30T10:45:54Z","url":"https://github.com/MohamadKanso/MLT-Journal"},{"description":"Built a fully local, voice-driven AI pipeline covering audio capture, speech-to-text, LLM inference, and text-to-speech. Uses Whisper.cpp for offline transcription and Qwen-2.5 ~3B for on-device reasoning, with modular Python components optimized for privacy, cost, and zero cloud dependencies.","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"MurmurX","primaryLanguage":{"name":"Python"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2025-12-17T13:17:59Z","url":"https://github.com/MohamadKanso/MurmurX"},{"description":"**DreamSense** is a Streamlit web app that turns written dreams into creative interpretations. Users describe a dream, answer a few follow‑up questions, and receive a poem, image, or (soon) a melody. It uses Hugging Face models, Stable Diffusion, and Google TTS to deliver a simple, human‑centred way to explore dream symbolism.","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"DreamSense","primaryLanguage":{"name":"Jupyter Notebook"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2025-07-25T11:22:30Z","url":"https://github.com/MohamadKanso/DreamSense"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"Analysis-Prediction-LSTM","primaryLanguage":{"name":"Jupyter Notebook"},"repositoryTopics":null,"stargazerCount":0,"updatedAt":"2025-01-19T17:20:38Z","url":"https://github.com/MohamadKanso/Analysis-Prediction-LSTM"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"GradientDescentRegression","primaryLanguage":{"name":"C++"},"repositoryTopics":null,"stargazerCount":1,"updatedAt":"2024-11-27T21:52:31Z","url":"https://github.com/MohamadKanso/GradientDescentRegression"},{"description":"Bitcoin Trading Bot.","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"Dissertation","primaryLanguage":{"name":"Jupyter Notebook"},"repositoryTopics":null,"stargazerCount":2,"updatedAt":"2024-11-27T21:53:22Z","url":"https://github.com/MohamadKanso/Dissertation"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"AirbnbPricePrediciton","primaryLanguage":{"name":"MATLAB"},"repositoryTopics":null,"stargazerCount":2,"updatedAt":"2024-11-27T21:53:22Z","url":"https://github.com/MohamadKanso/AirbnbPricePrediciton"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"FaceMaskDetection","primaryLanguage":{"name":"Jupyter Notebook"},"repositoryTopics":null,"stargazerCount":2,"updatedAt":"2024-11-27T21:53:23Z","url":"https://github.com/MohamadKanso/FaceMaskDetection"},{"description":"Complete stock analysis library that combines quantitative finance and machine learning techniques. Designed for study and practical trading applications, containing modules for market data processing, predictive modelling and backtesting.","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"trading-ml-research","primaryLanguage":{"name":"Jupyter Notebook"},"repositoryTopics":null,"stargazerCount":1,"updatedAt":"2024-11-27T21:53:24Z","url":"https://github.com/MohamadKanso/trading-ml-research"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"LR_NASDAQ","primaryLanguage":{"name":"Jupyter Notebook"},"repositoryTopics":null,"stargazerCount":1,"updatedAt":"2024-11-27T21:53:25Z","url":"https://github.com/MohamadKanso/LR_NASDAQ"},{"description":"MLP","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"PredictHousePrices","primaryLanguage":{"name":"C++"},"repositoryTopics":null,"stargazerCount":1,"updatedAt":"2024-11-27T21:53:26Z","url":"https://github.com/MohamadKanso/PredictHousePrices"},{"description":"","forkCount":0,"homepageUrl":"","isArchived":false,"isPrivate":false,"name":"Kanso","primaryLanguage":{"name":"HTML"},"repositoryTopics":null,"stargazerCount":2,"updatedAt":"2021-11-02T13:10:44Z","url":"https://github.com/MohamadKanso/Kanso"}]
+[
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "MohamadKanso",
+    "primaryLanguage": null,
+    "repositoryTopics": null,
+    "stargazerCount": 1,
+    "updatedAt": "2026-07-07T04:44:49Z",
+    "url": "https://github.com/MohamadKanso/MohamadKanso"
+  },
+  {
+    "description": "Public static preview build for the private Life Orbit app.",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/life-orbit-preview/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "life-orbit-preview",
+    "primaryLanguage": {
+      "name": "HTML"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2026-07-02T17:43:40Z",
+    "url": "https://github.com/MohamadKanso/life-orbit-preview"
+  },
+  {
+    "description": "Self-hosted AI workspace. ",
+    "forkCount": 0,
+    "homepageUrl": "https://pewdiepie-archdaemon.github.io/odysseus/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "odysseus",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2026-06-28T11:01:12Z",
+    "url": "https://github.com/MohamadKanso/odysseus"
+  },
+  {
+    "description": "Privacy and safety checker for local voice assistant transcripts before they reach an LLM.",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/VoiceSafeKit/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "VoiceSafeKit",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": [
+      {
+        "name": "generative-ai"
+      },
+      {
+        "name": "llm-safety"
+      },
+      {
+        "name": "local-ai"
+      },
+      {
+        "name": "openvoiceos"
+      },
+      {
+        "name": "privacy"
+      },
+      {
+        "name": "python"
+      },
+      {
+        "name": "voice-assistant"
+      },
+      {
+        "name": "wyoming"
+      }
+    ],
+    "stargazerCount": 1,
+    "updatedAt": "2026-06-21T16:57:16Z",
+    "url": "https://github.com/MohamadKanso/VoiceSafeKit"
+  },
+  {
+    "description": "Visual open-source demo for teaching business teams how AI workflows work",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/ai-workflow-lifecycle/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "ai-workflow-lifecycle",
+    "primaryLanguage": {
+      "name": "CSS"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2026-06-03T19:34:15Z",
+    "url": "https://github.com/MohamadKanso/ai-workflow-lifecycle"
+  },
+  {
+    "description": "An AI code review and auto fix tool. It automatically detects and corrects Python syntax errors, logic bugs and security risks using local LLMs via Ollama.",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/CodeSentry/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "CodeSentry",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 1,
+    "updatedAt": "2026-06-01T17:10:48Z",
+    "url": "https://github.com/MohamadKanso/CodeSentry"
+  },
+  {
+    "description": "Autonomous AI analyst workspace for executive research briefings using LangGraph, RAG, Tavily, Pydantic, Streamlit, and Plotly.",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/SignalBrief/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "SignalBrief",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2026-06-01T16:24:21Z",
+    "url": "https://github.com/MohamadKanso/SignalBrief"
+  },
+  {
+    "description": "Open-source workflow intelligence for turning messy operational context into structured execution systems.",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/WorkflowForge/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "WorkflowForge",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2026-05-08T17:29:43Z",
+    "url": "https://github.com/MohamadKanso/WorkflowForge"
+  },
+  {
+    "description": "Synthetic production incidents and RCA evaluation for AI SRE agents.",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "IncidentForge",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": [
+      {
+        "name": "ai-sre"
+      },
+      {
+        "name": "evaluation"
+      },
+      {
+        "name": "incident-response"
+      },
+      {
+        "name": "observability"
+      },
+      {
+        "name": "python"
+      },
+      {
+        "name": "root-cause-analysis"
+      },
+      {
+        "name": "sre"
+      },
+      {
+        "name": "synthetic-data"
+      }
+    ],
+    "stargazerCount": 1,
+    "updatedAt": "2026-05-02T13:22:02Z",
+    "url": "https://github.com/MohamadKanso/IncidentForge"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "https://mohamadkanso.github.io/MLT-Journal/",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "MLT-Journal",
+    "primaryLanguage": {
+      "name": "JavaScript"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2026-03-30T10:45:54Z",
+    "url": "https://github.com/MohamadKanso/MLT-Journal"
+  },
+  {
+    "description": "Built a fully local, voice-driven AI pipeline covering audio capture, speech-to-text, LLM inference, and text-to-speech. Uses Whisper.cpp for offline transcription and Qwen-2.5 ~3B for on-device reasoning, with modular Python components optimized for privacy, cost, and zero cloud dependencies.",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "MurmurX",
+    "primaryLanguage": {
+      "name": "Python"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2025-12-17T13:17:59Z",
+    "url": "https://github.com/MohamadKanso/MurmurX"
+  },
+  {
+    "description": "**DreamSense** is a Streamlit web app that turns written dreams into creative interpretations. Users describe a dream, answer a few follow‑up questions, and receive a poem, image, or (soon) a melody. It uses Hugging Face models, Stable Diffusion, and Google TTS to deliver a simple, human‑centred way to explore dream symbolism.",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "DreamSense",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2025-07-25T11:22:30Z",
+    "url": "https://github.com/MohamadKanso/DreamSense"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "Analysis-Prediction-LSTM",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 0,
+    "updatedAt": "2025-01-19T17:20:38Z",
+    "url": "https://github.com/MohamadKanso/Analysis-Prediction-LSTM"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "GradientDescentRegression",
+    "primaryLanguage": {
+      "name": "C++"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 1,
+    "updatedAt": "2024-11-27T21:52:31Z",
+    "url": "https://github.com/MohamadKanso/GradientDescentRegression"
+  },
+  {
+    "description": "Bitcoin Trading Bot.",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "Dissertation",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 2,
+    "updatedAt": "2024-11-27T21:53:22Z",
+    "url": "https://github.com/MohamadKanso/Dissertation"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "AirbnbPricePrediciton",
+    "primaryLanguage": {
+      "name": "MATLAB"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 2,
+    "updatedAt": "2024-11-27T21:53:22Z",
+    "url": "https://github.com/MohamadKanso/AirbnbPricePrediciton"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "FaceMaskDetection",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 2,
+    "updatedAt": "2024-11-27T21:53:23Z",
+    "url": "https://github.com/MohamadKanso/FaceMaskDetection"
+  },
+  {
+    "description": "Complete stock analysis library that combines quantitative finance and machine learning techniques. Designed for study and practical trading applications, containing modules for market data processing, predictive modelling and backtesting.",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "trading-ml-research",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 1,
+    "updatedAt": "2024-11-27T21:53:24Z",
+    "url": "https://github.com/MohamadKanso/trading-ml-research"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "LR_NASDAQ",
+    "primaryLanguage": {
+      "name": "Jupyter Notebook"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 1,
+    "updatedAt": "2024-11-27T21:53:25Z",
+    "url": "https://github.com/MohamadKanso/LR_NASDAQ"
+  },
+  {
+    "description": "MLP",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "PredictHousePrices",
+    "primaryLanguage": {
+      "name": "C++"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 1,
+    "updatedAt": "2024-11-27T21:53:26Z",
+    "url": "https://github.com/MohamadKanso/PredictHousePrices"
+  },
+  {
+    "description": "",
+    "forkCount": 0,
+    "homepageUrl": "",
+    "isArchived": false,
+    "isPrivate": false,
+    "name": "Kanso",
+    "primaryLanguage": {
+      "name": "HTML"
+    },
+    "repositoryTopics": null,
+    "stargazerCount": 2,
+    "updatedAt": "2021-11-02T13:10:44Z",
+    "url": "https://github.com/MohamadKanso/Kanso"
+  }
+]

@@ -15,7 +15,9 @@ const repoDescriptions = {
   FaceMaskDetection: "Computer vision notebook project for face mask detection.",
   LR_NASDAQ: "Linear regression and Nasdaq market-data modelling project.",
   PredictHousePrices: "C++ multilayer perceptron project for house price prediction.",
-  Dissertation: "Bitcoin trading bot and financial time-series ML dissertation project."
+  Dissertation: "Bitcoin trading bot and financial time-series ML dissertation project.",
+  "ai-workflow-lifecycle": "Visual open-source demo for teaching business teams how AI workflows move from messy context to structured execution.",
+  "MLT-Journal": "Public trading and machine-learning journal interface."
 };
 
 const commandRoutes = {
@@ -30,6 +32,8 @@ const commandRoutes = {
   awards: "awards",
   cv: "cv",
   resume: "cv",
+  dissertation: "projects",
+  disso: "projects",
   contact: "contact",
   linkedin: "contact",
   github: "projects"
@@ -216,7 +220,7 @@ async function renderRepos() {
           <div>
             <span>${updated}</span>
             <a href="${repo.url}" target="_blank" rel="noopener">repo</a>
-            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener">demo</a>` : ""}
+            ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" rel="noopener">html</a>` : ""}
           </div>
         `;
         archive.append(row);
