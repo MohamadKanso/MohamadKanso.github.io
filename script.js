@@ -186,7 +186,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-3", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-4", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)

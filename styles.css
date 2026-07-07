@@ -13,6 +13,7 @@
   --warning: #e5f4f5;
   --cyan-shadow: 0 0 18px rgba(173, 240, 247, 0.18);
   --font: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --site-zoom: 0.8;
 }
 
 * {
@@ -99,6 +100,21 @@ button {
   grid-template-rows: minmax(650px, calc(100vh - 208px)) 188px;
   gap: 7px;
   padding: 7px;
+}
+
+@media (min-width: 1081px) {
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .edex-shell {
+    width: calc(100vw / var(--site-zoom));
+    min-height: calc(100vh / var(--site-zoom));
+    grid-template-rows: minmax(650px, calc((100vh / var(--site-zoom)) - 208px)) 188px;
+    transform: scale(var(--site-zoom));
+    transform-origin: top left;
+  }
 }
 
 .panel {
@@ -1161,7 +1177,7 @@ p {
 @media (max-width: 1320px) {
   .edex-shell {
     grid-template-columns: 210px minmax(0, 1fr) 220px;
-    grid-template-rows: minmax(610px, calc(100vh - 196px)) 176px;
+    grid-template-rows: minmax(560px, calc((100vh / var(--site-zoom)) - 232px)) 212px;
   }
 
   .project-grid {
@@ -1170,12 +1186,14 @@ p {
 
   .quick-command-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding: 12px;
+    gap: 8px;
+    padding: 10px;
   }
 
   .quick-command-grid button,
   .quick-command-grid a {
-    min-height: 66px;
+    min-height: 56px;
+    padding: 9px 10px;
   }
 }
 
