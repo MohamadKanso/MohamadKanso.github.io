@@ -42,6 +42,126 @@ const commandRoutes = {
 const terminal = document.getElementById("terminal-scroll");
 const commandForm = document.getElementById("command-form");
 const commandLine = document.getElementById("command-line");
+const bootScreen = document.getElementById("boot-screen");
+
+const bootLines = [
+  "Welcome to KANZO-OS!",
+  "vm_page_bootstrap: 1245000 free pages and 53061 wired pages",
+  "portfolio_kernel: loading Mohamad Kanso profile interface",
+  "standard timeslicing quantum is 10000 us",
+  "KANZOACPICPU: ProcessorId=1 LocalApicId=0 AI_PIPELINE Enabled",
+  "KANZOACPICPU: ProcessorId=2 LocalApicId=2 RAG_INDEX Enabled",
+  "KANZOACPICPU: ProcessorId=3 LocalApicId=1 AGENT_RUNTIME Enabled",
+  "KANZOACPICPU: ProcessorId=4 LocalApicId=3 DATA_PIPELINES Enabled",
+  "calling mpo_policy_init for RecruiterSafeMode",
+  "Security policy loaded: source-grounded portfolio routes",
+  "calling mpo_policy_init for PublicArtifacts",
+  "Security policy loaded: CV, awards, dissertation, GitHub demos",
+  "HN_ Evidence framework successfully initialized",
+  "using 21 public repositories and 8 hosted HTML demos",
+  "[ portfolio configuration begin ]",
+  "profile: Mohamad Kanso / Python, Data and AI Engineer",
+  "origin: London, UK",
+  "current: Cognizant - Artificial Intelligence and Analytics",
+  "focus: LLM applications, AI agents, RAG, automation",
+  "impact: 40% data-latency reduction across 50M-record pipelines",
+  "[ portfolio configuration end ]",
+  "com.kanzo.cv.packet load succeeded",
+  "com.kanzo.awards.vault load succeeded",
+  "com.kanzo.dissertation.report load succeeded",
+  "com.kanzo.github.archive load succeeded",
+  "com.kanzo.linkedin.route load succeeded",
+  "IOPortfolioInterface::linkStatus - public site online",
+  "AirPort_Portfolio: Link Up on github.io",
+  "DSMOS has arrived",
+  "Portfolio Complete"
+];
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function bootDelay(index, reducedMotion) {
+  if (reducedMotion) return 20;
+  if (index === 2 || index === 4) return 420;
+  if (index > 4 && index < 13) return 34;
+  if (index === 15 || index === 22) return 260;
+  if (index >= bootLines.length - 3) return 220;
+  return 24;
+}
+
+async function runBootSequence() {
+  if (!bootScreen) {
+    document.body.classList.remove("booting");
+    return;
+  }
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const log = document.createElement("div");
+  log.className = "boot-log";
+  bootScreen.append(log);
+
+  let skipped = false;
+  const skip = () => { skipped = true; };
+  bootScreen.addEventListener("click", skip, { once: true });
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" || event.key === "Enter" || event.key === " ") skipped = true;
+  }, { once: true });
+
+  for (let index = 0; index < bootLines.length && !skipped; index += 1) {
+    if (index === 2) {
+      const kernel = document.createElement("span");
+      kernel.className = "boot-line dim";
+      kernel.textContent = `KANZO-OS Kernel version 2026.07 boot at ${new Date().toString()}; root:github-pages/RELEASE_X86_64`;
+      log.append(kernel);
+    }
+
+    const line = document.createElement("span");
+    line.className = `boot-line ${index === bootLines.length - 1 ? "ok" : ""}`;
+    line.textContent = bootLines[index];
+    log.append(line);
+    bootScreen.scrollTop = bootScreen.scrollHeight;
+    await delay(bootDelay(index, reducedMotion));
+  }
+
+  await showBootTitle(reducedMotion);
+}
+
+async function showBootTitle(reducedMotion) {
+  const fast = 1;
+  bootScreen.textContent = "";
+  bootScreen.classList.add("center");
+
+  await delay(360 * fast);
+
+  const title = document.createElement("h1");
+  title.className = "boot-title";
+  title.dataset.title = "KANZO-OS";
+  title.textContent = "KANZO-OS";
+  bootScreen.append(title);
+
+  await delay(220 * fast);
+  title.classList.add("fill");
+
+  await delay(300 * fast);
+  title.classList.remove("fill");
+  title.classList.add("boxed");
+
+  await delay(120 * fast);
+  title.classList.remove("boxed");
+  title.classList.add("glitch");
+
+  await delay(980 * fast);
+  title.classList.remove("glitch");
+  title.classList.add("boxed");
+
+  await delay(780 * fast);
+  document.body.classList.remove("booting");
+  bootScreen.classList.add("exit");
+
+  await delay(380 * fast);
+  bootScreen.remove();
+}
 
 function setClock() {
   const now = new Date();
@@ -186,7 +306,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-4", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-5", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)
@@ -299,3 +419,4 @@ bindNavigation();
 renderRepos();
 animatePing();
 drawGlobe();
+runBootSequence();

@@ -37,6 +37,171 @@ body {
     linear-gradient(180deg, #071014 0%, #080d11 52%, #06090d 100%);
 }
 
+body.booting .edex-shell {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 1.8vh 2vh;
+  margin: 0;
+  color: var(--accent);
+  background:
+    radial-gradient(circle at 50% 40%, rgba(169, 220, 224, 0.045), transparent 34rem),
+    #05090c;
+  font-family: var(--font);
+  font-size: clamp(9px, 1.4vh, 15px);
+  line-height: 1.25;
+  text-align: left;
+  white-space: normal;
+  text-shadow: 0 0 10px rgba(200, 246, 251, 0.24);
+}
+
+.boot-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(169, 220, 224, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(169, 220, 224, 0.13) 1px, transparent 1px),
+    radial-gradient(circle, rgba(200, 246, 251, 0.16) 1px, transparent 1.2px);
+  background-size: 42px 42px, 42px 42px, 24px 24px;
+  background-position: 0 0, 0 0, 9px 9px;
+  transition: opacity 180ms linear;
+}
+
+.boot-screen.center {
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.boot-screen.center::before {
+  opacity: 0.72;
+}
+
+.boot-log {
+  position: relative;
+  z-index: 1;
+  max-width: min(94vw, 1180px);
+}
+
+.boot-line {
+  display: block;
+}
+
+.boot-line.ok {
+  color: var(--accent-strong);
+}
+
+.boot-line.dim {
+  color: #719198;
+}
+
+.boot-line.warn {
+  color: #e5f4f5;
+}
+
+.boot-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 2vh 2vh 0.6vh 1.5vh;
+  border-bottom: 0.46vh solid var(--accent);
+  color: var(--accent-strong);
+  background-color: transparent;
+  font-family: var(--font);
+  font-size: clamp(52px, 10vh, 118px);
+  line-height: 1;
+  text-align: center;
+  opacity: 0;
+  text-shadow: 0 0 22px rgba(200, 246, 251, 0.34);
+  animation: boot-title-in 300ms linear forwards;
+}
+
+.boot-title.fill {
+  color: #061015;
+  background-color: var(--accent);
+  border-bottom-color: var(--accent);
+  text-shadow: none;
+}
+
+.boot-title.boxed {
+  color: var(--accent-strong);
+  background-color: transparent;
+  border: 5px solid var(--accent);
+}
+
+.boot-title.glitch {
+  border: 0;
+  color: transparent;
+  background: transparent;
+}
+
+@keyframes boot-title-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.boot-title::before,
+.boot-title::after {
+  content: attr(data-title);
+  display: block;
+  opacity: 0;
+  height: 0;
+  color: rgba(212, 251, 255, 0.9);
+  animation-duration: 50ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-play-state: paused;
+}
+
+.boot-title::before {
+  transform: translateY(100%) translateX(-2%);
+  clip-path: polygon(100% 0%, 100% 40%, 0% 40%, 0% 0%);
+  color: rgba(169, 220, 224, 0.8);
+  animation-name: boot-derez-top;
+}
+
+.boot-title::after {
+  transform: translateY(-100%) translateX(2%);
+  clip-path: polygon(100% 40%, 100% 100%, 0% 100%, 0% 40%);
+  color: rgba(212, 251, 255, 0.95);
+  animation-name: boot-derez-bottom;
+}
+
+.boot-title.glitch::before,
+.boot-title.glitch::after {
+  height: auto;
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes boot-derez-top {
+  from { transform: translateY(100%) translateX(-1%); }
+  to { transform: translateY(100%) translateX(-5%); }
+}
+
+@keyframes boot-derez-bottom {
+  from { transform: translateY(-100%) translateX(1%); }
+  to { transform: translateY(-100%) translateX(3%); }
+}
+
+.boot-screen.exit {
+  opacity: 0;
+  transition: opacity 360ms linear;
+}
+
 body::before {
   content: "";
   position: fixed;
