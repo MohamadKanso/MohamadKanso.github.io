@@ -45,15 +45,75 @@ const commandLine = document.getElementById("command-line");
 const bootScreen = document.getElementById("boot-screen");
 
 const loaderSteps = [
-  "Preparing portfolio overview",
-  "Loading projects and demos",
-  "Organising awards and recognition",
-  "Attaching CV and dissertation links",
+  "Syncing GitHub profile telemetry",
+  "Mapping LLM systems and AI automation",
+  "Loading public demos and project stars",
+  "Organising awards, CV, and dissertation",
   "Ready"
 ];
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function createBootAudio() {
+  let context = null;
+  let master = null;
+  let enabled = false;
+
+  const ensure = async () => {
+    if (!context) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return false;
+      context = new AudioContextClass();
+      master = context.createGain();
+      master.gain.value = 0.045;
+      master.connect(context.destination);
+    }
+    if (context.state === "suspended") await context.resume();
+    enabled = true;
+    return true;
+  };
+
+  const tone = (frequency, duration = 0.09, type = "sine", delaySeconds = 0, gainValue = 0.75) => {
+    if (!enabled || !context || !master) return;
+    const start = context.currentTime + delaySeconds;
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
+    oscillator.type = type;
+    oscillator.frequency.setValueAtTime(frequency, start);
+    oscillator.frequency.exponentialRampToValueAtTime(Math.max(20, frequency * 0.72), start + duration);
+    gain.gain.setValueAtTime(0.0001, start);
+    gain.gain.exponentialRampToValueAtTime(gainValue, start + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+    oscillator.connect(gain);
+    gain.connect(master);
+    oscillator.start(start);
+    oscillator.stop(start + duration + 0.03);
+  };
+
+  return {
+    async enable() {
+      const ok = await ensure();
+      if (ok) {
+        tone(740, 0.07, "triangle", 0, 0.55);
+        tone(1108, 0.1, "sine", 0.06, 0.5);
+      }
+      return ok;
+    },
+    step(index) {
+      const notes = [392, 494, 587, 659, 784];
+      tone(notes[index % notes.length], 0.07, index % 2 ? "triangle" : "sine", 0, 0.44);
+    },
+    ready() {
+      tone(523, 0.1, "triangle", 0, 0.48);
+      tone(659, 0.1, "triangle", 0.07, 0.42);
+      tone(1046, 0.14, "sine", 0.14, 0.36);
+    },
+    get enabled() {
+      return enabled;
+    }
+  };
 }
 
 async function runBootSequence() {
@@ -63,40 +123,69 @@ async function runBootSequence() {
   }
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const bootAudio = createBootAudio();
   let skipped = false;
-  const skip = () => { skipped = true; };
-  bootScreen.addEventListener("click", skip, { once: true });
   window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" || event.key === "Enter" || event.key === " ") skipped = true;
+    if (event.key === "Escape") skipped = true;
   }, { once: true });
 
   bootScreen.classList.add("soft-loader");
   bootScreen.innerHTML = `
     <div class="boot-card">
-      <span class="boot-eyebrow">Portfolio loading</span>
-      <h1>Mohamad Kanso</h1>
-      <p>Data and AI Engineer focused on practical AI systems, public demos, awards, and recruiter-ready evidence.</p>
-      <div class="boot-progress" aria-hidden="true"><i></i></div>
-      <div class="boot-status" aria-live="polite">Preparing portfolio overview</div>
-      <div class="boot-links" aria-hidden="true">
-        <span>CV</span>
-        <span>Projects</span>
-        <span>Awards</span>
-        <span>LinkedIn</span>
+      <div class="boot-copy">
+        <span class="boot-eyebrow">Deep-space portfolio telemetry</span>
+        <h1>Mohamad Kanso</h1>
+        <p>Python · GenAI Engineer · LLM Systems · AI Automation</p>
+        <div class="boot-progress" aria-hidden="true"><i></i></div>
+        <div class="boot-status" aria-live="polite">Syncing GitHub profile telemetry</div>
+        <div class="boot-links" aria-hidden="true">
+          <span>CV</span>
+          <span>Projects</span>
+          <span>Awards</span>
+          <span>LinkedIn</span>
+        </div>
+        <button class="boot-sound" type="button" aria-pressed="false">enable sound</button>
+      </div>
+      <div class="boot-galaxy" aria-hidden="true">
+        <div class="boot-orbit orbit-a"></div>
+        <div class="boot-orbit orbit-b"></div>
+        <div class="boot-orbit orbit-c"></div>
+        <span class="boot-core"></span>
+        <span class="boot-star s1">RAG</span>
+        <span class="boot-star s2">LLM</span>
+        <span class="boot-star s3">40%</span>
+        <span class="boot-star s4">CV</span>
+        <span class="boot-star s5">MLOps</span>
+        <div class="boot-telemetry">
+          <span>London, UK</span>
+          <span>Cognizant AI</span>
+          <span>21 public repos</span>
+        </div>
       </div>
     </div>
   `;
 
   const progress = bootScreen.querySelector(".boot-progress i");
   const status = bootScreen.querySelector(".boot-status");
-  const stepDelay = reducedMotion ? 70 : 430;
+  const soundButton = bootScreen.querySelector(".boot-sound");
+  const stepDelay = reducedMotion ? 90 : 680;
+
+  soundButton.addEventListener("click", async (event) => {
+    event.stopPropagation();
+    const ok = await bootAudio.enable();
+    soundButton.textContent = ok ? "sound on" : "sound unavailable";
+    soundButton.setAttribute("aria-pressed", ok ? "true" : "false");
+    soundButton.classList.toggle("active", ok);
+  });
 
   for (let index = 0; index < loaderSteps.length && !skipped; index += 1) {
     status.textContent = loaderSteps[index];
     progress.style.width = `${((index + 1) / loaderSteps.length) * 100}%`;
+    bootAudio.step(index);
     await delay(stepDelay);
   }
 
+  bootAudio.ready();
   document.body.classList.remove("booting");
   bootScreen.classList.add("exit");
 
@@ -250,7 +339,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-8", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-9", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)
