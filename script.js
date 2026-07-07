@@ -169,7 +169,6 @@ function setClock() {
     timeZone: "Europe/London",
     hour: "2-digit",
     minute: "2-digit",
-    second: "2-digit",
     hour12: false
   }).format(now).replaceAll(":", " : ");
   const date = new Intl.DateTimeFormat("en-GB", {
@@ -306,7 +305,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-5", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-6", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)

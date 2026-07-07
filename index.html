@@ -15,7 +15,7 @@
     >
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#071014">
-    <link rel="stylesheet" href="styles.css?v=20260707-5">
+    <link rel="stylesheet" href="styles.css?v=20260707-6">
   </head>
   <body class="booting">
     <section id="boot-screen" class="boot-screen" aria-live="polite" aria-label="KANZO-OS portfolio boot sequence"></section>
@@ -29,7 +29,7 @@
           <span>SYSTEM</span>
         </div>
         <div class="clock-block">
-          <time id="clock-time" class="clock-time" datetime="">-- : -- : --</time>
+          <time id="clock-time" class="clock-time" datetime="">-- : --</time>
           <div class="clock-meta">
             <span id="clock-date">---- -- --</span>
             <span>UPTIME 2026</span>
@@ -179,6 +179,29 @@
                   <li><span>Dissertation</span> ML trading-bot research report</li>
                 </ul>
               </article>
+            </div>
+
+            <div class="signal-route" aria-label="Portfolio evidence route">
+              <div>
+                <span>profile</span>
+                <strong>whoami</strong>
+              </div>
+              <div>
+                <span>evidence</span>
+                <strong>CV</strong>
+              </div>
+              <div>
+                <span>systems</span>
+                <strong>Projects</strong>
+              </div>
+              <div>
+                <span>proof</span>
+                <strong>Awards</strong>
+              </div>
+              <div>
+                <span>contact</span>
+                <strong>LinkedIn</strong>
+              </div>
             </div>
           </section>
 
@@ -527,6 +550,11 @@
             <span>London, UK / 51.5072, -0.1276</span>
           </div>
           <canvas id="globe" width="320" height="320" aria-label="Animated dotted world globe"></canvas>
+          <div class="world-route-lanes" aria-label="Public portfolio signal routes">
+            <div><span>London -> GitHub Pages</span><i style="width: 92%"></i></div>
+            <div><span>CV packet -> recruiter</span><i style="width: 84%"></i></div>
+            <div><span>Projects -> demos</span><i style="width: 88%"></i></div>
+          </div>
         </section>
 
         <section class="world-facts">
@@ -551,44 +579,52 @@
         </section>
       </aside>
 
-      <section class="panel filesystem-panel" aria-label="Portfolio filesystem navigation">
-        <div class="panel-ribbon compact">
-          <span>FILESYSTEM</span>
-          <span>/home/mohamad/portfolio</span>
-        </div>
-        <div class="file-grid">
-          <button type="button" class="file-tile" data-jump="overview"><i class="disk-icon"></i><span>Show profile</span></button>
-          <button type="button" class="file-tile" data-jump="projects"><i class="folder-icon"></i><span>projects</span></button>
-          <button type="button" class="file-tile" data-jump="awards"><i class="folder-icon"></i><span>awards</span></button>
-          <button type="button" class="file-tile" data-jump="cv"><i class="doc-icon"></i><span>cv.pdf</span></button>
-          <a class="file-tile" href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener"><i class="doc-icon"></i><span>dissertation.pdf</span></a>
-          <button type="button" class="file-tile" data-jump="skills"><i class="folder-icon"></i><span>skills</span></button>
-          <button type="button" class="file-tile" data-jump="experience"><i class="folder-icon"></i><span>experience</span></button>
-          <a class="file-tile" href="https://github.com/MohamadKanso" target="_blank" rel="noopener"><i class="link-icon"></i><span>github</span></a>
-          <a class="file-tile" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener"><i class="link-icon"></i><span>linkedin</span></a>
-        </div>
-        <div class="mount-line">
-          <span>Mount /portfolio used 71%</span>
-          <div><i style="width: 71%"></i></div>
-        </div>
-      </section>
-
       <section class="panel quick-panel" aria-label="Quick portfolio commands">
         <div class="panel-ribbon compact">
-          <span>QUICK COMMANDS</span>
-          <span>RECRUITER ROUTES</span>
+          <span>ROUTE FILES</span>
+          <span>/home/mohamad/portfolio</span>
         </div>
         <div class="quick-command-grid">
-          <button type="button" data-jump="overview"><span>00</span><strong>Profile</strong><small>whoami + focus</small></button>
-          <button type="button" data-jump="projects"><span>01</span><strong>Projects</strong><small>demos + repos</small></button>
-          <button type="button" data-jump="awards"><span>02</span><strong>Awards</strong><small>recognition vault</small></button>
-          <button type="button" data-jump="cv"><span>03</span><strong>CV</strong><small>download packet</small></button>
-          <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener"><span>04</span><strong>Dissertation</strong><small>ML report</small></a>
-          <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener"><span>05</span><strong>LinkedIn</strong><small>featured link</small></a>
+          <button type="button" data-jump="overview">
+            <i class="disk-icon" aria-hidden="true"></i>
+            <span>00 / exec</span>
+            <strong>Profile</strong>
+            <small>whoami + focus</small>
+          </button>
+          <button type="button" data-jump="projects">
+            <i class="folder-icon" aria-hidden="true"></i>
+            <span>01 / dir</span>
+            <strong>Projects</strong>
+            <small>demos + repos</small>
+          </button>
+          <button type="button" data-jump="awards">
+            <i class="folder-icon" aria-hidden="true"></i>
+            <span>02 / vault</span>
+            <strong>Awards</strong>
+            <small>recognition files</small>
+          </button>
+          <button type="button" data-jump="cv">
+            <i class="doc-icon" aria-hidden="true"></i>
+            <span>03 / pdf</span>
+            <strong>CV</strong>
+            <small>download packet</small>
+          </button>
+          <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">
+            <i class="doc-icon" aria-hidden="true"></i>
+            <span>04 / report</span>
+            <strong>Dissertation</strong>
+            <small>ML research PDF</small>
+          </a>
+          <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">
+            <i class="link-icon" aria-hidden="true"></i>
+            <span>05 / link</span>
+            <strong>LinkedIn</strong>
+            <small>featured route</small>
+          </a>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=20260707-5" defer></script>
+    <script src="script.js?v=20260707-6" defer></script>
   </body>
 </html>
