@@ -44,50 +44,16 @@ const commandForm = document.getElementById("command-form");
 const commandLine = document.getElementById("command-line");
 const bootScreen = document.getElementById("boot-screen");
 
-const bootLines = [
-  "Welcome to KANZO-OS!",
-  "vm_page_bootstrap: 1245000 free pages and 53061 wired pages",
-  "portfolio_kernel: loading Mohamad Kanso profile interface",
-  "standard timeslicing quantum is 10000 us",
-  "KANZOACPICPU: ProcessorId=1 LocalApicId=0 AI_PIPELINE Enabled",
-  "KANZOACPICPU: ProcessorId=2 LocalApicId=2 RAG_INDEX Enabled",
-  "KANZOACPICPU: ProcessorId=3 LocalApicId=1 AGENT_RUNTIME Enabled",
-  "KANZOACPICPU: ProcessorId=4 LocalApicId=3 DATA_PIPELINES Enabled",
-  "calling mpo_policy_init for RecruiterSafeMode",
-  "Security policy loaded: source-grounded portfolio routes",
-  "calling mpo_policy_init for PublicArtifacts",
-  "Security policy loaded: CV, awards, dissertation, GitHub demos",
-  "HN_ Evidence framework successfully initialized",
-  "using 21 public repositories and 8 hosted HTML demos",
-  "[ portfolio configuration begin ]",
-  "profile: Mohamad Kanso / Python, Data and AI Engineer",
-  "origin: London, UK",
-  "current: Cognizant - Artificial Intelligence and Analytics",
-  "focus: LLM applications, AI agents, RAG, automation",
-  "impact: 40% data-latency reduction across 50M-record pipelines",
-  "[ portfolio configuration end ]",
-  "com.kanzo.cv.packet load succeeded",
-  "com.kanzo.awards.vault load succeeded",
-  "com.kanzo.dissertation.report load succeeded",
-  "com.kanzo.github.archive load succeeded",
-  "com.kanzo.linkedin.route load succeeded",
-  "IOPortfolioInterface::linkStatus - public site online",
-  "AirPort_Portfolio: Link Up on github.io",
-  "DSMOS has arrived",
-  "Portfolio Complete"
+const loaderSteps = [
+  "Preparing portfolio overview",
+  "Loading projects and demos",
+  "Organising awards and recognition",
+  "Attaching CV and dissertation links",
+  "Ready"
 ];
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function bootDelay(index, reducedMotion) {
-  if (reducedMotion) return 20;
-  if (index === 2 || index === 4) return 420;
-  if (index > 4 && index < 13) return 34;
-  if (index === 15 || index === 22) return 260;
-  if (index >= bootLines.length - 3) return 220;
-  return 24;
 }
 
 async function runBootSequence() {
@@ -97,10 +63,6 @@ async function runBootSequence() {
   }
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const log = document.createElement("div");
-  log.className = "boot-log";
-  bootScreen.append(log);
-
   let skipped = false;
   const skip = () => { skipped = true; };
   bootScreen.addEventListener("click", skip, { once: true });
@@ -108,58 +70,37 @@ async function runBootSequence() {
     if (event.key === "Escape" || event.key === "Enter" || event.key === " ") skipped = true;
   }, { once: true });
 
-  for (let index = 0; index < bootLines.length && !skipped; index += 1) {
-    if (index === 2) {
-      const kernel = document.createElement("span");
-      kernel.className = "boot-line dim";
-      kernel.textContent = `KANZO-OS Kernel version 2026.07 boot at ${new Date().toString()}; root:github-pages/RELEASE_X86_64`;
-      log.append(kernel);
-    }
+  bootScreen.classList.add("soft-loader");
+  bootScreen.innerHTML = `
+    <div class="boot-card">
+      <span class="boot-eyebrow">Portfolio loading</span>
+      <h1>Mohamad Kanso</h1>
+      <p>Data and AI Engineer focused on practical AI systems, public demos, awards, and recruiter-ready evidence.</p>
+      <div class="boot-progress" aria-hidden="true"><i></i></div>
+      <div class="boot-status" aria-live="polite">Preparing portfolio overview</div>
+      <div class="boot-links" aria-hidden="true">
+        <span>CV</span>
+        <span>Projects</span>
+        <span>Awards</span>
+        <span>LinkedIn</span>
+      </div>
+    </div>
+  `;
 
-    const line = document.createElement("span");
-    line.className = `boot-line ${index === bootLines.length - 1 ? "ok" : ""}`;
-    line.textContent = bootLines[index];
-    log.append(line);
-    bootScreen.scrollTop = bootScreen.scrollHeight;
-    await delay(bootDelay(index, reducedMotion));
+  const progress = bootScreen.querySelector(".boot-progress i");
+  const status = bootScreen.querySelector(".boot-status");
+  const stepDelay = reducedMotion ? 70 : 430;
+
+  for (let index = 0; index < loaderSteps.length && !skipped; index += 1) {
+    status.textContent = loaderSteps[index];
+    progress.style.width = `${((index + 1) / loaderSteps.length) * 100}%`;
+    await delay(stepDelay);
   }
 
-  await showBootTitle(reducedMotion);
-}
-
-async function showBootTitle(reducedMotion) {
-  const fast = 1;
-  bootScreen.textContent = "";
-  bootScreen.classList.add("center");
-
-  await delay(360 * fast);
-
-  const title = document.createElement("h1");
-  title.className = "boot-title";
-  title.dataset.title = "KANZO-OS";
-  title.textContent = "KANZO-OS";
-  bootScreen.append(title);
-
-  await delay(220 * fast);
-  title.classList.add("fill");
-
-  await delay(300 * fast);
-  title.classList.remove("fill");
-  title.classList.add("boxed");
-
-  await delay(120 * fast);
-  title.classList.remove("boxed");
-  title.classList.add("glitch");
-
-  await delay(980 * fast);
-  title.classList.remove("glitch");
-  title.classList.add("boxed");
-
-  await delay(780 * fast);
   document.body.classList.remove("booting");
   bootScreen.classList.add("exit");
 
-  await delay(380 * fast);
+  await delay(reducedMotion ? 80 : 420);
   bootScreen.remove();
 }
 
@@ -221,7 +162,11 @@ function jumpTo(id) {
   const target = document.getElementById(id);
   if (!target) return;
   const offset = target.offsetTop - terminal.offsetTop - 8;
-  terminal.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
+  if (terminal.scrollHeight > terminal.clientHeight + 4) {
+    terminal.scrollTo({ top: Math.max(0, offset), behavior: "smooth" });
+  } else {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   document.querySelectorAll("[data-jump]").forEach((el) => {
     el.classList.toggle("active", el.dataset.jump === id);
   });
@@ -305,7 +250,7 @@ function normalizeRepo(repo) {
 async function renderRepos() {
   const archive = document.getElementById("repo-archive");
   try {
-    const response = await fetch("assets/data/public-repositories.json?v=20260707-6", { cache: "no-store" });
+    const response = await fetch("assets/data/public-repositories.json?v=20260707-8", { cache: "no-store" });
     const repos = await response.json();
     repos
       .filter((repo) => !repo.isArchived && !repo.isPrivate)
