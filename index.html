@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mohamad Kanso | Data and AI Engineer</title>
+    <meta
+      name="description"
+      content="Terminal-style portfolio for Mohamad Kanso, Python, Data and AI Engineer focused on LLM applications, AI agents, RAG, data engineering, and automation."
+    >
+    <meta property="og:title" content="Mohamad Kanso | Data and AI Engineer">
+    <meta
+      property="og:description"
+      content="A terminal-style portfolio with CV, awards, public projects, and LinkedIn access."
+    >
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#071014">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="screen-noise" aria-hidden="true"></div>
+    <div class="scanline" aria-hidden="true"></div>
+
+    <main class="edex-shell" aria-label="Mohamad Kanso portfolio terminal">
+      <aside class="panel system-panel" aria-label="System status">
+        <div class="panel-ribbon">
+          <span>PANEL</span>
+          <span>SYSTEM</span>
+        </div>
+        <div class="clock-block">
+          <time id="clock-time" class="clock-time" datetime="">-- : -- : --</time>
+          <div class="clock-meta">
+            <span id="clock-date">---- -- --</span>
+            <span>UPTIME 2026</span>
+            <span>TYPE PORTFOLIO</span>
+            <span>POWER ONLINE</span>
+          </div>
+        </div>
+
+        <div class="sys-row">
+          <span>MANUFACTURER</span>
+          <strong>Mohamad Kanso</strong>
+        </div>
+        <div class="sys-row two">
+          <span>MODEL</span>
+          <strong>Data / AI Engineer</strong>
+          <span>CHASSIS</span>
+          <strong>London, UK</strong>
+        </div>
+
+        <section class="mini-module">
+          <div class="module-title">
+            <span>CPU USAGE</span>
+            <span>AI PIPELINE LOAD</span>
+          </div>
+          <div class="spark-row">
+            <span>#1-2<br><small>Avg 55%</small></span>
+            <svg class="sparkline" viewBox="0 0 220 44" aria-hidden="true">
+              <polyline id="spark-a" points=""></polyline>
+            </svg>
+          </div>
+          <div class="spark-row">
+            <span>#3-4<br><small>Avg 64%</small></span>
+            <svg class="sparkline" viewBox="0 0 220 44" aria-hidden="true">
+              <polyline id="spark-b" points=""></polyline>
+            </svg>
+          </div>
+        </section>
+
+        <section class="metric-stack">
+          <div>
+            <span>TEMP</span>
+            <strong>42C</strong>
+          </div>
+          <div>
+            <span>MIN</span>
+            <strong>Python</strong>
+          </div>
+          <div>
+            <span>MAX</span>
+            <strong>FastAPI</strong>
+          </div>
+          <div>
+            <span>TASKS</span>
+            <strong>21 repos</strong>
+          </div>
+        </section>
+
+        <section class="mini-module">
+          <div class="module-title">
+            <span>MEMORY</span>
+            <span>SKILL MATRIX</span>
+          </div>
+          <div class="memory-grid" aria-hidden="true"></div>
+          <div class="swap-line">
+            <span>GENAI</span>
+            <div><i style="width: 86%"></i></div>
+            <span>RAG</span>
+          </div>
+        </section>
+
+        <section class="mini-module process-module">
+          <div class="module-title">
+            <span>TOP PROCESSES</span>
+            <span>PID | NAME | CPU | MEM</span>
+          </div>
+          <ol>
+            <li><span>5636</span><b>rag-search</b><em>18.7%</em><em>11%</em></li>
+            <li><span>2404</span><b>ai-agents</b><em>14.2%</em><em>9%</em></li>
+            <li><span>1137</span><b>databricks</b><em>12.8%</em><em>7%</em></li>
+            <li><span>2316</span><b>local-llm</b><em>9.6%</em><em>6%</em></li>
+            <li><span>0567</span><b>portfolio</b><em>4.1%</em><em>2%</em></li>
+          </ol>
+        </section>
+      </aside>
+
+      <section class="panel terminal-panel" aria-label="Main portfolio shell">
+        <div class="panel-ribbon">
+          <span>TERMINAL</span>
+          <span>MAIN SHELL</span>
+        </div>
+
+        <nav class="terminal-tabs" aria-label="Portfolio sections">
+          <button type="button" class="active" data-jump="overview">MAIN SHELL</button>
+          <button type="button" data-jump="projects">PROJECTS</button>
+          <button type="button" data-jump="awards">AWARDS</button>
+          <button type="button" data-jump="cv">CV</button>
+          <button type="button" data-jump="contact">LINKEDIN</button>
+        </nav>
+
+        <div id="terminal-scroll" class="terminal-scroll" tabindex="0">
+          <section id="overview" class="terminal-section hero-shell">
+            <div class="terminal-line muted">Welcome to KANZO-OS Portfolio v1.0 - browser shell</div>
+            <div class="terminal-line">cd ~/portfolio</div>
+            <div class="prompt-line">
+              <span class="prompt-path">~/mohamad-kanso</span>
+              <span class="prompt-cmd">neofetch</span>
+            </div>
+
+            <div class="neofetch">
+              <pre class="ascii-logo" aria-label="KANZO ASCII logo">
+ __  __  ___  _   _    _    __  __    _    ____  
+|  \/  |/ _ \| | | |  / \  |  \/  |  / \  |  _ \ 
+| |\/| | | | | |_| | / _ \ | |\/| | / _ \ | | | |
+| |  | | |_| |  _  |/ ___ \| |  | |/ ___ \| |_| |
+|_|  |_|\___/|_| |_/_/   \_\_|  |_/_/   \_\____/ 
+              </pre>
+              <div class="identity-table">
+                <p><span>user</span> Mohamad Kanso</p>
+                <p><span>role</span> Python, Data and AI Engineer</p>
+                <p><span>origin</span> London, UK</p>
+                <p><span>current</span> Cognizant - Artificial Intelligence and Analytics</p>
+                <p><span>focus</span> LLM applications, AI agents, RAG, data pipelines, automation</p>
+                <p><span>impact</span> 40% data-latency reduction across 50M-record Databricks pipelines</p>
+                <p><span>stack</span> Python, SQL, FastAPI, LangGraph, PySpark, Databricks, Azure, React</p>
+              </div>
+            </div>
+
+            <div class="status-strip" aria-label="Primary links">
+              <a class="term-action" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>download_cv.pdf</a>
+              <a class="term-action" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">open_linkedin</a>
+              <a class="term-action" href="https://github.com/MohamadKanso" target="_blank" rel="noopener">open_github</a>
+              <a class="term-action" href="mailto:kanso1245@gmail.com">send_email</a>
+            </div>
+
+            <div class="hero-grid">
+              <article>
+                <h1>Data systems, AI agents, and local-first intelligence.</h1>
+                <p>
+                  I build practical AI systems: retrieval tools over enterprise data, production data pipelines,
+                  local LLM workflows, and open-source utilities that turn messy context into structured execution.
+                </p>
+              </article>
+              <article>
+                <h2>Signal</h2>
+                <p>Commercial Cognizant experience, public AI tooling, privacy-first local systems, and applied ML research.</p>
+              </article>
+              <article>
+                <h2>Mode</h2>
+                <p>Source-grounded, traceable, security-aware, and built so people can actually run it.</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="skills" class="terminal-section">
+            <div class="section-command">$ skills --matrix --from-cv</div>
+            <h2>Technical Stack</h2>
+            <div class="skill-grid">
+              <div><strong>Primary</strong><span>Python</span><span>SQL</span><span>FastAPI</span><span>REST APIs</span></div>
+              <div><strong>AI Systems</strong><span>LangChain</span><span>LangGraph</span><span>RAG</span><span>Tool calling</span></div>
+              <div><strong>Data</strong><span>PySpark</span><span>Databricks</span><span>Azure Data Factory</span><span>PostgreSQL</span></div>
+              <div><strong>ML</strong><span>PyTorch</span><span>scikit-learn</span><span>XGBoost</span><span>Time series</span></div>
+              <div><strong>MLOps</strong><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>CI/CD</span></div>
+              <div><strong>Interfaces</strong><span>React</span><span>Streamlit</span><span>CLI tooling</span><span>Markdown reports</span></div>
+            </div>
+          </section>
+
+          <section id="experience" class="terminal-section">
+            <div class="section-command">$ experience --trace</div>
+            <h2>Experience Trace</h2>
+            <div class="timeline">
+              <article>
+                <span>May 2025 - Present</span>
+                <h3>Cognizant - Graduate, Artificial Intelligence and Analytics</h3>
+                <p>
+                  Built RAG-based enterprise search and Q&A prototypes with metadata-aware chunking,
+                  embeddings, vector search, source grounding, access controls, and retrieval evaluation.
+                </p>
+                <p>
+                  Designed MCP-style AI assistant prototypes over structured data using FastAPI,
+                  approved tool calls, RBAC, PostgreSQL, Redis, structured outputs, and traceability.
+                </p>
+                <p>
+                  Improved ADF-to-Databricks pipelines for public-sector workloads, adding retry logic
+                  and observability to cut data latency by 40% across 50M-record datasets.
+                </p>
+              </article>
+              <article>
+                <span>Sep 2024 - Apr 2025</span>
+                <h3>Independent ML and AI Engineering</h3>
+                <p>
+                  Built MurmurX, a fully local voice-first AI pipeline using WebRTC VAD, Whisper.cpp,
+                  Qwen 2.5 3B, and TTS for sub-2-second local inference with zero cloud dependency.
+                </p>
+                <p>
+                  Developed ML and time-series models across Ethereum, Bitcoin, and Nasdaq data with
+                  indicators, walk-forward validation, and error analysis.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section id="projects" class="terminal-section">
+            <div class="section-command">$ projects --public-github --cv-featured</div>
+            <div class="section-heading">
+              <h2>Featured Systems</h2>
+              <p>Selected from CV and public GitHub repositories.</p>
+            </div>
+            <div class="project-grid">
+              <article class="project-card featured">
+                <span>2026 / Python / Workflow intelligence</span>
+                <h3>WorkflowForge</h3>
+                <p>
+                  Open-source workflow intelligence engine that turns operational inputs into workflow maps,
+                  bottleneck analysis, Mermaid diagrams, and ranked automation opportunities.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener">Live demo</a>
+                </div>
+              </article>
+              <article class="project-card featured">
+                <span>May 2026 / Python / Voice privacy</span>
+                <h3>VoiceSafeKit</h3>
+                <p>
+                  Transcript safety layer that classifies voice assistant input as SAFE, REDACT, REVIEW,
+                  or BLOCK before it reaches an LLM, with browser recording and CLI support.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener">Live demo</a>
+                </div>
+              </article>
+              <article class="project-card featured">
+                <span>Feb 2026 / Python / Local LLM</span>
+                <h3>CodeSentry</h3>
+                <p>
+                  Local AI code review and auto-fix platform for scanning codebases, caching review results,
+                  exporting Markdown reports, and integrating GitHub Actions checks.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener">Live demo</a>
+                </div>
+              </article>
+              <article class="project-card featured">
+                <span>2026 / LangGraph / Analyst agents</span>
+                <h3>SignalBrief</h3>
+                <p>
+                  Six-agent analyst briefing pipeline using LangGraph, typed facts, evidence indexing,
+                  risk scoring, sentiment analysis, Plotly, and deterministic demo fallback.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener">Live demo</a>
+                </div>
+              </article>
+              <article class="project-card">
+                <span>May 2026 / Python / AI SRE evaluation</span>
+                <h3>IncidentForge</h3>
+                <p>
+                  Synthetic incident bundles and RCA scoring for benchmarking AI SRE agents across alerts,
+                  metrics, logs, traces, runbooks, and ground truth.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/IncidentForge" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </article>
+              <article class="project-card">
+                <span>Python / Local AI workspace</span>
+                <h3>Odysseus</h3>
+                <p>
+                  Self-hosted AI workspace for local agent workflows and private engineering productivity.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/odysseus" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://pewdiepie-archdaemon.github.io/odysseus/" target="_blank" rel="noopener">Live demo</a>
+                </div>
+              </article>
+              <article class="project-card">
+                <span>Python / Offline voice AI</span>
+                <h3>MurmurX</h3>
+                <p>
+                  Fully local voice-driven AI pipeline covering audio capture, speech-to-text, local LLM
+                  inference, and text-to-speech with zero cloud dependency.
+                </p>
+                <div>
+                  <a href="https://github.com/MohamadKanso/MurmurX" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </article>
+              <article class="project-card">
+                <span>2026 / FastAPI / RBAC</span>
+                <h3>Enterprise AI Assistant</h3>
+                <p>
+                  Private MCP/RBAC tool-use prototype over structured enterprise data with approved tools,
+                  SSO-style roles, PostgreSQL retrieval, Redis traces, and human-review controls.
+                </p>
+                <div>
+                  <span class="private-chip">Private prototype</span>
+                </div>
+              </article>
+            </div>
+
+            <div class="section-heading archive-heading">
+              <h2>Public GitHub Archive</h2>
+              <p>Loaded from public repository metadata.</p>
+            </div>
+            <div id="repo-archive" class="repo-archive" aria-live="polite"></div>
+          </section>
+
+          <section id="awards" class="terminal-section">
+            <div class="section-command">$ awards --vault --public-safe</div>
+            <div class="section-heading">
+              <h2>Awards and Recognition</h2>
+              <p>Certificates and recognitions supplied for the portfolio. Client-sensitive details are omitted in public assets.</p>
+            </div>
+            <div class="award-grid">
+              <article class="award-card wide">
+                <img src="assets/awards/cognizant-impact-award-2026-public.png" alt="Cognizant Impact Award 2026 public portfolio version">
+                <div>
+                  <span>2026 / Cognizant</span>
+                  <h3>Impact Award 2026</h3>
+                  <p>Global Account of the Year recognition. The public image omits client-name details.</p>
+                </div>
+              </article>
+              <article class="award-card">
+                <img src="assets/awards/cognizant-guinness-generative-ai-hackathon.png" alt="Guinness World Records online generative AI hackathon participation certificate">
+                <div>
+                  <span>13 Aug 2025 / Cognizant</span>
+                  <h3>Guinness World Records Generative AI Hackathon</h3>
+                  <p>Participated in Cognizant's online generative AI hackathon title attempt.</p>
+                  <a href="assets/awards/cognizant-guinness-generative-ai-hackathon.pdf" target="_blank" rel="noopener">View certificate</a>
+                </div>
+              </article>
+              <article class="award-card badge-award">
+                <img src="assets/awards/cognizant-vibecode-hackathon-cursor.png" alt="Cognizant VibeCode Hackathon badge">
+                <div>
+                  <span>2025 / Cognizant</span>
+                  <h3>Vibe Coding Challenge Winner</h3>
+                  <p>VibeCode Hackathon recognition for building with Cursor during Cognizant's AI coding initiative.</p>
+                </div>
+              </article>
+              <article class="award-card text-award">
+                <div>
+                  <span>13 Jun 2025 / Cognizant Cheers</span>
+                  <h3>Team Award - Owning It</h3>
+                  <p>Recognition for keeping colleagues informed, supporting peers, and contributing strongly to team delivery.</p>
+                </div>
+              </article>
+              <article class="award-card text-award">
+                <div>
+                  <span>2023 / University</span>
+                  <h3>Computer Vision Challenge Winner</h3>
+                  <p>CV-listed academic recognition alongside first-class performance in Computer Vision.</p>
+                </div>
+              </article>
+              <article class="award-card text-award">
+                <div>
+                  <span>2020 / UKMT</span>
+                  <h3>Senior Maths Challenge Silver</h3>
+                  <p>Mathematics recognition supporting the quantitative foundation behind applied ML and data science work.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="cv" class="terminal-section cv-section">
+            <div class="section-command">$ cv --download --summary</div>
+            <h2>CV Packet</h2>
+            <div class="cv-grid">
+              <article>
+                <h3>Mohamad Kanso - Data and AI Engineer CV</h3>
+                <p>
+                  Python, Data and AI Engineer with Cognizant experience across RAG enterprise search,
+                  LLM-backed automation workflows, production data pipelines, and local LLM systems.
+                </p>
+                <a class="term-action" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>download_latest_cv</a>
+              </article>
+              <article>
+                <h3>Education</h3>
+                <p>MSci Data Science, City, University of London. Upper Second Class Honours with first-class performance in Mathematics and Applied Machine Learning modules.</p>
+                <p>Dissertation: Time-Series ML System for Financial Market Data, first-class mark, 76%.</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="contact" class="terminal-section contact-section">
+            <div class="section-command">$ connect --linkedin --github</div>
+            <h2>Contact Links</h2>
+            <div class="contact-grid">
+              <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">
+                <span>LINKEDIN</span>
+                linkedin.com/in/mohamadkanso
+              </a>
+              <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">
+                <span>GITHUB</span>
+                github.com/MohamadKanso
+              </a>
+              <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>
+                <span>CV</span>
+                download portfolio CV
+              </a>
+              <a href="mailto:kanso1245@gmail.com">
+                <span>EMAIL</span>
+                kanso1245@gmail.com
+              </a>
+            </div>
+          </section>
+
+        </div>
+
+        <form class="command-input" id="command-form">
+          <label for="command-line">~/portfolio</label>
+          <input id="command-line" name="command" autocomplete="off" spellcheck="false" value="" placeholder="type help, projects, awards, cv, linkedin">
+          <button type="submit">ENTER</button>
+        </form>
+      </section>
+
+      <aside class="panel network-panel" aria-label="Network status and world view">
+        <div class="panel-ribbon">
+          <span>PANEL</span>
+          <span>NETWORK</span>
+        </div>
+        <section class="network-status">
+          <div class="module-title">
+            <span>NETWORK STATUS</span>
+            <span>IF: github.io</span>
+          </div>
+          <div class="status-grid">
+            <span>STATE</span><strong>ONLINE</strong>
+            <span>IPv4</span><strong>portfolio</strong>
+            <span>PING</span><strong id="ping-value">16ms</strong>
+          </div>
+        </section>
+
+        <section class="world-module">
+          <div class="module-title">
+            <span>WORLDVIEW</span>
+            <span>GLOBAL NETWORK MAP</span>
+          </div>
+          <div class="coords">
+            <span>ENDPOINT LAT/LON</span>
+            <span>51.5072, -0.1276</span>
+          </div>
+          <canvas id="globe" width="320" height="320" aria-label="Animated dotted world globe"></canvas>
+        </section>
+
+        <section class="traffic-module">
+          <div class="module-title">
+            <span>NETWORK TRAFFIC</span>
+            <span>UP / DOWN, MB/S</span>
+          </div>
+          <div class="traffic-total">
+            <span>TOTAL</span>
+            <span>CV + GitHub + LinkedIn</span>
+          </div>
+          <svg class="traffic-chart" viewBox="0 0 320 180" aria-hidden="true">
+            <g class="chart-grid">
+              <path d="M0 30H320M0 70H320M0 110H320M0 150H320"></path>
+              <path d="M40 0V180M120 0V180M200 0V180M280 0V180"></path>
+            </g>
+            <polyline id="traffic-a" points=""></polyline>
+            <polyline id="traffic-b" points=""></polyline>
+          </svg>
+        </section>
+      </aside>
+
+      <section class="panel filesystem-panel" aria-label="Portfolio filesystem navigation">
+        <div class="panel-ribbon compact">
+          <span>FILESYSTEM</span>
+          <span>/home/mohamad/portfolio</span>
+        </div>
+        <div class="file-grid">
+          <button type="button" class="file-tile" data-jump="overview"><i class="disk-icon"></i><span>Show profile</span></button>
+          <button type="button" class="file-tile" data-jump="projects"><i class="folder-icon"></i><span>projects</span></button>
+          <button type="button" class="file-tile" data-jump="awards"><i class="folder-icon"></i><span>awards</span></button>
+          <button type="button" class="file-tile" data-jump="cv"><i class="doc-icon"></i><span>cv.pdf</span></button>
+          <button type="button" class="file-tile" data-jump="skills"><i class="folder-icon"></i><span>skills</span></button>
+          <button type="button" class="file-tile" data-jump="experience"><i class="folder-icon"></i><span>experience</span></button>
+          <a class="file-tile" href="https://github.com/MohamadKanso" target="_blank" rel="noopener"><i class="link-icon"></i><span>github</span></a>
+          <a class="file-tile" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener"><i class="link-icon"></i><span>linkedin</span></a>
+        </div>
+        <div class="mount-line">
+          <span>Mount /portfolio used 71%</span>
+          <div><i style="width: 71%"></i></div>
+        </div>
+      </section>
+
+      <section class="panel keyboard-panel" aria-label="Terminal keyboard navigation">
+        <div class="keyboard-grid">
+          <button type="button" data-jump="overview">ESC</button>
+          <button type="button" data-jump="skills">1</button>
+          <button type="button" data-jump="projects">2</button>
+          <button type="button" data-jump="awards">3</button>
+          <button type="button" data-jump="cv">4</button>
+          <button type="button" data-jump="contact">5</button>
+          <button type="button" data-jump="overview">BACK</button>
+          <button type="button" data-jump="projects">TAB</button>
+          <button type="button" data-command="q">Q</button>
+          <button type="button" data-command="w">W</button>
+          <button type="button" data-command="e">E</button>
+          <button type="button" data-command="r">R</button>
+          <button type="button" data-command="t">T</button>
+          <button type="button" data-jump="cv">ENTER</button>
+          <button type="button" data-jump="awards">CAPS</button>
+          <button type="button" data-command="a">A</button>
+          <button type="button" data-command="s">S</button>
+          <button type="button" data-command="d">D</button>
+          <button type="button" data-command="f">F</button>
+          <button type="button" data-command="g">G</button>
+          <button type="button" data-jump="contact">LINK</button>
+          <button type="button" data-jump="experience">SHIFT</button>
+          <button type="button" data-command="z">Z</button>
+          <button type="button" data-command="x">X</button>
+          <button type="button" data-command="c">C</button>
+          <button type="button" data-command="v">V</button>
+          <button type="button" data-command="b">B</button>
+          <button type="button" data-jump="projects">SHIFT</button>
+          <button type="button" data-jump="overview">CTRL</button>
+          <button type="button" class="space-key" data-jump="projects">SPACE</button>
+          <button type="button" data-jump="awards">ALT</button>
+          <button type="button" data-jump="cv">CTRL</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
