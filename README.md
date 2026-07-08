@@ -1,6 +1,6 @@
 # Mohamad Kanso Portfolio
 
-Interactive terminal-style portfolio for Mohamad Kanso, built for LinkedIn Featured and recruiter review.
+Compact visual portfolio for Mohamad Kanso, built for LinkedIn Featured and recruiter review.
 
 ## LinkedIn Featured Link
 
@@ -19,7 +19,7 @@ Use this URL in the Featured section:
 - Dissertation link
 - Public GitHub projects and live demos
 - LinkedIn and contact routes
-- eDEX-inspired interface with a recruiter-friendly portfolio view
+- Compact recruiter-first interface with visual project and recognition sections
 
 ## Local Preview
 
