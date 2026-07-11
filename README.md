@@ -1,30 +1,30 @@
-# Mohamad Kanso Portfolio
+# Mohamad Kanso — Portfolio
 
-Interactive terminal-style portfolio for Mohamad Kanso, built for LinkedIn Featured and recruiter review.
+[mohamadkanso.github.io](https://mohamadkanso.github.io/) is the portfolio of Mohamad Kanso, a London-based Data and AI Engineer.
 
-## LinkedIn Featured Link
+![Mohamad Kanso portfolio preview](assets/preview/signal-noise-social.png)
 
-Use this URL in the Featured section:
+## Signal / Noise
 
-[https://mohamadkanso.github.io/](https://mohamadkanso.github.io/)
+The experience is built around a living visual system that turns disorder into structure as visitors move through the work. Project chapters reshape the same signal into workflow graphs, privacy gates, code scans, agent orbits, incident shockwaves and market traces.
 
-[Open the live portfolio](https://mohamadkanso.github.io/)
+The cinematic path is paired with a fast 60-second view, direct CV and contact links, full keyboard support, a reduced-motion mode and a filterable public-project archive.
 
-![Mohamad Kanso portfolio preview](assets/preview/linkedin-featured-preview.png)
+## Featured work
 
-## What It Includes
+- WorkflowForge
+- VoiceSafeKit
+- CodeSentry
+- SignalBrief
+- IncidentForge
+- Odysseus
+- MurmurX
+- Bitcoin time-series ML dissertation
 
-- Downloadable CV
-- Awards and recognition
-- Dissertation link
-- Public GitHub projects and live demos
-- LinkedIn and contact routes
-- eDEX-inspired interface with a recruiter-friendly portfolio view
-
-## Local Preview
+## Local preview
 
 ```bash
 python3 -m http.server 4173 --bind 127.0.0.1
 ```
 
-Then open `http://127.0.0.1:4173`.
+Open [http://127.0.0.1:4173](http://127.0.0.1:4173).

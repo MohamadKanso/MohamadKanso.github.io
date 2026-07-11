@@ -3,798 +3,556 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mohamad Kanso | Data and AI Engineer</title>
+    <title>Mohamad Kanso — Data &amp; AI Engineer</title>
     <meta
       name="description"
-      content="Interactive terminal-style portfolio for Mohamad Kanso, a Python, Data and AI Engineer focused on LLM applications, AI agents, RAG, data engineering, and automation."
+      content="Mohamad Kanso turns noisy data, voice, code and operations into useful AI systems. Explore production data engineering, local AI, agent workflows, awards and research."
     >
     <link rel="canonical" href="https://mohamadkanso.github.io/">
-    <meta property="og:title" content="Mohamad Kanso | Interactive Data and AI Portfolio">
-    <meta
-      property="og:description"
-      content="Recruiter-ready portfolio with CV, awards, dissertation, public GitHub projects, live demos, and LinkedIn access."
-    >
+    <meta name="theme-color" content="#0b0d12">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mohamadkanso.github.io/">
     <meta property="og:site_name" content="Mohamad Kanso Portfolio">
-    <meta property="og:image" content="https://mohamadkanso.github.io/assets/preview/linkedin-featured-preview.png">
-    <meta property="og:image:alt" content="Mohamad Kanso terminal-style Data and AI Engineer portfolio preview">
+    <meta property="og:title" content="Mohamad Kanso — Signal into systems">
+    <meta
+      property="og:description"
+      content="A living, interactive portfolio of AI systems, data engineering, local intelligence and applied research."
+    >
+    <meta property="og:image" content="https://mohamadkanso.github.io/assets/preview/signal-noise-social.png">
+    <meta property="og:image:alt" content="Mohamad Kanso, Data and AI Engineer — turning signal into systems">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohamad Kanso | Interactive Data and AI Portfolio">
+    <meta name="twitter:title" content="Mohamad Kanso — Signal into systems">
     <meta
       name="twitter:description"
-      content="CV, awards, dissertation, public GitHub projects, live demos, and LinkedIn access in an eDEX-inspired portfolio."
+      content="Explore AI systems, data engineering, local intelligence and applied research."
     >
-    <meta name="twitter:image" content="https://mohamadkanso.github.io/assets/preview/linkedin-featured-preview.png">
-    <meta name="theme-color" content="#071014">
-    <link rel="stylesheet" href="styles.css?v=20260707-11">
+    <meta name="twitter:image" content="https://mohamadkanso.github.io/assets/preview/signal-noise-social.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Syne:wght@400..800&amp;display=swap"
+      rel="stylesheet"
+    >
+    <link rel="icon" type="image/png" href="assets/preview/favicon.png">
+    <link rel="stylesheet" href="styles.css?v=20260711-5">
+    <script src="script.js?v=20260711-5" defer></script>
   </head>
-  <body class="booting">
-    <section id="boot-screen" class="boot-screen" aria-live="polite" aria-label="Mohamad Kanso portfolio loading screen"></section>
-    <div class="screen-noise" aria-hidden="true"></div>
-    <div class="scanline" aria-hidden="true"></div>
+  <body data-theme="ink">
+    <a class="skip-link" href="#main-content">Skip to the portfolio</a>
 
-    <main class="edex-shell" aria-label="Mohamad Kanso portfolio terminal">
-      <aside class="panel system-panel" aria-label="System status">
-        <div class="panel-ribbon">
-          <span>PANEL</span>
-          <span>SYSTEM</span>
-        </div>
-        <div class="clock-block">
-          <time id="clock-time" class="clock-time" datetime="">-- : --</time>
-          <div class="clock-meta">
-            <span id="clock-date">---- -- --</span>
-            <span>UPTIME 2026</span>
-            <span>TYPE PORTFOLIO</span>
-            <span>POWER ONLINE</span>
-          </div>
-        </div>
+    <canvas id="signal-canvas" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-orbit" aria-hidden="true"><span></span></div>
 
-        <div class="sys-row">
-          <span>MANUFACTURER</span>
-          <strong>Mohamad Kanso</strong>
-        </div>
-        <div class="sys-row two">
-          <span>MODEL</span>
-          <strong>Data / AI Engineer</strong>
-          <span>CHASSIS</span>
-          <strong>London, UK</strong>
-        </div>
+    <div class="page-progress" aria-hidden="true"><i id="page-progress-bar"></i></div>
 
-        <section class="mini-module">
-          <div class="module-title">
-            <span>CV SIGNALS</span>
-            <span>current focus</span>
-          </div>
-          <div class="spark-row">
-            <span>AI systems<br><small>RAG + agents</small></span>
-            <svg class="sparkline" viewBox="0 0 220 44" aria-hidden="true">
-              <polyline id="spark-a" points=""></polyline>
-            </svg>
-          </div>
-          <div class="spark-row">
-            <span>Data work<br><small>ADF + Databricks</small></span>
-            <svg class="sparkline" viewBox="0 0 220 44" aria-hidden="true">
-              <polyline id="spark-b" points=""></polyline>
-            </svg>
-          </div>
-        </section>
+    <header class="site-header" id="site-header">
+      <a class="brand magnetic" href="#top" aria-label="Mohamad Kanso — back to top">
+        <span class="brand-mark">MK</span>
+        <span class="brand-copy">Data + AI<br>Engineer</span>
+      </a>
 
-        <section class="metric-stack">
-          <div>
-            <span>ROLE</span>
-            <strong>AI Eng</strong>
-          </div>
-          <div>
-            <span>STACK</span>
-            <strong>Python</strong>
-          </div>
-          <div>
-            <span>IMPACT</span>
-            <strong>40% cut</strong>
-          </div>
-          <div>
-            <span>PROOF</span>
-            <strong>21 repos</strong>
-          </div>
-        </section>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span>Menu</span><i aria-hidden="true"></i>
+      </button>
 
-        <section class="mini-module">
-          <div class="module-title">
-            <span>CORE STACK</span>
-            <span>CV skills</span>
-          </div>
-          <div class="cv-skill-list" aria-label="Core CV skills">
-            <span>Python</span>
-            <span>SQL</span>
-            <span>FastAPI</span>
-            <span>LangGraph</span>
-            <span>PySpark</span>
-            <span>Databricks</span>
-            <span>Azure</span>
-            <span>React</span>
-          </div>
-          <div class="cv-stack-line">
-            <span>AI apps</span>
-            <strong>RAG, agents, automation</strong>
-          </div>
-        </section>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#proof">Proof</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="mobile-motion-toggle" id="mobile-motion-toggle" type="button" aria-pressed="false">
+          <span class="status-dot" aria-hidden="true"></span><span>Motion on</span>
+        </button>
+      </nav>
 
-        <section class="mini-module process-module">
-          <div class="module-title">
-            <span>READOUT</span>
-            <span>RECRUITER SNAPSHOT</span>
-          </div>
-          <ol>
-            <li><span>01</span><b>Commercial AI</b><em>Cognizant AIA</em></li>
-            <li><span>02</span><b>Data pipelines</b><em>Databricks / ADF</em></li>
-            <li><span>03</span><b>Public builds</b><em>Repos + demos</em></li>
-            <li><span>04</span><b>Research</b><em>ML dissertation</em></li>
-          </ol>
-        </section>
-      </aside>
+      <div class="header-actions">
+        <button class="text-button" id="motion-toggle" type="button" aria-pressed="false">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Motion on</span>
+        </button>
+        <button class="pill-button magnetic" type="button" data-open-quick>60s view</button>
+      </div>
+    </header>
 
-      <section class="panel terminal-panel" aria-label="Main portfolio shell">
-        <div class="panel-ribbon">
-          <span>TERMINAL</span>
-          <span>MAIN SHELL</span>
+    <main id="main-content">
+      <section class="hero signal-scene theme-scene" id="top" data-mode="chaos" data-theme="ink">
+        <div class="hero-kicker reveal">
+          <span>Mohamad Kanso</span>
+          <span>London, UK</span>
+          <span>Cognizant AI &amp; Analytics</span>
         </div>
 
-        <nav class="terminal-tabs" aria-label="Portfolio sections">
-          <button type="button" class="active" data-jump="overview">MAIN SHELL</button>
-          <button type="button" data-jump="projects">PROJECTS</button>
-          <button type="button" data-jump="awards">AWARDS</button>
-          <button type="button" data-jump="cv">CV</button>
-          <button type="button" data-jump="contact">LINKEDIN</button>
-        </nav>
-
-        <div id="terminal-scroll" class="terminal-scroll" tabindex="0">
-          <section id="overview" class="terminal-section hero-shell">
-            <div class="terminal-line muted">Welcome to KANZO-OS Portfolio v1.0 - browser shell</div>
-            <div class="terminal-line">cd ~/portfolio</div>
-            <div class="prompt-line">
-              <span class="prompt-path">~/mohamad-kanso</span>
-              <span class="prompt-cmd">neofetch</span>
-            </div>
-
-            <div class="neofetch">
-              <div class="name-lockup" aria-label="Mohamad Kanso">
-                <span>Mohamad</span>
-                <strong>Kanso</strong>
-                <em>Data and AI Engineer</em>
-              </div>
-              <div class="identity-table">
-                <p><span>user</span> Mohamad Kanso</p>
-                <p><span>role</span> Python, Data and AI Engineer</p>
-                <p><span>origin</span> London, UK</p>
-                <p><span>current</span> Cognizant - Artificial Intelligence and Analytics</p>
-                <p><span>focus</span> LLM applications, AI agents, RAG, data pipelines, automation</p>
-                <p><span>impact</span> 40% data-latency reduction across 50M-record Databricks pipelines</p>
-                <p><span>stack</span> Python, SQL, FastAPI, LangGraph, PySpark, Databricks, Azure, React</p>
-              </div>
-            </div>
-
-            <div class="status-strip" aria-label="Primary links">
-              <a class="term-action" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>download_cv.pdf</a>
-              <a class="term-action" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">open_linkedin</a>
-              <a class="term-action" href="https://github.com/MohamadKanso" target="_blank" rel="noopener">open_github</a>
-              <a class="term-action" href="mailto:kanso1245@gmail.com">send_email</a>
-            </div>
-
-            <div class="hero-grid">
-              <article class="hero-statement">
-                <h1>Data and AI engineering, shipped with evidence.</h1>
-                <p>
-                  I build practical AI systems: retrieval tools over enterprise data, production data pipelines,
-                  local LLM workflows, and open-source utilities that turn messy context into structured execution.
-                </p>
-              </article>
-              <article class="hero-readout">
-                <h2>Best first clicks</h2>
-                <ul>
-                  <li><span>CV</span> latest data and AI engineering packet</li>
-                  <li><span>Demos</span> hosted project pages and GitHub repos</li>
-                  <li><span>Dissertation</span> ML trading-bot research report</li>
-                </ul>
-              </article>
-            </div>
-
-            <div class="signal-route" aria-label="Portfolio evidence route">
-              <div>
-                <span>profile</span>
-                <strong>whoami</strong>
-              </div>
-              <div>
-                <span>evidence</span>
-                <strong>CV</strong>
-              </div>
-              <div>
-                <span>systems</span>
-                <strong>Projects</strong>
-              </div>
-              <div>
-                <span>proof</span>
-                <strong>Awards</strong>
-              </div>
-              <div>
-                <span>contact</span>
-                <strong>LinkedIn</strong>
-              </div>
-            </div>
-          </section>
-
-          <section id="skills" class="terminal-section">
-            <div class="section-command">$ skills --matrix --from-cv</div>
-            <h2>Technical Stack</h2>
-            <div class="skill-grid">
-              <div><strong>Primary</strong><span>Python</span><span>SQL</span><span>FastAPI</span><span>REST APIs</span></div>
-              <div><strong>AI Systems</strong><span>LangChain</span><span>LangGraph</span><span>RAG</span><span>Tool calling</span></div>
-              <div><strong>Data</strong><span>PySpark</span><span>Databricks</span><span>Azure Data Factory</span><span>PostgreSQL</span></div>
-              <div><strong>ML</strong><span>PyTorch</span><span>scikit-learn</span><span>XGBoost</span><span>Time series</span></div>
-              <div><strong>MLOps</strong><span>Docker</span><span>GitHub Actions</span><span>pytest</span><span>CI/CD</span></div>
-              <div><strong>Interfaces</strong><span>React</span><span>Streamlit</span><span>CLI tooling</span><span>Markdown reports</span></div>
-            </div>
-          </section>
-
-          <section id="experience" class="terminal-section">
-            <div class="section-command">$ experience --trace</div>
-            <h2>Experience Trace</h2>
-            <div class="timeline">
-              <article>
-                <span>May 2025 - Present</span>
-                <h3>Cognizant - Graduate, Artificial Intelligence and Analytics</h3>
-                <p>
-                  Built RAG-based enterprise search and Q&A prototypes with metadata-aware chunking,
-                  embeddings, vector search, source grounding, access controls, and retrieval evaluation.
-                </p>
-                <p>
-                  Designed MCP-style AI assistant prototypes over structured data using FastAPI,
-                  approved tool calls, RBAC, PostgreSQL, Redis, structured outputs, and traceability.
-                </p>
-                <p>
-                  Improved ADF-to-Databricks pipelines for public-sector workloads, adding retry logic
-                  and observability to cut data latency by 40% across 50M-record datasets.
-                </p>
-              </article>
-              <article>
-                <span>Sep 2024 - Apr 2025</span>
-                <h3>Independent ML and AI Engineering</h3>
-                <p>
-                  Built MurmurX, a fully local voice-first AI pipeline using WebRTC VAD, Whisper.cpp,
-                  Qwen 2.5 3B, and TTS for sub-2-second local inference with zero cloud dependency.
-                </p>
-                <p>
-                  Developed ML and time-series models across Ethereum, Bitcoin, and Nasdaq data with
-                  indicators, walk-forward validation, and error analysis.
-                </p>
-              </article>
-            </div>
-          </section>
-
-          <section id="projects" class="terminal-section">
-            <div class="section-command">$ projects --public-github --cv-featured</div>
-            <div class="section-heading">
-              <h2>Featured Systems</h2>
-              <p>Selected from CV and public GitHub repositories.</p>
-            </div>
-            <div class="project-grid">
-              <article class="project-card featured">
-                <span>2026 / Python / Workflow intelligence</span>
-                <h3>WorkflowForge</h3>
-                <div class="project-visual pv-workflow" role="img" aria-label="WorkflowForge visual showing inputs mapped into bottlenecks and automation opportunities">
-                  <span class="pv-label">workflow map</span>
-                  <div class="pv-node-row">
-                    <i>input</i>
-                    <i>map</i>
-                    <i>rank</i>
-                  </div>
-                  <div class="pv-bars">
-                    <i style="--w: 82%"></i>
-                    <i style="--w: 58%"></i>
-                    <i style="--w: 72%"></i>
-                  </div>
-                </div>
-                <p>
-                  Open-source workflow intelligence engine that turns operational inputs into workflow maps,
-                  bottleneck analysis, Mermaid diagrams, and ranked automation opportunities.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener">GitHub</a>
-                  <a href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener">Live demo</a>
-                </div>
-              </article>
-              <article class="project-card featured">
-                <span>May 2026 / Python / Voice privacy</span>
-                <h3>VoiceSafeKit</h3>
-                <div class="project-visual pv-voice-safe" role="img" aria-label="VoiceSafeKit visual showing audio input passing through privacy classifications">
-                  <span class="pv-label">privacy gate</span>
-                  <div class="pv-wave">
-                    <i style="--h: 38%"></i>
-                    <i style="--h: 76%"></i>
-                    <i style="--h: 46%"></i>
-                    <i style="--h: 88%"></i>
-                    <i style="--h: 54%"></i>
-                    <i style="--h: 68%"></i>
-                    <i style="--h: 40%"></i>
-                  </div>
-                  <div class="pv-chips">
-                    <i>safe</i>
-                    <i>redact</i>
-                    <i>review</i>
-                  </div>
-                </div>
-                <p>
-                  Transcript safety layer that classifies voice assistant input as SAFE, REDACT, REVIEW,
-                  or BLOCK before it reaches an LLM, with browser recording and CLI support.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener">GitHub</a>
-                  <a href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener">Live demo</a>
-                </div>
-              </article>
-              <article class="project-card featured">
-                <span>Feb 2026 / Python / Local LLM</span>
-                <h3>CodeSentry</h3>
-                <div class="project-visual pv-code" role="img" aria-label="CodeSentry visual showing a code scan with findings and an auto-fix route">
-                  <span class="pv-label">code scan</span>
-                  <div class="pv-code-window">
-                    <i style="--w: 92%"></i>
-                    <i style="--w: 67%"></i>
-                    <i style="--w: 78%"></i>
-                    <i style="--w: 46%"></i>
-                  </div>
-                  <div class="pv-scan-chip">fix</div>
-                </div>
-                <p>
-                  Local AI code review and auto-fix platform for scanning codebases, caching review results,
-                  exporting Markdown reports, and integrating GitHub Actions checks.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener">GitHub</a>
-                  <a href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener">Live demo</a>
-                </div>
-              </article>
-              <article class="project-card featured">
-                <span>2026 / LangGraph / Analyst agents</span>
-                <h3>SignalBrief</h3>
-                <div class="project-visual pv-agents" role="img" aria-label="SignalBrief visual showing analyst agents converging into a briefing report">
-                  <span class="pv-label">agent brief</span>
-                  <div class="pv-agent-ring">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                  </div>
-                  <div class="pv-mini-chart">
-                    <i style="--h: 36%"></i>
-                    <i style="--h: 62%"></i>
-                    <i style="--h: 48%"></i>
-                    <i style="--h: 84%"></i>
-                  </div>
-                </div>
-                <p>
-                  Six-agent analyst briefing pipeline using LangGraph, typed facts, evidence indexing,
-                  risk scoring, sentiment analysis, Plotly, and deterministic demo fallback.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener">GitHub</a>
-                  <a href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener">Live demo</a>
-                </div>
-              </article>
-              <article class="project-card">
-                <span>May 2026 / Python / AI SRE evaluation</span>
-                <h3>IncidentForge</h3>
-                <div class="project-visual pv-incident" role="img" aria-label="IncidentForge visual showing alerts, traces, runbooks, and root cause analysis">
-                  <span class="pv-label">incident RCA</span>
-                  <div class="pv-timeline">
-                    <i>alert</i>
-                    <i>logs</i>
-                    <i>rca</i>
-                  </div>
-                  <div class="pv-status-dot"></div>
-                </div>
-                <p>
-                  Synthetic incident bundles and RCA scoring for benchmarking AI SRE agents across alerts,
-                  metrics, logs, traces, runbooks, and ground truth.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/IncidentForge" target="_blank" rel="noopener">GitHub</a>
-                </div>
-              </article>
-              <article class="project-card">
-                <span>Python / Local AI workspace</span>
-                <h3>Odysseus</h3>
-                <div class="project-visual pv-workspace" role="img" aria-label="Odysseus visual showing a local AI workspace shell and private task routes">
-                  <span class="pv-label">local workspace</span>
-                  <div class="pv-shell">
-                    <i>~/agent</i>
-                    <i>tools: local</i>
-                    <i>state: private</i>
-                  </div>
-                </div>
-                <p>
-                  Self-hosted AI workspace for local agent workflows and private engineering productivity.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/odysseus" target="_blank" rel="noopener">GitHub</a>
-                  <a href="https://pewdiepie-archdaemon.github.io/odysseus/" target="_blank" rel="noopener">Live demo</a>
-                </div>
-              </article>
-              <article class="project-card">
-                <span>Python / Offline voice AI</span>
-                <h3>MurmurX</h3>
-                <div class="project-visual pv-voice-loop" role="img" aria-label="MurmurX visual showing speech to text, local LLM inference, and text to speech">
-                  <span class="pv-label">offline voice</span>
-                  <div class="pv-loop">
-                    <i>stt</i>
-                    <i>llm</i>
-                    <i>tts</i>
-                  </div>
-                  <div class="pv-wave compact">
-                    <i style="--h: 42%"></i>
-                    <i style="--h: 72%"></i>
-                    <i style="--h: 50%"></i>
-                    <i style="--h: 90%"></i>
-                    <i style="--h: 58%"></i>
-                  </div>
-                </div>
-                <p>
-                  Fully local voice-driven AI pipeline covering audio capture, speech-to-text, local LLM
-                  inference, and text-to-speech with zero cloud dependency.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/MurmurX" target="_blank" rel="noopener">GitHub</a>
-                </div>
-              </article>
-              <article class="project-card featured">
-                <span>MSci Dissertation / LSTM / Binance API</span>
-                <h3>Bitcoin Trading Bot in Python</h3>
-                <div class="project-visual pv-trading" role="img" aria-label="Bitcoin trading bot visual showing a time-series model and trading signal chart">
-                  <span class="pv-label">time-series ML</span>
-                  <div class="pv-chart-line">
-                    <i style="--x: 8%; --y: 62%"></i>
-                    <i style="--x: 26%; --y: 42%"></i>
-                    <i style="--x: 44%; --y: 55%"></i>
-                    <i style="--x: 64%; --y: 30%"></i>
-                    <i style="--x: 84%; --y: 48%"></i>
-                  </div>
-                  <div class="pv-chips">
-                    <i>lstm</i>
-                    <i>backtest</i>
-                  </div>
-                </div>
-                <p>
-                  First-class dissertation project building an automated Bitcoin trading bot with LSTM models,
-                  technical indicators, backtesting, exploratory analysis, and live-trading tests.
-                </p>
-                <div>
-                  <a href="https://github.com/MohamadKanso/Dissertation" target="_blank" rel="noopener">GitHub</a>
-                  <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">Report PDF</a>
-                </div>
-              </article>
-              <article class="project-card">
-                <span>2026 / FastAPI / RBAC</span>
-                <h3>Enterprise AI Assistant</h3>
-                <div class="project-visual pv-enterprise" role="img" aria-label="Enterprise AI Assistant visual showing role-based access, approved tools, and human review">
-                  <span class="pv-label">rbac tools</span>
-                  <div class="pv-access-grid">
-                    <i>role</i>
-                    <i>tool</i>
-                    <i>trace</i>
-                    <i>review</i>
-                  </div>
-                </div>
-                <p>
-                  Private MCP/RBAC tool-use prototype over structured enterprise data with approved tools,
-                  SSO-style roles, PostgreSQL retrieval, Redis traces, and human-review controls.
-                </p>
-                <div>
-                  <span class="private-chip">Private prototype</span>
-                </div>
-              </article>
-            </div>
-
-            <div class="section-heading archive-heading">
-              <h2>Live HTML Demos</h2>
-              <p>Direct hosted links are surfaced first where the public repo exposes a working page.</p>
-            </div>
-            <div class="demo-strip">
-              <a href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener">
-                <span>WorkflowForge</span>
-                workflow intelligence demo
-              </a>
-              <a href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener">
-                <span>VoiceSafeKit</span>
-                privacy and safety demo
-              </a>
-              <a href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener">
-                <span>CodeSentry</span>
-                local review platform
-              </a>
-              <a href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener">
-                <span>SignalBrief</span>
-                analyst-agent demo
-              </a>
-              <a href="https://mohamadkanso.github.io/ai-workflow-lifecycle/" target="_blank" rel="noopener">
-                <span>AI Workflow Lifecycle</span>
-                visual workflow explainer
-              </a>
-              <a href="https://mohamadkanso.github.io/MLT-Journal/" target="_blank" rel="noopener">
-                <span>MLT Journal</span>
-                trading journal page
-              </a>
-              <a href="https://mohamadkanso.github.io/life-orbit-preview/" target="_blank" rel="noopener">
-                <span>Life Orbit Preview</span>
-                static app preview
-              </a>
-              <a href="https://pewdiepie-archdaemon.github.io/odysseus/" target="_blank" rel="noopener">
-                <span>Odysseus</span>
-                self-hosted AI workspace
-              </a>
-            </div>
-
-            <div class="section-heading archive-heading">
-              <h2>Public GitHub Archive</h2>
-              <p>Loaded from public repository metadata. Rows show repository and hosted HTML links when available.</p>
-            </div>
-            <div id="repo-archive" class="repo-archive" aria-live="polite"></div>
-          </section>
-
-          <section id="awards" class="terminal-section">
-            <div class="section-command">$ awards --vault --public-safe</div>
-            <div class="section-heading">
-              <h2>Awards and Recognition</h2>
-              <p>Recognition across delivery impact, AI hackathons, team contribution, academic performance, and quantitative problem solving.</p>
-            </div>
-
-            <div class="award-showcase">
-              <article class="award-hero">
-                <div class="award-hero-media">
-                  <img src="assets/awards/cognizant-impact-award-2026-public.png" alt="Cognizant Impact Award 2026 public portfolio version">
-                </div>
-                <div class="award-hero-copy">
-                  <span>Flagship Recognition / 2026 / Cognizant</span>
-                  <h3>Impact Award 2026</h3>
-                  <p>
-                    Recognition for delivery impact supporting financial service clients on a major global
-                    account. Public portfolio asset keeps client-sensitive details out while preserving the
-                    award evidence.
-                  </p>
-                  <dl>
-                    <div><dt>Signal</dt><dd>Commercial delivery impact</dd></div>
-                    <div><dt>Context</dt><dd>Financial service clients</dd></div>
-                    <div><dt>Evidence</dt><dd>Public certificate image</dd></div>
-                  </dl>
-                </div>
-              </article>
-
-              <aside class="award-index" aria-label="Recognition summary">
-                <div>
-                  <strong>6</strong>
-                  <span>recognition records</span>
-                </div>
-                <div>
-                  <strong>3</strong>
-                  <span>Cognizant awards and certificates</span>
-                </div>
-                <div>
-                  <strong>2</strong>
-                  <span>academic and quantitative signals</span>
-                </div>
-              </aside>
-            </div>
-
-            <div class="award-grid">
-              <article class="award-card certificate-card">
-                <div class="award-media">
-                  <img src="assets/awards/cognizant-guinness-generative-ai-hackathon.png" alt="Guinness World Records online generative AI hackathon participation certificate">
-                </div>
-                <div>
-                  <span>13 Aug 2025 / Cognizant</span>
-                  <h3>Guinness World Records Generative AI Hackathon</h3>
-                  <p>Participation certificate for Cognizant's online generative AI hackathon title attempt.</p>
-                  <a href="assets/awards/cognizant-guinness-generative-ai-hackathon.pdf" target="_blank" rel="noopener">View certificate</a>
-                </div>
-              </article>
-
-              <article class="award-card certificate-card badge-award">
-                <div class="award-media">
-                  <img src="assets/awards/cognizant-vibecode-hackathon-cursor.png" alt="Cognizant VibeCode Hackathon badge">
-                </div>
-                <div>
-                  <span>2025 / Cognizant</span>
-                  <h3>Vibe Coding Challenge Winner</h3>
-                  <p>Hackathon recognition for building with Cursor during Cognizant's AI coding initiative.</p>
-                </div>
-              </article>
-
-              <article class="award-card recognition-card">
-                <div>
-                  <span>13 Jun 2025 / Cognizant Cheers</span>
-                  <h3>Team Award - Owning It</h3>
-                  <p>Recognition for keeping colleagues informed, supporting peers, and contributing strongly to team delivery.</p>
-                </div>
-              </article>
-
-              <article class="award-card recognition-card">
-                <div>
-                  <span>2023 / University</span>
-                  <h3>Computer Vision Challenge Winner</h3>
-                  <p>Academic recognition paired with first-class performance in Computer Vision.</p>
-                </div>
-              </article>
-
-              <article class="award-card recognition-card">
-                <div>
-                  <span>2020 / UKMT</span>
-                  <h3>Senior Maths Challenge Silver</h3>
-                  <p>Mathematics recognition supporting the quantitative foundation behind applied ML and data science work.</p>
-                </div>
-              </article>
-            </div>
-          </section>
-
-          <section id="cv" class="terminal-section cv-section">
-            <div class="section-command">$ cv --download --summary</div>
-            <h2>CV Packet</h2>
-            <div class="cv-grid">
-              <article>
-                <h3>Mohamad Kanso - Data and AI Engineer CV</h3>
-                <p>
-                  Python, Data and AI Engineer with Cognizant experience across RAG enterprise search,
-                  LLM-backed automation workflows, production data pipelines, and local LLM systems.
-                </p>
-                <a class="term-action" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>download_latest_cv</a>
-              </article>
-              <article>
-                <h3>Education</h3>
-                <p>MSci Data Science, City, University of London. Upper Second Class Honours with first-class performance in Mathematics and Applied Machine Learning modules.</p>
-                <p>Dissertation: Time-Series ML System for Financial Market Data, first-class mark, 76%.</p>
-                <a class="term-action" href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">open_dissertation_pdf</a>
-              </article>
-            </div>
-          </section>
-
-          <section id="contact" class="terminal-section contact-section">
-            <div class="section-command">$ connect --linkedin --github</div>
-            <h2>Contact Links</h2>
-            <div class="contact-grid">
-              <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">
-                <span>LINKEDIN</span>
-                linkedin.com/in/mohamadkanso
-              </a>
-              <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">
-                <span>GITHUB</span>
-                github.com/MohamadKanso
-              </a>
-              <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>
-                <span>CV</span>
-                download portfolio CV
-              </a>
-              <a href="mailto:kanso1245@gmail.com">
-                <span>EMAIL</span>
-                kanso1245@gmail.com
-              </a>
-            </div>
-          </section>
-
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Data + AI Engineer</p>
+          <h1 class="hero-title" aria-label="Turning signal into systems">
+            <span class="title-line"><span>Turning</span></span>
+            <span class="title-line title-signal"><em>signal</em></span>
+            <span class="title-line title-indent"><span>into systems.</span></span>
+          </h1>
+          <p class="hero-intro reveal">
+            I build intelligent systems that turn noisy data, voice, code and operations into decisions people can trust.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="primary-action magnetic" href="#work"><span>Explore the systems</span><b aria-hidden="true">↘</b></a>
+            <button class="secondary-action magnetic" type="button" data-open-quick>Get the 60-second view</button>
+          </div>
         </div>
 
-        <form class="command-input" id="command-form">
-          <label for="command-line">~/portfolio</label>
-          <input id="command-line" name="command" autocomplete="off" spellcheck="false" value="" placeholder="type help, projects, awards, cv, dissertation, linkedin">
-          <button type="submit">ENTER</button>
-        </form>
+        <div class="hero-engine reveal" aria-hidden="true">
+          <div class="engine-ring ring-one"></div>
+          <div class="engine-ring ring-two"></div>
+          <div class="engine-core"><span>K</span></div>
+          <span class="engine-label label-a">VOICE</span>
+          <span class="engine-label label-b">DATA</span>
+          <span class="engine-label label-c">CODE</span>
+          <span class="engine-label label-d">AGENTS</span>
+        </div>
+
+        <div class="hero-footer reveal">
+          <div class="signal-control">
+            <button id="signal-toggle" type="button" aria-pressed="false">
+              <span class="control-icon" aria-hidden="true"></span>
+              <span class="control-copy"><b>Conduct the signal</b><small>move · press · release</small></span>
+            </button>
+          </div>
+          <div class="hero-links" aria-label="Primary profile links">
+            <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>CV <span aria-hidden="true">↓</span></a>
+            <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <a class="scroll-cue" href="#signal-proof"><span>Scroll to resolve the noise</span><i aria-hidden="true"></i></a>
+        </div>
       </section>
 
-      <aside class="panel network-panel" aria-label="Network status and world view">
-        <div class="panel-ribbon">
-          <span>PANEL</span>
-          <span>NETWORK</span>
+      <section class="signal-proof signal-scene theme-scene" id="signal-proof" data-mode="core" data-theme="lime">
+        <div class="section-number reveal">00 / THESIS</div>
+        <div class="manifesto-grid">
+          <h2 class="manifesto-title reveal">Messy in.<br><em>Meaning out.</em></h2>
+          <div class="manifesto-copy reveal">
+            <p>
+              The interesting problems rarely arrive clean. They arrive as fragmented context, risky transcripts,
+              failing pipelines, noisy markets and ambiguous decisions.
+            </p>
+            <p>
+              My work is the layer in between: structuring the noise, adding guardrails and shipping a system that holds up in the real world.
+            </p>
+          </div>
         </div>
-        <section class="network-status">
-          <div class="module-title">
-            <span>PORTFOLIO STATUS</span>
-            <span>IF: github.io</span>
-          </div>
-          <div class="status-grid">
-            <span>STATE</span><strong>ONLINE</strong>
-            <span>ROUTE</span><strong>GitHub Pages</strong>
-            <span>PUBLIC REPOS</span><strong>21</strong>
-            <span>HTML DEMOS</span><strong>8</strong>
-            <span>UPDATED</span><strong>Jul 2026</strong>
-          </div>
-        </section>
 
-        <section class="world-module">
-          <div class="module-title">
-            <span>WORLDVIEW</span>
-            <span>PUBLIC SIGNAL MAP</span>
-          </div>
-          <div class="coords">
-            <span>BASE LAT/LON</span>
-            <span>London, UK / 51.5072, -0.1276</span>
-          </div>
-          <canvas id="globe" width="320" height="320" aria-label="Animated dotted world globe"></canvas>
-          <div class="world-route-lanes" aria-label="Public portfolio signal routes">
-            <div><span>London -> GitHub Pages</span><i style="width: 92%"></i></div>
-            <div><span>CV packet -> recruiter</span><i style="width: 84%"></i></div>
-            <div><span>Projects -> demos</span><i style="width: 88%"></i></div>
-          </div>
-        </section>
-
-        <section class="world-facts">
-          <div class="module-title">
-            <span>WORLDVIEW SIGNALS</span>
-            <span>WHAT THE MAP POINTS TO</span>
-          </div>
-          <div class="world-fact-grid">
-            <div><span>Role</span><strong>Python, Data and AI Engineer</strong></div>
-            <div><span>Base</span><strong>London, UK</strong></div>
-            <div><span>Current</span><strong>Cognizant AIA</strong></div>
-            <div><span>Focus</span><strong>RAG, agents, data pipelines</strong></div>
-            <div><span>Evidence</span><strong>CV, awards, demos, dissertation</strong></div>
-            <div><span>Mode</span><strong>Source-grounded and practical</strong></div>
-          </div>
-          <div class="world-links" aria-label="Portfolio route shortcuts">
-            <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>CV</a>
-            <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">Dissertation</a>
-            <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </section>
-      </aside>
-
-      <section class="panel quick-panel" aria-label="Quick portfolio commands">
-        <div class="panel-ribbon compact">
-          <span>ROUTE FILES</span>
-          <span>/home/mohamad/portfolio</span>
+        <div class="proof-ribbon" aria-label="Career proof points">
+          <article class="proof-stat reveal">
+            <strong data-count="40" data-suffix="%">40%</strong>
+            <span>lower data latency</span>
+          </article>
+          <article class="proof-stat reveal">
+            <strong data-count="50" data-suffix="M">50M</strong>
+            <span>records in production pipelines</span>
+          </article>
+          <article class="proof-stat reveal">
+            <strong data-prefix="&lt;" data-count="2" data-suffix="s">&lt;2s</strong>
+            <span>local voice AI inference</span>
+          </article>
+          <article class="proof-stat reveal">
+            <strong data-count="76" data-suffix="%">76%</strong>
+            <span>dissertation result</span>
+          </article>
         </div>
-        <div class="quick-command-grid">
-          <button type="button" data-jump="overview">
-            <i class="disk-icon" aria-hidden="true"></i>
-            <span>00 / exec</span>
-            <strong>Profile</strong>
-            <small>whoami + focus</small>
-          </button>
-          <button type="button" data-jump="projects">
-            <i class="folder-icon" aria-hidden="true"></i>
-            <span>01 / dir</span>
-            <strong>Projects</strong>
-            <small>demos + repos</small>
-          </button>
-          <button type="button" data-jump="awards">
-            <i class="folder-icon" aria-hidden="true"></i>
-            <span>02 / vault</span>
-            <strong>Awards</strong>
-            <small>recognition files</small>
-          </button>
-          <button type="button" data-jump="cv">
-            <i class="doc-icon" aria-hidden="true"></i>
-            <span>03 / pdf</span>
-            <strong>CV</strong>
-            <small>download packet</small>
-          </button>
-          <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">
-            <i class="doc-icon" aria-hidden="true"></i>
-            <span>04 / report</span>
-            <strong>Dissertation</strong>
-            <small>ML research PDF</small>
+      </section>
+
+      <section class="work-intro signal-scene theme-scene" id="work" data-mode="flow" data-theme="porcelain">
+        <div class="section-number reveal">01 / SELECTED SYSTEMS</div>
+        <div class="section-heading-grid">
+          <h2 class="display-heading reveal">Built to survive<br><em>contact with reality.</em></h2>
+          <div class="section-lede reveal">
+            <p>Five systems. Five different kinds of noise. One engineering instinct: make the hard thing understandable and useful.</p>
+            <a href="#project-archive">Jump to all public work <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-journey theme-scene" data-theme="ink" aria-label="Featured projects">
+        <div class="project-chapters">
+          <article
+            class="project-chapter signal-scene"
+            data-mode="flow"
+            data-project="WorkflowForge"
+            data-index="01"
+            data-accent="#c8ff35"
+            data-caption="Operational context becomes an executable map"
+          >
+            <p class="project-index">01 <span>Workflow intelligence</span></p>
+            <h3>Workflow<wbr>Forge</h3>
+            <p class="project-thesis">Turns operational chaos into a map teams can actually execute.</p>
+            <div class="project-facts">
+              <p><span>The noise</span>Scattered documents, tribal knowledge and invisible bottlenecks.</p>
+              <p><span>The system</span>Python workflow mapping, bottleneck analysis, Mermaid diagrams and ranked automation opportunities.</p>
+              <p><span>The proof</span>Open source with a live, explorable demo.</p>
+            </div>
+            <ul class="tag-list" aria-label="WorkflowForge technologies">
+              <li>Python</li><li>Workflow graphs</li><li>Automation</li><li>Mermaid</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-action magnetic" href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener">Launch demo <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </article>
+
+          <article
+            class="project-chapter signal-scene"
+            data-mode="gate"
+            data-project="VoiceSafeKit"
+            data-index="02"
+            data-accent="#ff4f7b"
+            data-caption="Voice enters. Privacy decides what leaves."
+          >
+            <p class="project-index">02 <span>Voice privacy</span></p>
+            <h3>Voice<wbr>SafeKit</h3>
+            <p class="project-thesis">A safety gate for voice assistants—before sensitive words reach an LLM.</p>
+            <div class="project-facts">
+              <p><span>The noise</span>Raw voice transcripts can quietly contain credentials, identity data and private context.</p>
+              <p><span>The system</span>Classifies every transcript as SAFE, REDACT, REVIEW or BLOCK, with browser recording and CLI support.</p>
+              <p><span>The proof</span>Local-first, open source and built around visible decisions.</p>
+            </div>
+            <ul class="tag-list" aria-label="VoiceSafeKit technologies">
+              <li>Python</li><li>Local AI</li><li>Privacy</li><li>Voice</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-action magnetic" href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener">Launch demo <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </article>
+
+          <article
+            class="project-chapter signal-scene"
+            data-mode="scan"
+            data-project="CodeSentry"
+            data-index="03"
+            data-accent="#1de1ff"
+            data-caption="A local model scans, reasons and repairs"
+          >
+            <p class="project-index">03 <span>Developer intelligence</span></p>
+            <h3>Code<wbr>Sentry</h3>
+            <p class="project-thesis">Local AI code review that finds the risk and proposes the fix.</p>
+            <div class="project-facts">
+              <p><span>The noise</span>Syntax failures, logic bugs and security risks buried across a codebase.</p>
+              <p><span>The system</span>Local LLM review, auto-fix routes, cached scans, Markdown reports and CI checks.</p>
+              <p><span>The proof</span>Private by design, with a working browser experience.</p>
+            </div>
+            <ul class="tag-list" aria-label="CodeSentry technologies">
+              <li>Python</li><li>Ollama</li><li>GitHub Actions</li><li>Static analysis</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-action magnetic" href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener">Launch demo <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </article>
+
+          <article
+            class="project-chapter signal-scene"
+            data-mode="orbit"
+            data-project="SignalBrief"
+            data-index="04"
+            data-accent="#8a5cff"
+            data-caption="Six specialist agents converge on one evidence core"
+          >
+            <p class="project-index">04 <span>Agent systems</span></p>
+            <h3>Signal<wbr>Brief</h3>
+            <p class="project-thesis">Six specialist agents assemble an executive briefing without losing the evidence.</p>
+            <div class="project-facts">
+              <p><span>The noise</span>Research scattered across sources, opinions and incompatible formats.</p>
+              <p><span>The system</span>LangGraph agents, typed facts, evidence indexing, risk scoring, sentiment and visual analysis.</p>
+              <p><span>The proof</span>Deterministic fallback means the demo still tells the truth.</p>
+            </div>
+            <ul class="tag-list" aria-label="SignalBrief technologies">
+              <li>LangGraph</li><li>RAG</li><li>Pydantic</li><li>Plotly</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-action magnetic" href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener">Launch demo <span aria-hidden="true">↗</span></a>
+              <a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </article>
+
+          <article
+            class="project-chapter signal-scene"
+            data-mode="shock"
+            data-project="IncidentForge"
+            data-index="05"
+            data-accent="#ff7a42"
+            data-caption="Alerts, traces and logs collapse toward root cause"
+          >
+            <p class="project-index">05 <span>AI evaluation</span></p>
+            <h3>Incident<wbr>Forge</h3>
+            <p class="project-thesis">A proving ground for AI agents that claim they can diagnose production incidents.</p>
+            <div class="project-facts">
+              <p><span>The noise</span>Alerts, metrics, logs, traces and runbooks all telling fragments of the same failure.</p>
+              <p><span>The system</span>Synthetic incident bundles, ground truth and RCA scoring for repeatable AI SRE evaluation.</p>
+              <p><span>The proof</span>Open benchmarks over vague agent claims.</p>
+            </div>
+            <ul class="tag-list" aria-label="IncidentForge technologies">
+              <li>Python</li><li>AI SRE</li><li>Evaluation</li><li>Observability</li>
+            </ul>
+            <div class="project-links">
+              <a class="project-action magnetic" href="https://github.com/MohamadKanso/IncidentForge" target="_blank" rel="noopener">Explore source <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+
+        <aside class="project-stage" aria-label="Living project visual">
+          <div class="stage-frame">
+            <div class="stage-chrome">
+              <span>LIVE SIGNAL</span>
+              <span id="stage-status">SYSTEM 01 / 05</span>
+            </div>
+            <div class="stage-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <div class="stage-caption">
+              <span id="stage-index">01</span>
+              <div><strong id="stage-title">WorkflowForge</strong><p id="stage-copy">Operational context becomes an executable map</p></div>
+            </div>
+            <div class="stage-progress" aria-hidden="true"><i id="stage-progress-bar"></i></div>
+          </div>
+          <p class="stage-hint"><span aria-hidden="true">●</span> The same engine changes topology with every system.</p>
+        </aside>
+      </section>
+
+      <section class="more-work signal-scene theme-scene" data-mode="market" data-theme="violet">
+        <div class="section-number reveal">02 / MORE BUILDS</div>
+        <div class="section-heading-grid">
+          <h2 class="display-heading reveal">The lab stays<br><em>switched on.</em></h2>
+          <p class="section-lede reveal">Local agents, voice interfaces, research systems and tools built to answer questions I could not leave alone.</p>
+        </div>
+
+        <div class="system-grid">
+          <a class="system-card card-wide tilt reveal" href="https://github.com/MohamadKanso/odysseus" target="_blank" rel="noopener">
+            <span class="card-number">A / 04</span>
+            <div class="mini-visual odysseus-visual" aria-hidden="true"><i></i><i></i><i></i><b>K</b></div>
+            <div class="card-copy"><p>Self-hosted AI workspace</p><h3>Odysseus</h3><span>Private agent workflows, embedded locally. ↗</span></div>
           </a>
-          <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">
-            <i class="link-icon" aria-hidden="true"></i>
-            <span>05 / link</span>
-            <strong>LinkedIn</strong>
-            <small>featured route</small>
+          <a class="system-card tilt reveal" href="https://github.com/MohamadKanso/MurmurX" target="_blank" rel="noopener">
+            <span class="card-number">B / 04</span>
+            <div class="mini-visual wave-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="card-copy"><p>Offline voice AI</p><h3>MurmurX</h3><span>Speech → local reasoning → speech. ↗</span></div>
           </a>
+          <a class="system-card tilt reveal" href="https://github.com/MohamadKanso/Dissertation" target="_blank" rel="noopener">
+            <span class="card-number">C / 04</span>
+            <div class="mini-visual chart-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="card-copy"><p>MSci research · 76%</p><h3>Bitcoin ML System</h3><span>LSTM, indicators and walk-forward testing. ↗</span></div>
+          </a>
+          <article class="system-card card-wide private-card tilt reveal">
+            <span class="card-number">D / 04</span>
+            <div class="mini-visual access-visual" aria-hidden="true"><i>ROLE</i><i>TOOL</i><i>TRACE</i><i>HUMAN</i></div>
+            <div class="card-copy"><p>Private prototype</p><h3>Enterprise AI Assistant</h3><span>RBAC, approved tools, PostgreSQL retrieval and human review.</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="approach signal-scene theme-scene" id="approach" data-mode="core" data-theme="porcelain">
+        <div class="section-number reveal">03 / HOW I THINK</div>
+        <div class="approach-layout">
+          <div class="approach-copy">
+            <h2 class="display-heading reveal">Press any layer.<br><em>See the system think.</em></h2>
+            <p class="reveal">Great AI is rarely one model. It is a chain of choices about context, structure, constraints and evidence.</p>
+          </div>
+
+          <div class="system-composer reveal" data-active-layer="context">
+            <div class="composer-visual" aria-hidden="true">
+              <span class="composer-core">USEFUL<br>OUTPUT</span>
+              <i class="route route-a"></i><i class="route route-b"></i><i class="route route-c"></i><i class="route route-d"></i>
+            </div>
+            <div class="composer-controls" role="tablist" aria-label="Engineering approach layers">
+              <button id="approach-tab-context" type="button" role="tab" aria-controls="composer-output" aria-selected="true" data-layer="context"><span>01</span><b>Context</b><small>Start with the real mess</small></button>
+              <button id="approach-tab-structure" type="button" role="tab" aria-controls="composer-output" aria-selected="false" data-layer="structure"><span>02</span><b>Structure</b><small>Make the facts explicit</small></button>
+              <button id="approach-tab-guardrails" type="button" role="tab" aria-controls="composer-output" aria-selected="false" data-layer="guardrails"><span>03</span><b>Guardrails</b><small>Design for safe failure</small></button>
+              <button id="approach-tab-evidence" type="button" role="tab" aria-controls="composer-output" aria-selected="false" data-layer="evidence"><span>04</span><b>Evidence</b><small>Measure what shipped</small></button>
+            </div>
+            <div class="composer-output" id="composer-output" role="tabpanel" aria-labelledby="approach-tab-context" aria-live="polite" tabindex="0">
+              <span id="composer-label">LAYER 01 / CONTEXT</span>
+              <p id="composer-text">I begin with the actual inputs, users, risks and constraints—not a model looking for a problem.</p>
+              <strong id="composer-projects">Proven in WorkflowForge · IncidentForge</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-section signal-scene theme-scene" id="proof" data-mode="shock" data-theme="warm">
+        <div class="section-number reveal">04 / PROOF, NOT CLAIMS</div>
+        <div class="section-heading-grid">
+          <h2 class="display-heading reveal">The work<br><em>leaves receipts.</em></h2>
+          <p class="section-lede reveal">Commercial delivery, public systems, academic depth and recognition for turning up when the problem gets difficult.</p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-lead reveal">
+            <p class="experience-date">May 2025 — now</p>
+            <h3>Cognizant</h3>
+            <p class="experience-role">Graduate, Artificial Intelligence &amp; Analytics</p>
+            <ul>
+              <li>Built RAG enterprise search and Q&amp;A prototypes with metadata-aware retrieval, grounding and access controls.</li>
+              <li>Designed structured-data assistants with approved tool calls, RBAC, traceability and human review.</li>
+              <li>Improved ADF-to-Databricks pipelines, cutting latency 40% across 50M-record datasets.</li>
+            </ul>
+          </article>
+          <article class="experience-side reveal">
+            <p class="experience-date">Sep 2024 — Apr 2025</p>
+            <h3>Independent ML + AI engineering</h3>
+            <p>Built local voice AI, financial time-series systems and applied ML experiments with privacy and evaluation in the loop.</p>
+          </article>
+        </div>
+
+        <div class="award-gallery">
+          <button
+            class="award-card award-main tilt reveal"
+            type="button"
+            data-award-src="assets/awards/cognizant-impact-award-2026-public.png"
+            data-award-alt="Cognizant Impact Award 2026 public portfolio version"
+          >
+            <img src="assets/awards/thumbs/cognizant-impact-award-2026.webp" alt="" width="1400" height="972" loading="lazy" decoding="async">
+            <span class="award-overlay"><small>Flagship recognition · 2026</small><strong>Impact Award</strong><em>Commercial delivery impact ↗</em></span>
+          </button>
+          <button
+            class="award-card tilt reveal"
+            type="button"
+            data-award-src="assets/awards/cognizant-guinness-generative-ai-hackathon.png"
+            data-award-alt="Guinness World Records online generative AI hackathon participation certificate"
+          >
+            <img src="assets/awards/thumbs/cognizant-guinness-generative-ai-hackathon.webp" alt="" width="1100" height="776" loading="lazy" decoding="async">
+            <span class="award-overlay"><small>Cognizant · 2025</small><strong>Generative AI Hackathon</strong><em>Guinness World Records attempt ↗</em></span>
+          </button>
+          <button
+            class="award-card award-badge tilt reveal"
+            type="button"
+            data-award-src="assets/awards/cognizant-vibecode-hackathon-cursor.png"
+            data-award-alt="Cognizant VibeCode Hackathon winner badge"
+          >
+            <img src="assets/awards/thumbs/cognizant-vibecode-hackathon-cursor.webp" alt="" width="388" height="388" loading="lazy" decoding="async">
+            <span class="award-overlay"><small>Cognizant · 2025</small><strong>Vibe Coding Winner</strong><em>AI coding initiative ↗</em></span>
+          </button>
+        </div>
+
+        <div class="recognition-strip reveal" aria-label="Additional recognition">
+          <span>Team Award — Owning It <b>2025</b></span>
+          <span>Computer Vision Challenge Winner <b>2023</b></span>
+          <span>Senior Maths Challenge Silver <b>2020</b></span>
+        </div>
+      </section>
+
+      <section class="about signal-scene theme-scene" id="about" data-mode="orbit" data-theme="ink">
+        <div class="section-number reveal">05 / THE HUMAN</div>
+        <div class="about-grid">
+          <div class="about-statement reveal">
+            <p class="eyebrow">Behind the systems</p>
+            <h2>I care about the moment an ambitious idea becomes <em>real, legible and useful.</em></h2>
+          </div>
+          <div class="about-details reveal">
+            <p>
+              I am a London-based Data &amp; AI Engineer working across intelligent applications, production data systems and local-first AI. I like problems with messy edges: the ones where architecture, product judgement and evidence matter as much as the model.
+            </p>
+            <dl>
+              <div><dt>Now</dt><dd>Cognizant · AI &amp; Analytics</dd></div>
+              <div><dt>Education</dt><dd>MSci Data Science · City, University of London</dd></div>
+              <div><dt>Focus</dt><dd>GenAI · RAG · agents · data systems · automation</dd></div>
+              <div><dt>Based</dt><dd>London, United Kingdom</dd></div>
+            </dl>
+            <div class="about-actions">
+              <a class="primary-action magnetic" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download><span>Download CV</span><b aria-hidden="true">↓</b></a>
+              <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">Read dissertation ↗</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="archive signal-scene theme-scene" id="project-archive" data-mode="flow" data-theme="porcelain">
+        <div class="section-number reveal">06 / OPEN-SOURCE ATLAS</div>
+        <div class="archive-heading">
+          <h2 class="display-heading reveal">Every public<br><em>experiment.</em></h2>
+          <div class="archive-tools reveal">
+            <label for="repo-search">Search the archive</label>
+            <div class="search-field"><input id="repo-search" type="search" placeholder="Project, language, idea…" autocomplete="off"><span aria-hidden="true">⌕</span></div>
+            <div class="filter-list" aria-label="Filter repositories">
+              <button type="button" class="active" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="Python" aria-pressed="false">Python</button>
+              <button type="button" data-filter="JavaScript" aria-pressed="false">JavaScript</button>
+              <button type="button" data-filter="HTML" aria-pressed="false">Live web</button>
+            </div>
+          </div>
+        </div>
+        <div id="repo-list" class="repo-list" aria-live="polite">
+          <a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener"><span>WorkflowForge</span><small>Python · workflow intelligence</small><b>↗</b></a>
+          <a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener"><span>VoiceSafeKit</span><small>Python · voice privacy</small><b>↗</b></a>
+          <a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener"><span>CodeSentry</span><small>Python · local code intelligence</small><b>↗</b></a>
+          <a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener"><span>SignalBrief</span><small>Python · agent research</small><b>↗</b></a>
+        </div>
+        <div class="archive-footer reveal">
+          <p id="repo-summary">Loading the complete public archive…</p>
+          <button id="repo-expand" type="button" hidden>Show every repository</button>
+          <a href="https://github.com/MohamadKanso?tab=repositories" target="_blank" rel="noopener">Open GitHub profile ↗</a>
+        </div>
+      </section>
+
+      <section class="contact signal-scene theme-scene" id="contact" data-mode="kanso" data-theme="cobalt">
+        <div class="contact-top">
+          <div class="section-number reveal">07 / OUTPUT</div>
+          <p class="reveal">You made it through the signal.</p>
+        </div>
+        <div class="contact-main">
+          <h2 class="contact-title reveal">Have a difficult<br><em>system?</em></h2>
+          <a class="contact-email magnetic reveal" href="mailto:kanso1245@gmail.com">
+            <span>Tell me what is messy.</span><b aria-hidden="true">↗</b>
+          </a>
+        </div>
+        <div class="contact-footer reveal">
+          <p>Mohamad Kanso<br>Data + AI Engineer<br>London, UK</p>
+          <div>
+            <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>CV ↓</a>
+          </div>
+          <button id="replay-signal" type="button">Replay the signal <span aria-hidden="true">↑</span></button>
         </div>
       </section>
     </main>
 
-    <script src="script.js?v=20260707-10" defer></script>
+    <dialog class="quick-dialog" id="quick-dialog" aria-labelledby="quick-title">
+      <div class="dialog-top">
+        <span>THE 60-SECOND VIEW</span>
+        <button type="button" data-close-dialog aria-label="Close quick view">Close ×</button>
+      </div>
+      <div class="quick-intro">
+        <p>Mohamad Kanso · Data + AI Engineer</p>
+        <h2 id="quick-title">I turn messy inputs into systems people can trust.</h2>
+      </div>
+      <div class="quick-grid">
+        <article><strong>40%</strong><span>lower pipeline latency across 50M records</span></article>
+        <article><strong>RAG + agents</strong><span>enterprise search, tool use and traceable outputs</span></article>
+        <article><strong>Local AI</strong><span>private voice and code intelligence with zero-cloud paths</span></article>
+        <article><strong>Proof</strong><span>public demos, source code, awards and research</span></article>
+      </div>
+      <div class="quick-projects">
+        <span>Best first clicks</span>
+        <a href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener"><b>WorkflowForge</b><small>workflow intelligence</small><i>↗</i></a>
+        <a href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener"><b>VoiceSafeKit</b><small>voice privacy</small><i>↗</i></a>
+        <a href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener"><b>SignalBrief</b><small>multi-agent research</small><i>↗</i></a>
+      </div>
+      <div class="quick-actions">
+        <a class="primary-action" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download><span>Download CV</span><b aria-hidden="true">↓</b></a>
+        <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:kanso1245@gmail.com">Email ↗</a>
+      </div>
+    </dialog>
+
+    <dialog class="award-dialog" id="award-dialog" aria-label="Award preview">
+      <button type="button" data-close-award aria-label="Close award preview">Close ×</button>
+      <img id="award-dialog-image" alt="">
+      <p id="award-dialog-caption"></p>
+    </dialog>
+
+    <div class="signal-toast" id="signal-toast" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <div class="noscript-note">This portfolio is still fully readable, but its living signal needs JavaScript to move.</div>
+    </noscript>
   </body>
 </html>
