@@ -650,6 +650,8 @@ const stageIndex = document.getElementById("stage-index");
 const stageStatus = document.getElementById("stage-status");
 const stageProgress = document.getElementById("stage-progress-bar");
 const projectChapters = [...document.querySelectorAll(".project-chapter")];
+const totalProjects = projectChapters.length;
+const totalProjectsLabel = String(totalProjects).padStart(2, "0");
 const storedVisited = readStoredValue("mk-portfolio-visited", "");
 const visitedProjects = new Set(storedVisited.split(",").filter(Boolean));
 const returningProjectCount = visitedProjects.size;
@@ -670,8 +672,8 @@ function setActiveProject(chapter, announce = true, markVisited = true) {
   stageTitle.textContent = projectName;
   stageCopy.textContent = chapter.dataset.caption;
   stageIndex.textContent = index;
-  stageStatus.textContent = `SYSTEM ${index} / 05`;
-  stageProgress.style.width = `${Number(index) * 20}%`;
+  stageStatus.textContent = `SYSTEM ${index} / ${totalProjectsLabel}`;
+  stageProgress.style.width = `${(Number(index) / totalProjects) * 100}%`;
   signalEngine.setMode(mode, accent);
 
   if (markVisited) {
@@ -679,7 +681,7 @@ function setActiveProject(chapter, announce = true, markVisited = true) {
     visitedProjects.add(projectName);
     storeValue("mk-portfolio-visited", [...visitedProjects].join(","));
     if (announce && projectChanged && initialProjectSet && !wasVisited) {
-      showToast(`${visitedProjects.size} / 5 systems mapped`);
+      showToast(`${visitedProjects.size} / ${totalProjects} systems mapped`);
     }
   }
   initialProjectSet = true;
@@ -704,7 +706,7 @@ projectChapters.forEach((chapter) => {
 setActiveProject(projectChapters[0], false, false);
 
 if (returningProjectCount > 0) {
-  window.setTimeout(() => showToast(`Welcome back · ${returningProjectCount} / 5 systems mapped`), 1400);
+  window.setTimeout(() => showToast(`Welcome back · ${returningProjectCount} / ${totalProjects} systems mapped`), 1400);
 }
 
 const signalToggle = document.getElementById("signal-toggle");

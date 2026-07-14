@@ -1133,6 +1133,37 @@ body.is-ready .title-line:nth-child(3) > span { transition-delay: 190ms; }
   text-transform: uppercase;
 }
 
+.project-private-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  width: fit-content;
+  margin: 0;
+  padding: 12px 15px;
+  border: 1px solid color-mix(in srgb, var(--scene-accent) 55%, transparent);
+  border-radius: 999px;
+  color: var(--scene-accent);
+  background: color-mix(in srgb, var(--scene-accent) 7%, transparent);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.project-private-state i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 14px currentColor;
+  animation: private-state-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes private-state-pulse {
+  0%, 100% { transform: scale(.7); opacity: .55; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
 .project-stage {
   position: sticky;
   top: 0;
