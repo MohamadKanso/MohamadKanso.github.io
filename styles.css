@@ -157,14 +157,14 @@ img {
   height: 100%;
   pointer-events: none;
   opacity: 0.86;
-  transition: opacity 500ms ease, filter 700ms ease;
+  contain: strict;
+  transition: opacity 500ms ease;
 }
 
 body[data-theme="porcelain"] #signal-canvas,
 body[data-theme="lime"] #signal-canvas,
 body[data-theme="warm"] #signal-canvas {
   opacity: 0.26;
-  filter: contrast(1.08) saturate(1.15);
 }
 
 body[data-theme="violet"] #signal-canvas,
@@ -178,26 +178,18 @@ body.effects-reduced #signal-canvas {
 
 .grain {
   position: fixed;
-  inset: -50%;
+  inset: 0;
   z-index: 5;
-  width: 200%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   opacity: 0.055;
+  contain: strict;
   background-image:
     radial-gradient(circle at 17% 29%, rgba(255,255,255,.9) 0 .55px, transparent .8px),
     radial-gradient(circle at 71% 63%, rgba(255,255,255,.75) 0 .45px, transparent .75px),
     radial-gradient(circle at 43% 81%, rgba(255,255,255,.65) 0 .5px, transparent .8px);
   background-size: 7px 9px, 11px 13px, 13px 8px;
-  animation: grain-shift 0.24s steps(2) infinite;
-}
-
-@keyframes grain-shift {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(2%, -2%); }
-  50% { transform: translate(-3%, 1%); }
-  75% { transform: translate(1%, 3%); }
-  100% { transform: translate(-1%, -2%); }
 }
 
 .cursor-orbit {
@@ -208,12 +200,19 @@ body.effects-reduced #signal-canvas {
   width: 42px;
   height: 42px;
   margin: -21px 0 0 -21px;
-  border: 1px solid var(--header-fg);
-  border-radius: 50%;
   opacity: 0;
   pointer-events: none;
-  mix-blend-mode: difference;
-  transition: width 260ms var(--ease), height 260ms var(--ease), margin 260ms var(--ease), opacity 200ms ease;
+  will-change: transform, opacity;
+  transition: opacity 160ms ease;
+}
+
+.cursor-orbit::before {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--header-fg);
+  border-radius: 50%;
+  content: "";
+  transition: transform 220ms var(--ease), border-color 300ms ease;
 }
 
 .cursor-orbit span {
@@ -224,7 +223,8 @@ body.effects-reduced #signal-canvas {
   height: 4px;
   margin: -2px;
   border-radius: 50%;
-  background: var(--white);
+  background: var(--header-fg);
+  transition: background-color 300ms ease;
 }
 
 .cursor-orbit.visible {
@@ -232,9 +232,11 @@ body.effects-reduced #signal-canvas {
 }
 
 .cursor-orbit.hovering {
-  width: 72px;
-  height: 72px;
-  margin: -36px 0 0 -36px;
+  opacity: 0.8;
+}
+
+.cursor-orbit.hovering::before {
+  transform: scale(1.72);
 }
 
 .page-progress {
@@ -275,15 +277,19 @@ body.effects-reduced #signal-canvas {
 body.is-scrolled .site-header {
   min-height: 72px;
   border-bottom: 1px solid color-mix(in srgb, var(--header-fg) 15%, transparent);
-  background: color-mix(in srgb, var(--ink) 68%, transparent);
-  -webkit-backdrop-filter: blur(18px) saturate(1.4);
-  backdrop-filter: blur(18px) saturate(1.4);
+  background: rgba(11, 13, 18, 0.94);
 }
 
 body.is-scrolled[data-theme="porcelain"] .site-header,
 body.is-scrolled[data-theme="lime"] .site-header,
 body.is-scrolled[data-theme="warm"] .site-header {
-  background: rgba(243, 240, 232, 0.78);
+  background: rgba(243, 240, 232, 0.94);
+}
+
+.motion-region:not(.is-motion-visible) *,
+.motion-region:not(.is-motion-visible) *::before,
+.motion-region:not(.is-motion-visible) *::after {
+  animation-play-state: paused !important;
 }
 
 .brand {

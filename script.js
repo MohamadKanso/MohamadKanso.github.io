@@ -94,8 +94,14 @@ class SignalEngine {
 
     this.resize();
     this.bind();
-    this.draw(0);
-    if (!this.reduced) this.start();
+    if (!this.reduced) {
+      const startWhenReady = () => this.start();
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(startWhenReady, { timeout: 450 });
+      } else {
+        window.setTimeout(startWhenReady, 80);
+      }
+    }
   }
 
   bind() {
@@ -138,14 +144,14 @@ class SignalEngine {
     if (!this.available) return;
     this.width = window.innerWidth;
     this.height = window.innerHeight;
-    this.dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 1.15 : 1.5);
+    this.dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 1.15 : 1.25);
     this.canvas.width = Math.round(this.width * this.dpr);
     this.canvas.height = Math.round(this.height * this.dpr);
     this.canvas.style.width = `${this.width}px`;
     this.canvas.style.height = `${this.height}px`;
     this.context.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
 
-    const desiredCount = this.width < 680 ? 64 : this.width < 1100 ? 92 : 126;
+    const desiredCount = this.width < 680 ? 64 : this.width < 1100 ? 76 : 84;
     if (this.particles.length !== desiredCount) {
       this.particles = Array.from({ length: desiredCount }, (_, index) => this.createParticle(index));
     } else {
@@ -212,7 +218,7 @@ class SignalEngine {
   }
 
   start() {
-    if (!this.available || this.running || this.scrolling || document.hidden) return;
+    if (!this.available || this.reduced || this.running || this.scrolling || document.hidden) return;
     this.running = true;
     this.lastTime = performance.now();
     this.frame = requestAnimationFrame(this.boundAnimate);
@@ -225,7 +231,7 @@ class SignalEngine {
 
   animate(time) {
     if (!this.running) return;
-    if (time - this.lastRender >= 20) {
+    if (time - this.lastRender >= 32) {
       this.draw(time);
       this.lastRender = time;
     }
@@ -504,11 +510,10 @@ class SignalEngine {
 
     this.drawModePrimitives(time);
 
+    context.shadowBlur = 0;
     this.particles.forEach((particle) => {
       context.beginPath();
       context.fillStyle = rgba(particle.color, 0.72);
-      context.shadowColor = rgba(particle.color, 0.72);
-      context.shadowBlur = particle.size * 7;
       context.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
       context.fill();
     });
@@ -594,6 +599,17 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+const motionRegionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    entry.target.classList.toggle("is-motion-visible", entry.isIntersecting);
+  });
+}, { threshold: 0.01, rootMargin: "18% 0px 18% 0px" });
+
+document.querySelectorAll(".signal-scene, .project-journey").forEach((region) => {
+  region.classList.add("motion-region");
+  motionRegionObserver.observe(region);
+});
 
 const countObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
@@ -851,19 +867,22 @@ function syncScrollState() {
   const scrollTop = window.scrollY;
   const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
   const progress = scrollRange > 0 ? scrollTop / scrollRange : 0;
-  progressBar.style.transform = `scaleX(${progress})`;
-  body.classList.toggle("is-scrolled", scrollTop > 20);
+  const activationLine = window.innerHeight * 0.46;
 
   let active = navSections[0];
   navSections.forEach((item) => {
-    if (item.section.getBoundingClientRect().top <= window.innerHeight * 0.46) active = item;
+    if (item.section.getBoundingClientRect().top <= activationLine) active = item;
   });
   const archiveSection = document.getElementById("project-archive");
   const contactSection = document.getElementById("contact");
-  if (archiveSection.getBoundingClientRect().top <= window.innerHeight * 0.46
-    && contactSection.getBoundingClientRect().top > window.innerHeight * 0.46) {
+  const archiveTop = archiveSection.getBoundingClientRect().top;
+  const contactTop = contactSection.getBoundingClientRect().top;
+  if (archiveTop <= activationLine && contactTop > activationLine) {
     active = navSections.find((item) => item.link.getAttribute("href") === "#work") || active;
   }
+
+  progressBar.style.transform = `scaleX(${progress})`;
+  body.classList.toggle("is-scrolled", scrollTop > 20);
   navLinks.forEach((link) => link.classList.toggle("active", active && link === active.link));
   scrollTicking = false;
 }
@@ -871,7 +890,7 @@ function syncScrollState() {
 window.addEventListener("scroll", () => {
   signalEngine.setScrolling(true);
   window.clearTimeout(scrollIdleTimer);
-  scrollIdleTimer = window.setTimeout(() => signalEngine.setScrolling(false), 140);
+  scrollIdleTimer = window.setTimeout(() => signalEngine.setScrolling(false), 240);
   if (scrollTicking) return;
   scrollTicking = true;
   requestAnimationFrame(syncScrollState);
@@ -1065,36 +1084,40 @@ if (finePointer.matches) {
   const cursor = document.querySelector(".cursor-orbit");
   let cursorX = window.innerWidth / 2;
   let cursorY = window.innerHeight / 2;
-  let renderedX = cursorX;
-  let renderedY = cursorY;
   let cursorFrame = 0;
   let cursorRunning = false;
+
+  const renderCursor = () => {
+    cursorFrame = 0;
+    if (!cursorRunning) return;
+    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+  };
+
+  const queueCursorRender = () => {
+    if (!cursorRunning || cursorFrame) return;
+    cursorFrame = requestAnimationFrame(renderCursor);
+  };
 
   window.addEventListener("pointermove", (event) => {
     cursorX = event.clientX;
     cursorY = event.clientY;
-    if (!effectsReduced) cursor.classList.add("visible");
+    if (!effectsReduced) {
+      cursor.classList.add("visible");
+      queueCursorRender();
+    }
   }, { passive: true });
 
   window.addEventListener("pointerleave", () => cursor.classList.remove("visible"));
 
-  const animateCursor = () => {
-    if (!cursorRunning) return;
-    renderedX += (cursorX - renderedX) * 0.18;
-    renderedY += (cursorY - renderedY) * 0.18;
-    cursor.style.transform = `translate3d(${renderedX}px, ${renderedY}px, 0)`;
-    cursorFrame = requestAnimationFrame(animateCursor);
-  };
-
   startCursorAnimation = () => {
     if (cursorRunning || effectsReduced) return;
     cursorRunning = true;
-    cursorFrame = requestAnimationFrame(animateCursor);
   };
 
   stopCursorAnimation = () => {
     cursorRunning = false;
     cancelAnimationFrame(cursorFrame);
+    cursorFrame = 0;
     cursor.classList.remove("visible", "hovering");
   };
 
@@ -1108,27 +1131,65 @@ if (finePointer.matches) {
   });
 
   document.querySelectorAll(".magnetic").forEach((element) => {
+    let rect = null;
+    let pointerX = 0;
+    let pointerY = 0;
+    let frame = 0;
+
+    const renderMagnetic = () => {
+      frame = 0;
+      if (!rect || effectsReduced) return;
+      const x = pointerX - rect.left - rect.width / 2;
+      const y = pointerY - rect.top - rect.height / 2;
+      element.style.transform = `translate3d(${x * 0.12}px, ${y * 0.12}px, 0)`;
+    };
+
+    element.addEventListener("pointerenter", () => {
+      rect = element.getBoundingClientRect();
+    });
     element.addEventListener("pointermove", (event) => {
       if (effectsReduced) return;
-      const rect = element.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
-      element.style.transform = `translate3d(${x * 0.12}px, ${y * 0.12}px, 0)`;
+      if (!rect) rect = element.getBoundingClientRect();
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (!frame) frame = requestAnimationFrame(renderMagnetic);
     });
     element.addEventListener("pointerleave", () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      rect = null;
       element.style.transform = "translate3d(0, 0, 0)";
     });
   });
 
   document.querySelectorAll(".tilt").forEach((element) => {
+    let rect = null;
+    let pointerX = 0;
+    let pointerY = 0;
+    let frame = 0;
+
+    const renderTilt = () => {
+      frame = 0;
+      if (!rect || effectsReduced) return;
+      const x = (pointerX - rect.left) / rect.width - 0.5;
+      const y = (pointerY - rect.top) / rect.height - 0.5;
+      element.style.transform = `perspective(1000px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg) translateY(-3px)`;
+    };
+
+    element.addEventListener("pointerenter", () => {
+      rect = element.getBoundingClientRect();
+    });
     element.addEventListener("pointermove", (event) => {
       if (effectsReduced) return;
-      const rect = element.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      element.style.transform = `perspective(1000px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg) translateY(-3px)`;
+      if (!rect) rect = element.getBoundingClientRect();
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (!frame) frame = requestAnimationFrame(renderTilt);
     });
     element.addEventListener("pointerleave", () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      rect = null;
       element.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
     });
   });
