@@ -78,6 +78,7 @@ class SignalEngine {
     this.pulses = [];
     this.pointer = { x: 0, y: 0, active: false, pressed: false };
     this.reduced = effectsReduced;
+    this.scrolling = false;
     this.running = false;
     this.frame = 0;
     this.lastTime = 0;
@@ -128,7 +129,7 @@ class SignalEngine {
 
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) this.stop();
-      else if (!this.reduced) this.start();
+      else if (!this.reduced && !this.scrolling) this.start();
     });
   }
 
@@ -189,9 +190,17 @@ class SignalEngine {
     if (reduced) {
       this.stop();
       this.draw(performance.now());
-    } else {
+    } else if (!this.scrolling) {
       this.start();
     }
+  }
+
+  setScrolling(scrolling) {
+    if (!this.available || this.scrolling === scrolling) return;
+    this.scrolling = scrolling;
+    if (this.reduced) return;
+    if (scrolling) this.stop();
+    else this.start();
   }
 
   pulse(x = this.pointer.x, y = this.pointer.y) {
@@ -202,7 +211,7 @@ class SignalEngine {
   }
 
   start() {
-    if (!this.available || this.running || document.hidden) return;
+    if (!this.available || this.running || this.scrolling || document.hidden) return;
     this.running = true;
     this.lastTime = performance.now();
     this.frame = requestAnimationFrame(this.boundAnimate);
@@ -819,6 +828,7 @@ const navSections = navLinks
   .map((link) => ({ link, section: document.querySelector(link.getAttribute("href")) }))
   .filter((item) => item.section);
 let scrollTicking = false;
+let scrollIdleTimer = 0;
 
 function syncScrollState() {
   const scrollTop = window.scrollY;
@@ -842,6 +852,9 @@ function syncScrollState() {
 }
 
 window.addEventListener("scroll", () => {
+  signalEngine.setScrolling(true);
+  window.clearTimeout(scrollIdleTimer);
+  scrollIdleTimer = window.setTimeout(() => signalEngine.setScrolling(false), 140);
   if (scrollTicking) return;
   scrollTicking = true;
   requestAnimationFrame(syncScrollState);
@@ -913,8 +926,9 @@ const repoDescriptions = {
   DreamSense: "Creative AI interpretations for written dreams",
   "MLT-Journal": "Machine learning and trading journal",
   "ai-workflow-lifecycle": "Visual guide to AI workflow design",
-  "life-orbit-preview": "Public preview of a private life operating system"
 };
+
+const privateProjectPreviews = new Set(["life-orbit-preview"]);
 
 const repoList = document.getElementById("repo-list");
 const repoSearch = document.getElementById("repo-search");
@@ -989,7 +1003,7 @@ fetch("assets/data/public-repositories.json?v=20260711-1")
   })
   .then((data) => {
     repositories = data
-      .filter((repository) => !repository.isArchived && !repository.isPrivate)
+      .filter((repository) => !repository.isArchived && !repository.isPrivate && !privateProjectPreviews.has(repository.name))
       .map(normalizeRepository)
       .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
     renderRepositories();
