@@ -29,6 +29,15 @@
       content="Explore AI systems, data engineering, local intelligence and applied research."
     >
     <meta name="twitter:image" content="https://mohamadkanso.github.io/assets/preview/signal-noise-social.png">
+    <script>
+      try {
+        if (localStorage.getItem("mk-portfolio-motion-notice") !== "seen") {
+          document.documentElement.classList.add("motion-gate-pending");
+        }
+      } catch {
+        document.documentElement.classList.add("motion-gate-pending");
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -36,8 +45,8 @@
       rel="stylesheet"
     >
     <link rel="icon" type="image/png" href="assets/preview/favicon.png">
-    <link rel="stylesheet" href="styles.css?v=20260714-3">
-    <script src="script.js?v=20260714-10" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260714-5">
+    <script src="script.js?v=20260714-13" defer onerror="document.documentElement.classList.remove('motion-gate-pending')"></script>
   </head>
   <body data-theme="ink">
     <a class="skip-link" href="#main-content">Skip to the portfolio</a>
@@ -47,6 +56,47 @@
     <div class="cursor-orbit" aria-hidden="true"><span></span></div>
 
     <div class="page-progress" aria-hidden="true"><i id="page-progress-bar"></i></div>
+
+    <dialog
+      class="motion-gate"
+      id="motion-gate"
+      aria-labelledby="motion-gate-title"
+      aria-describedby="motion-gate-description"
+    >
+      <div class="motion-gate-topline">
+        <span>ACCESSIBILITY / MOTION</span>
+        <span>CHOOSE BEFORE ENTERING</span>
+      </div>
+      <div class="motion-gate-layout">
+        <div class="motion-gate-visual" aria-hidden="true">
+          <i class="motion-ring motion-ring-one"></i>
+          <i class="motion-ring motion-ring-two"></i>
+          <i class="motion-ring motion-ring-three"></i>
+          <strong>K</strong>
+          <span class="motion-label motion-label-scroll">SCROLL</span>
+          <span class="motion-label motion-label-cursor">CURSOR</span>
+          <span class="motion-label motion-label-systems">SYSTEMS</span>
+        </div>
+        <div class="motion-gate-copy">
+          <p class="motion-gate-eyebrow">Before you enter</p>
+          <h2 id="motion-gate-title">This portfolio <em>moves.</em></h2>
+          <p id="motion-gate-description">
+            The experience uses scroll transitions, a responsive cursor and animated system visuals. Motion is on by default. If movement can cause dizziness, nausea or discomfort, choose the calmer version before entering.
+          </p>
+          <div class="motion-gate-actions" role="group" aria-label="Choose a motion preference">
+            <button class="motion-choice motion-choice-full" type="button" data-motion-choice="full">
+              <span><b>Enter with motion</b><small>Full interactive experience</small></span>
+              <em>DEFAULT</em>
+            </button>
+            <button class="motion-choice motion-choice-reduced" type="button" data-motion-choice="reduced">
+              <span><b>Use reduced motion</b><small>The complete portfolio, without continuous movement</small></span>
+              <i aria-hidden="true">→</i>
+            </button>
+          </div>
+          <p class="motion-gate-note">You can change this at any time using the Motion control in the header.</p>
+        </div>
+      </div>
+    </dialog>
 
     <header class="site-header" id="site-header">
       <a class="brand magnetic" href="#top" aria-label="Mohamad Kanso — back to top">
@@ -64,13 +114,13 @@
         <a href="#proof">Proof</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-        <button class="mobile-motion-toggle" id="mobile-motion-toggle" type="button" aria-pressed="false">
+        <button class="mobile-motion-toggle" id="mobile-motion-toggle" type="button" aria-label="Reduced motion" aria-pressed="false">
           <span class="status-dot" aria-hidden="true"></span><span>Motion on</span>
         </button>
       </nav>
 
       <div class="header-actions">
-        <button class="text-button" id="motion-toggle" type="button" aria-pressed="false">
+        <button class="text-button" id="motion-toggle" type="button" aria-label="Reduced motion" aria-pressed="false">
           <span class="status-dot" aria-hidden="true"></span>
           <span>Motion on</span>
         </button>

@@ -1,11 +1,15 @@
 document.documentElement.classList.add("js-ready");
 
-const revealStaticFallback = () => document.documentElement.classList.remove("js-ready");
+const revealStaticFallback = () => {
+  document.documentElement.classList.remove("js-ready", "motion-gate-pending");
+  document.body?.classList.remove("motion-gate-open");
+  const gate = document.getElementById("motion-gate");
+  if (gate?.open && typeof gate.close === "function") gate.close();
+};
 window.addEventListener("error", revealStaticFallback, { once: true });
 window.addEventListener("unhandledrejection", revealStaticFallback, { once: true });
 
 const body = document.body;
-const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
 function readStoredValue(key, fallback = null) {
@@ -25,12 +29,18 @@ function storeValue(key, value) {
 }
 
 const storedMotion = readStoredValue("mk-portfolio-motion");
-let effectsReduced = storedMotion === "reduced" || (storedMotion === null && motionQuery.matches);
+let motionGatePending = readStoredValue("mk-portfolio-motion-notice") !== "seen";
+let effectsReduced = storedMotion === "reduced";
 body.classList.toggle("effects-reduced", effectsReduced);
+body.classList.toggle("motion-gate-open", motionGatePending);
 document.documentElement.classList.toggle("effects-reduced", effectsReduced);
-document.documentElement.classList.toggle("motion-forced", storedMotion === "full");
+document.documentElement.classList.toggle("motion-forced", !effectsReduced);
 
-requestAnimationFrame(() => body.classList.add("is-ready"));
+function markPortfolioReady() {
+  requestAnimationFrame(() => body.classList.add("is-ready"));
+}
+
+markPortfolioReady();
 
 const paletteByMode = {
   chaos: ["#c8ff35", "#8a5cff", "#1de1ff"],
@@ -94,7 +104,7 @@ class SignalEngine {
 
     this.resize();
     this.bind();
-    if (!this.reduced) {
+    if (!this.reduced && !motionGatePending) {
       const startWhenReady = () => this.start();
       if ("requestIdleCallback" in window) {
         window.requestIdleCallback(startWhenReady, { timeout: 450 });
@@ -191,14 +201,26 @@ class SignalEngine {
     if (this.reduced) this.draw(performance.now());
   }
 
-  setReduced(reduced) {
+  setReduced(reduced, deferStart = false) {
     if (!this.available) return;
     this.reduced = reduced;
     if (reduced) {
       this.stop();
       this.draw(performance.now());
     } else if (!this.scrolling) {
-      this.start();
+      if (deferStart) {
+        this.stop();
+        window.setTimeout(() => {
+          const startWhenReady = () => this.start();
+          if ("requestIdleCallback" in window) {
+            window.requestIdleCallback(startWhenReady, { timeout: 600 });
+          } else {
+            startWhenReady();
+          }
+        }, 180);
+      } else {
+        this.start();
+      }
     }
   }
 
@@ -563,32 +585,69 @@ function syncMotionControl() {
 
 syncMotionControl();
 
-motionControls.forEach((control) => {
-  control.addEventListener("click", () => {
-    effectsReduced = !effectsReduced;
-    body.classList.toggle("effects-reduced", effectsReduced);
-    document.documentElement.classList.toggle("effects-reduced", effectsReduced);
-    document.documentElement.classList.toggle("motion-forced", !effectsReduced);
-    storeValue("mk-portfolio-motion", effectsReduced ? "reduced" : "full");
-    signalEngine.setReduced(effectsReduced);
-    if (effectsReduced) stopCursorAnimation();
-    else startCursorAnimation();
-    syncMotionControl();
-    showToast(effectsReduced ? "Motion reduced" : "Motion restored");
-  });
-});
-
-motionQuery.addEventListener("change", (event) => {
-  if (readStoredValue("mk-portfolio-motion") !== null) return;
-  effectsReduced = event.matches;
+function applyMotionPreference(reduced, announce = true, deferStart = false) {
+  effectsReduced = reduced;
   body.classList.toggle("effects-reduced", effectsReduced);
   document.documentElement.classList.toggle("effects-reduced", effectsReduced);
-  document.documentElement.classList.remove("motion-forced");
-  signalEngine.setReduced(effectsReduced);
+  document.documentElement.classList.toggle("motion-forced", !effectsReduced);
+  storeValue("mk-portfolio-motion", effectsReduced ? "reduced" : "full");
+  signalEngine.setReduced(effectsReduced, deferStart);
   if (effectsReduced) stopCursorAnimation();
   else startCursorAnimation();
   syncMotionControl();
+  if (announce) showToast(effectsReduced ? "Motion reduced" : "Motion restored");
+}
+
+motionControls.forEach((control) => {
+  control.addEventListener("click", () => {
+    applyMotionPreference(!effectsReduced);
+  });
 });
+
+const motionGate = document.getElementById("motion-gate");
+const defaultMotionChoice = motionGate.querySelector('[data-motion-choice="full"]');
+
+function enterPortfolioWithMotion(reduced) {
+  motionGatePending = false;
+  storeValue("mk-portfolio-motion-notice", "seen");
+  document.documentElement.classList.remove("motion-gate-pending");
+  body.classList.remove("motion-gate-open");
+  applyMotionPreference(reduced, false, true);
+  if (typeof motionGate.close === "function") motionGate.close();
+  else motionGate.removeAttribute("open");
+}
+
+motionGate.querySelectorAll("[data-motion-choice]").forEach((choice) => {
+  choice.addEventListener("click", () => {
+    enterPortfolioWithMotion(choice.dataset.motionChoice === "reduced");
+  });
+});
+
+motionGate.addEventListener("cancel", (event) => {
+  if (motionGatePending) event.preventDefault();
+});
+
+motionGate.addEventListener("keydown", (event) => {
+  if (event.key !== "Tab" || !motionGatePending) return;
+  const choices = [...motionGate.querySelectorAll("[data-motion-choice]")];
+  const firstChoice = choices[0];
+  const lastChoice = choices[choices.length - 1];
+  if (event.shiftKey && document.activeElement === firstChoice) {
+    event.preventDefault();
+    lastChoice.focus();
+  } else if (!event.shiftKey && document.activeElement === lastChoice) {
+    event.preventDefault();
+    firstChoice.focus();
+  }
+});
+
+if (motionGatePending) {
+  requestAnimationFrame(() => {
+    if (typeof motionGate.showModal === "function") motionGate.showModal();
+    else motionGate.setAttribute("open", "");
+    defaultMotionChoice.focus({ preventScroll: true });
+  });
+}
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
@@ -946,6 +1005,7 @@ awardDialog.addEventListener("close", () => {
 window.addEventListener("keydown", (event) => {
   if (event.key.toLowerCase() !== "q" || event.metaKey || event.ctrlKey || event.altKey) return;
   if (event.target.matches("input, textarea, [contenteditable='true']")) return;
+  if (motionGatePending || motionGate.open) return;
   if (!quickDialog.open && !awardDialog.open) openDialog(quickDialog);
 });
 
@@ -1121,7 +1181,7 @@ if (finePointer.matches) {
     cursor.classList.remove("visible", "hovering");
   };
 
-  if (!effectsReduced) startCursorAnimation();
+  if (!effectsReduced && !motionGatePending) startCursorAnimation();
 
   document.querySelectorAll("a, button, input").forEach((element) => {
     element.addEventListener("pointerenter", () => {
