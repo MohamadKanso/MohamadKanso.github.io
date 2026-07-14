@@ -1013,7 +1013,7 @@ function renderRepositories() {
   repoExpand.textContent = archiveExpanded ? "Show the short list" : `Show all ${repositories.length} repositories`;
 }
 
-fetch("assets/data/public-repositories.json?v=20260714-1")
+fetch("assets/data/public-repositories.json?v=20260714-2")
   .then((response) => {
     if (!response.ok) throw new Error("Repository archive unavailable");
     return response.json();

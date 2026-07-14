@@ -288,9 +288,9 @@
     "url": "https://github.com/MohamadKanso/AirbnbPricePrediciton"
   },
   {
-    "description": "",
+    "description": "Interactive browser lab comparing CNN, HOG + KNN, HOG + MLP, and HOG + SVM mask detection",
     "forkCount": 0,
-    "homepageUrl": "",
+    "homepageUrl": "https://mohamadkanso.github.io/FaceMaskDetection/",
     "isArchived": false,
     "isPrivate": false,
     "name": "FaceMaskDetection",
