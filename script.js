@@ -993,6 +993,12 @@ function renderRepositories() {
     title.textContent = repository.name;
     const detail = document.createElement("small");
     detail.textContent = `${repository.language} · ${repository.description}`;
+    if (repository.homepage) {
+      const demoBadge = document.createElement("em");
+      demoBadge.className = "archive-try-now";
+      demoBadge.textContent = "TRY IT NOW";
+      detail.append(" ", demoBadge);
+    }
     const arrow = document.createElement("b");
     arrow.setAttribute("aria-hidden", "true");
     arrow.textContent = "↗";
@@ -1013,7 +1019,7 @@ function renderRepositories() {
   repoExpand.textContent = archiveExpanded ? "Show the short list" : `Show all ${repositories.length} repositories`;
 }
 
-fetch("assets/data/public-repositories.json?v=20260714-2")
+fetch("assets/data/public-repositories.json?v=20260714-3")
   .then((response) => {
     if (!response.ok) throw new Error("Repository archive unavailable");
     return response.json();

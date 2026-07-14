@@ -548,6 +548,33 @@ main,
   color: var(--cobalt);
 }
 
+.try-now-key {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 0;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: .05em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.try-now-key span {
+  flex: 0 0 auto;
+  padding: 7px 9px;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--cobalt);
+  box-shadow: 0 0 20px rgba(55, 74, 255, .2);
+}
+
+.try-now-key strong {
+  max-width: 300px;
+  font-weight: 500;
+  opacity: .64;
+}
+
 .work-jump-list a span {
   transition: transform 240ms var(--ease);
 }
@@ -1116,13 +1143,28 @@ body.is-ready .title-line:nth-child(3) > span { transition-delay: 190ms; }
 }
 
 .project-action {
-  gap: 34px;
+  gap: 13px;
   padding: 0 18px;
   border-radius: 999px;
   color: var(--ink);
   background: var(--scene-accent);
   font-size: 12px;
   font-weight: 700;
+}
+
+.project-action em {
+  margin-left: 8px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  color: var(--white);
+  background: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .project-links > a:not(.project-action) {
@@ -1557,6 +1599,28 @@ body.is-ready .title-line:nth-child(3) > span { transition-delay: 190ms; }
 
 .system-card.card-wide {
   grid-column: span 2;
+}
+
+.card-try-badge {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  right: 18px;
+  padding: 7px 9px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--lime);
+  box-shadow: 0 0 24px rgba(200,255,53,.28);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.system-card.has-live-demo:hover .card-try-badge,
+.system-card.has-live-demo:focus-visible .card-try-badge {
+  background: var(--white);
 }
 
 .card-number {
@@ -2447,6 +2511,26 @@ body.is-ready .title-line:nth-child(3) > span { transition-delay: 190ms; }
   letter-spacing: .05em;
   opacity: .62;
   text-transform: uppercase;
+}
+
+.archive-try-now {
+  display: inline-flex;
+  margin-left: 7px;
+  padding: 5px 7px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--lime);
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .08em;
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.repo-list a:hover .archive-try-now,
+.repo-list a:focus-visible .archive-try-now {
+  background: var(--white);
 }
 
 .repo-list a b {
