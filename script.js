@@ -41,6 +41,7 @@ const paletteByMode = {
   orbit: ["#8a5cff", "#1de1ff", "#ff4f7b"],
   shock: ["#ff7a42", "#ff4f7b", "#f3f0e8"],
   market: ["#c8ff35", "#1de1ff", "#8a5cff"],
+  journal: ["#ff4f7b", "#f3f0e8", "#1de1ff"],
   kanso: ["#c8ff35", "#f3f0e8", "#1de1ff"]
 };
 
@@ -323,6 +324,17 @@ class SignalEngine {
       const wave = Math.sin(normalized * Math.PI * 6 + phase * 2) * radius * 0.2;
       const micro = Math.sin(normalized * Math.PI * 21 - phase * 5) * 12;
       return { x, y: center.y + radius * 0.32 + trend + wave + micro };
+    }
+
+    if (this.mode === "journal") {
+      const columns = 12;
+      const column = index % columns;
+      const row = Math.floor(index / columns);
+      const rows = Math.ceil(particleCount / columns);
+      return {
+        x: center.x - radius + (column / (columns - 1)) * radius * 2,
+        y: center.y - radius * 0.62 + (row / Math.max(1, rows - 1)) * radius * 1.24
+      };
     }
 
     if (this.mode === "kanso") {
@@ -649,11 +661,13 @@ const stageCopy = document.getElementById("stage-copy");
 const stageIndex = document.getElementById("stage-index");
 const stageStatus = document.getElementById("stage-status");
 const stageProgress = document.getElementById("stage-progress-bar");
+const stageFrame = document.querySelector(".stage-frame");
 const projectChapters = [...document.querySelectorAll(".project-chapter")];
 const totalProjects = projectChapters.length;
 const totalProjectsLabel = String(totalProjects).padStart(2, "0");
+const currentProjectNames = new Set(projectChapters.map((chapter) => chapter.dataset.project));
 const storedVisited = readStoredValue("mk-portfolio-visited", "");
-const visitedProjects = new Set(storedVisited.split(",").filter(Boolean));
+const visitedProjects = new Set(storedVisited.split(",").filter((name) => currentProjectNames.has(name)));
 const returningProjectCount = visitedProjects.size;
 let activeProject = null;
 let initialProjectSet = false;
@@ -674,6 +688,7 @@ function setActiveProject(chapter, announce = true, markVisited = true) {
   stageIndex.textContent = index;
   stageStatus.textContent = `SYSTEM ${index} / ${totalProjectsLabel}`;
   stageProgress.style.width = `${(Number(index) / totalProjects) * 100}%`;
+  stageFrame.dataset.visual = mode;
   signalEngine.setMode(mode, accent);
 
   if (markVisited) {
