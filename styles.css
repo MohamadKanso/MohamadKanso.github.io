@@ -86,6 +86,12 @@ body.effects-reduced .magnetic {
   transform: none !important;
 }
 
+body.effects-reduced .quick-dialog[open] {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+}
+
 body.dialog-open {
   overflow: hidden;
 }
