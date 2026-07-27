@@ -2555,6 +2555,17 @@ body.is-ready .title-line:nth-child(3) > span { transition-delay: 190ms; }
   font-size: clamp(1.6rem, 2.6vw, 3.4rem);
 }
 
+.experience-reference-note {
+  margin: -18px 0 34px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(11,13,18,.22);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .11em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
 .experience-grid ul {
   display: grid;
   gap: 16px;
