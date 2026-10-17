@@ -9,17 +9,17 @@
       content="Mohamad Kanso is a Senior Forward Deployed AI Associate at 7IM, building, evaluating and governing AI agents. Explore his agent systems, 27 contributions landed in Hermes Agent, awards and research."
     >
     <link rel="canonical" href="https://mohamadkanso.github.io/">
-    <meta name="theme-color" content="#0b0d12">
+    <meta name="theme-color" content="#f4f1ea">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mohamadkanso.github.io/">
-    <meta property="og:site_name" content="Mohamad Kanso Portfolio">
+    <meta property="og:site_name" content="Mohamad Kanso">
     <meta property="og:title" content="Mohamad Kanso — Forward Deployed AI">
     <meta
       property="og:description"
       content="I build AI agents that hold up in the real world, with the evaluation and governance around them, and 27 contributions landed in the open-source Hermes Agent."
     >
-    <meta property="og:image" content="https://mohamadkanso.github.io/assets/preview/forward-deployed-social.png?v=2026-10-17">
-    <meta property="og:image:alt" content="Mohamad Kanso, Forward Deployed AI at 7IM — agents that hold up in the real world">
+    <meta property="og:image" content="https://mohamadkanso.github.io/assets/preview/social.png?v=2026-10-17">
+    <meta property="og:image:alt" content="Mohamad Kanso, Forward Deployed AI at 7IM">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
@@ -28,707 +28,520 @@
       name="twitter:description"
       content="I build AI agents that hold up in the real world, with the evaluation and governance around them, and 27 contributions landed in the open-source Hermes Agent."
     >
-    <meta name="twitter:image" content="https://mohamadkanso.github.io/assets/preview/forward-deployed-social.png?v=2026-10-17">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;family=Syne:wght@400..800&amp;display=swap"
-      rel="stylesheet"
-    >
-    <link rel="icon" type="image/png" href="assets/preview/favicon.png">
-    <link rel="stylesheet" href="styles.css?v=20261017-1">
-    <script src="script.js?v=20261017-1" defer></script>
+    <meta name="twitter:image" content="https://mohamadkanso.github.io/assets/preview/social.png?v=2026-10-17">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/fonts/newsreader-roman.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin>
+    <script>
+      // motion preference is decided before first paint so nothing jumps.
+      (function () {
+        var choice = null;
+        try { choice = localStorage.getItem("mk-motion"); } catch (e) {}
+        var reduce = choice ? choice === "off" : matchMedia("(prefers-reduced-motion: reduce)").matches;
+        document.documentElement.classList.add(reduce ? "motion-off" : "motion-on");
+      })();
+    </script>
   </head>
-  <body data-theme="ink">
-    <a class="skip-link" href="#main-content">Skip to the portfolio</a>
+  <body>
+    <a class="skip" href="#main">skip to content</a>
 
-    <canvas id="signal-canvas" aria-hidden="true"></canvas>
-    <div class="grain" aria-hidden="true"></div>
-    <div class="cursor-orbit" aria-hidden="true"><span></span></div>
-
-    <div class="page-progress" aria-hidden="true"><i id="page-progress-bar"></i></div>
-
-    <header class="site-header" id="site-header">
-      <a class="brand magnetic" href="#top" aria-label="Mohamad Kanso — back to top">
-        <span class="brand-mark">MK</span>
-        <span class="brand-copy">Forward<br>Deployed AI</span>
-      </a>
-
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span>Menu</span><i aria-hidden="true"></i>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
-        <a href="#proof">Proof</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <button class="mobile-motion-toggle" id="mobile-motion-toggle" type="button" aria-label="Reduced motion" aria-pressed="false">
-          <span class="status-dot" aria-hidden="true"></span><span>Motion on</span>
-        </button>
+    <header class="masthead" id="masthead">
+      <a class="wordmark" href="#top" aria-label="Mohamad Kanso, back to top">m<span>/</span>k</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#work">work</a>
+        <a href="#approach">approach</a>
+        <a href="#experience">experience</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
       </nav>
-
-      <div class="header-actions">
-        <button class="text-button" id="motion-toggle" type="button" aria-label="Reduced motion" aria-pressed="false">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Motion on</span>
-        </button>
-        <button class="pill-button magnetic" type="button" data-open-quick>60s view</button>
+      <div class="masthead-tools">
+        <button class="tool" type="button" id="brief-open">in brief</button>
+        <button class="tool" type="button" id="motion-toggle" aria-pressed="false">motion <b>on</b></button>
+        <a class="tool tool-cv" href="/assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>cv ↓</a>
       </div>
     </header>
 
-    <main id="main-content">
-      <section class="hero signal-scene theme-scene" id="top" data-mode="chaos" data-theme="ink">
-        <div class="hero-kicker reveal">
-          <span>Mohamad Kanso</span>
-          <span>London, UK</span>
-          <span>7IM · Forward Deployed AI</span>
-        </div>
-
+    <main id="main">
+      <!-- hero -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow reveal">Senior Forward Deployed AI Associate · 7IM</p>
-          <h1 class="hero-title" aria-label="Turning signal into systems">
-            <span class="title-line"><span>Turning</span></span>
-            <span class="title-line title-signal"><em>signal</em></span>
-            <span class="title-line title-indent"><span>into systems.</span></span>
+          <p class="kicker">forward deployed ai · 7im · london</p>
+          <h1 id="hero-title">
+            <span class="hero-name">Mohamad Kanso</span>
+            <span class="hero-line">I build AI agents that hold up in the <em>real&nbsp;world.</em></span>
           </h1>
-          <p class="hero-intro reveal">
-            I design, deploy and govern AI agents that turn noisy data, voice, code and operations into decisions people can trust.
+          <p class="hero-sub">
+            Senior Forward Deployed AI Associate at 7IM, designing, deploying and governing agents.
+            In the open, I contribute to Hermes Agent by Nous Research.
           </p>
-          <div class="hero-actions reveal">
-            <a class="primary-action magnetic" href="#work"><span>Explore the systems</span><b aria-hidden="true">↘</b></a>
-            <button class="secondary-action magnetic" type="button" data-open-quick>Get the 60-second view</button>
-          </div>
+          <p class="hero-links">
+            <a class="link" href="#work">see the work ↓</a>
+            <a class="link" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">linkedin ↗</a>
+            <a class="link" href="https://github.com/MohamadKanso" target="_blank" rel="noopener">github ↗</a>
+          </p>
         </div>
 
-        <div class="hero-engine reveal" aria-hidden="true">
-          <div class="engine-ring ring-one"></div>
-          <div class="engine-ring ring-two"></div>
-          <div class="engine-core"><span>K</span></div>
-          <span class="engine-label label-a">VOICE</span>
-          <span class="engine-label label-b">DATA</span>
-          <span class="engine-label label-c">CODE</span>
-          <span class="engine-label label-d">AGENTS</span>
-        </div>
+        <figure class="graph" id="graph" aria-labelledby="graph-caption">
+          <div class="graph-stage">
+            <canvas id="graph-canvas" aria-hidden="true"></canvas>
+            <div class="graph-tip" id="graph-tip" hidden></div>
+          </div>
+          <figcaption id="graph-caption" class="graph-caption">
+            <span><b>hermes agent</b> · 27 contributions, each a path from my pull request into main</span>
+            <span class="graph-legend" aria-hidden="true"><i class="lg-auth"></i>authored <i class="lg-co"></i>co-authored <i class="lg-direct"></i>merged directly</span>
+          </figcaption>
+          <ol class="graph-list" id="graph-list" aria-label="Hermes Agent contributions that landed on main"></ol>
+        </figure>
 
-        <div class="hero-footer reveal">
-          <div class="signal-control">
-            <button id="signal-toggle" type="button" aria-pressed="false">
-              <span class="control-icon" aria-hidden="true"></span>
-              <span class="control-copy"><b>Conduct the signal</b><small>move · press · release</small></span>
-            </button>
+        <dl class="proof" aria-label="Proof points">
+          <div>
+            <dt><a href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">contributions landed in hermes agent ↗</a></dt>
+            <dd data-metric="landed">27</dd>
           </div>
-          <div class="hero-links" aria-label="Primary profile links">
-            <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>CV <span aria-hidden="true">↓</span></a>
-            <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
-            <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+          <div>
+            <dt><a href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">commits credited on hermes main<br>21 authored + 13 co&#8209;authored ↗</a></dt>
+            <dd data-metric="credited">34</dd>
           </div>
-          <a class="scroll-cue" href="#signal-proof"><span>Scroll to resolve the noise</span><i aria-hidden="true"></i></a>
+          <div>
+            <dt>lower pipeline latency across 50m-record datasets · cognizant</dt>
+            <dd>40%</dd>
+          </div>
+          <div>
+            <dt>cognizant · 2026</dt>
+            <dd class="proof-word">Impact Award</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- thesis -->
+      <section class="thesis" aria-labelledby="thesis-title">
+        <p class="label">00 · thesis</p>
+        <h2 id="thesis-title" class="reveal-lines">Messy in. <em>Meaning out.</em></h2>
+        <div class="thesis-copy">
+          <p>The interesting problems rarely arrive clean. They arrive as fragmented context, risky transcripts, failing pipelines, noisy markets and ambiguous decisions.</p>
+          <p>My work is the layer in between: structuring the noise, adding guardrails and shipping a system that holds up in the real world.</p>
         </div>
       </section>
 
-      <section class="signal-proof signal-scene theme-scene" id="signal-proof" data-mode="core" data-theme="lime">
-        <div class="section-number reveal">00 / THESIS</div>
-        <div class="manifesto-grid">
-          <h2 class="manifesto-title reveal">Messy in.<br><em>Meaning out.</em></h2>
-          <div class="manifesto-copy reveal">
-            <p>
-              The interesting problems rarely arrive clean. They arrive as fragmented context, risky transcripts,
-              failing pipelines, noisy markets and ambiguous decisions.
-            </p>
-            <p>
-              My work is the layer in between: structuring the noise, adding guardrails and shipping a system that holds up in the real world.
-            </p>
-          </div>
+      <!-- work -->
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="section-head">
+          <p class="label">01 · selected systems</p>
+          <h2 id="work-title" class="reveal-lines">Built to survive <em>contact with reality.</em></h2>
+          <p class="section-note">Ten systems, ranked for AI-agent work: open-source agent contributions first, then the agent, evaluation and safety systems I build myself. Nine have a live demo you can open in the browser.</p>
         </div>
 
-        <div class="proof-ribbon" aria-label="Career proof points">
-          <a class="proof-stat proof-link reveal" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">
-            <strong data-count="27">27</strong>
-            <span>contributions landed in Hermes Agent (Nous Research) ↗</span>
-          </a>
-          <a class="proof-stat proof-link reveal" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">
-            <strong data-count="34">34</strong>
-            <span>commits credited on Hermes main ↗</span>
-          </a>
-          <article class="proof-stat reveal">
-            <strong data-count="40" data-suffix="%">40%</strong>
-            <span>lower pipeline latency across 50M-record datasets (Cognizant)</span>
-          </article>
-          <article class="proof-stat proof-word reveal">
-            <strong>Impact Award</strong>
-            <span>Cognizant, 2026</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="work-intro signal-scene theme-scene" id="work" data-mode="flow" data-theme="porcelain">
-        <div class="section-number reveal">01 / SELECTED SYSTEMS</div>
-        <div class="section-heading-grid">
-          <h2 class="display-heading reveal">Built to survive<br><em>contact with reality.</em></h2>
-          <div class="section-lede reveal">
-            <p>Ten systems, ranked for AI-agent work: open-source agent contributions first, then the agent, evaluation and safety systems I build myself.</p>
-            <div class="work-jump-list">
-              <a href="#hermes-agent">Start with the strongest work <span aria-hidden="true">↓</span></a>
-              <a href="#project-archive">Open-source atlas <span aria-hidden="true">↓</span></a>
+        <ol class="projects">
+          <li class="project" id="hermes-agent">
+            <div class="project-text">
+              <p class="project-meta"><span>01</span> open-source agent contributions</p>
+              <h3>Hermes Agent</h3>
+              <p class="project-thesis">Open-source contributions to the agent from Nous Research.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Agents lose context, sessions and routing at the boundaries: a compaction drops history, a session switches mid-turn, a provider alias routes two ways.</dd></div>
+                <div><dt>what i built</dt><dd>Fixes to session recovery, provider routing, scheduler reliability and tool safety, proposed as pull requests and carried into main by the maintainers.</dd></div>
+                <div><dt>proof</dt><dd>27 contributions landed and 34 commits credited on main (21 authored, 13 co-authored), with maintainer credit linked for every one.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">see the record ↗</a>
+                <a class="link" href="https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3AMohamadKanso" target="_blank" rel="noopener">pull requests ↗</a>
+              </p>
             </div>
-            <p class="try-now-key"><span>TRY IT NOW</span><strong>marks a live project you can open and use in your browser.</strong></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-journey theme-scene" data-theme="ink" aria-label="Featured projects">
-        <div class="project-chapters">
-          <article
-            class="project-chapter signal-scene"
-            id="hermes-agent"
-            data-mode="flow"
-            data-project="Hermes Agent"
-            data-index="01"
-            data-accent="#5b5bff"
-            data-caption="27 contribution paths into an open-source agent's main branch"
-          >
-            <p class="project-index">01 <span>Open-source agent contributions</span></p>
-            <h3>Hermes<br>Agent</h3>
-            <p class="project-thesis">Open-source contributions to the agent from Nous Research.</p>
-            <a class="hermes-inline-visual" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-              <img src="assets/preview/hermes-contributions.png" alt="" width="1200" height="630" loading="lazy" decoding="async">
+            <a class="shot" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/hermes-720.jpg" srcset="/assets/shots/hermes-720.jpg 720w, /assets/shots/hermes.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
             </a>
-            <div class="project-facts">
-              <p><span>The problem</span>Agents lose context, sessions and routing at the boundaries: a compaction drops history, a session switches mid-turn, a provider alias routes two ways.</p>
-              <p><span>The system</span>Fixes to session recovery, provider routing, scheduler reliability and tool safety, proposed as pull requests and carried into main by the maintainers.</p>
-              <p><span>The proof</span>27 contributions landed and 34 commits credited on main (21 authored, 13 co-authored), with maintainer credit linked for every one.</p>
-            </div>
-            <ul class="tag-list" aria-label="Hermes Agent contribution areas">
-              <li>Agent runtime</li><li>Sessions</li><li>Provider routing</li><li>Tool safety</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">See the record <span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/NousResearch/hermes-agent/pulls?q=is%3Apr+author%3AMohamadKanso" target="_blank" rel="noopener">Pull requests ↗</a>
-            </div>
-          </article>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="signalbrief"
-            data-mode="orbit"
-            data-project="SignalBrief"
-            data-index="02"
-            data-accent="#8a5cff"
-            data-caption="Six specialist agents converge on one evidence core"
-          >
-            <p class="project-index">02 <span>Agent systems</span></p>
-            <h3>Signal<wbr>Brief</h3>
-            <p class="project-thesis">Six specialist agents assemble an executive briefing without losing the evidence.</p>
-            <div class="project-facts">
-              <p><span>The noise</span>Research scattered across sources, opinions and incompatible formats.</p>
-              <p><span>The system</span>LangGraph agents, typed facts, evidence indexing, risk scoring, sentiment and visual analysis.</p>
-              <p><span>The proof</span>Deterministic fallback means the demo still tells the truth.</p>
+          <li class="project" id="signalbrief">
+            <div class="project-text">
+              <p class="project-meta"><span>02</span> agent systems</p>
+              <h3>SignalBrief</h3>
+              <p class="project-thesis">Six specialist agents assemble an executive briefing without losing the evidence.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Research scattered across sources, opinions and incompatible formats.</dd></div>
+                <div><dt>what i built</dt><dd>LangGraph agents, typed facts, evidence indexing, risk scoring, sentiment and visual analysis.</dd></div>
+                <div><dt>proof</dt><dd>Deterministic fallback means the demo still tells the truth.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener">open the demo ↗</a>
+                <a class="link" href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener">source ↗</a>
+              </p>
             </div>
-            <ul class="tag-list" aria-label="SignalBrief technologies">
-              <li>LangGraph</li><li>RAG</li><li>Pydantic</li><li>Plotly</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener">Launch demo <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/SignalBrief/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/signalbrief-720.jpg" srcset="/assets/shots/signalbrief-720.jpg 720w, /assets/shots/signalbrief.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="incidentforge"
-            data-mode="shock"
-            data-project="IncidentForge"
-            data-index="03"
-            data-accent="#ff7a42"
-            data-caption="Alerts, traces and logs collapse toward root cause"
-          >
-            <p class="project-index">03 <span>AI evaluation</span></p>
-            <h3>Incident<wbr>Forge</h3>
-            <p class="project-thesis">A proving ground for AI agents that claim they can diagnose production incidents.</p>
-            <div class="project-facts">
-              <p><span>The noise</span>Alerts, metrics, logs, traces and runbooks all telling fragments of the same failure.</p>
-              <p><span>The system</span>Synthetic incident bundles, ground truth and RCA scoring for repeatable AI SRE evaluation.</p>
-              <p><span>The proof</span>Open benchmarks over vague agent claims.</p>
+          <li class="project" id="incidentforge">
+            <div class="project-text">
+              <p class="project-meta"><span>03</span> ai evaluation</p>
+              <h3>IncidentForge</h3>
+              <p class="project-thesis">A proving ground for AI agents that claim they can diagnose production incidents.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Alerts, metrics, logs, traces and runbooks all telling fragments of the same failure.</dd></div>
+                <div><dt>what i built</dt><dd>Synthetic incident bundles, ground truth and RCA scoring for repeatable AI SRE evaluation.</dd></div>
+                <div><dt>proof</dt><dd>Open benchmarks over vague agent claims.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/IncidentForge/" target="_blank" rel="noopener">open the demo ↗</a>
+                <a class="link" href="https://github.com/MohamadKanso/IncidentForge" target="_blank" rel="noopener">source ↗</a>
+              </p>
             </div>
-            <ul class="tag-list" aria-label="IncidentForge technologies">
-              <li>Python</li><li>AI SRE</li><li>Evaluation</li><li>Observability</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/IncidentForge/" target="_blank" rel="noopener">Launch demo <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/MohamadKanso/IncidentForge" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/IncidentForge/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/incidentforge-720.jpg" srcset="/assets/shots/incidentforge-720.jpg 720w, /assets/shots/incidentforge.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="voicesafekit"
-            data-mode="gate"
-            data-project="VoiceSafeKit"
-            data-index="04"
-            data-accent="#ff4f7b"
-            data-caption="Voice enters. Privacy decides what leaves."
-          >
-            <p class="project-index">04 <span>Voice privacy</span></p>
-            <h3>Voice<wbr>SafeKit</h3>
-            <p class="project-thesis">A safety gate for voice assistants—before sensitive words reach an LLM.</p>
-            <div class="project-facts">
-              <p><span>The noise</span>Raw voice transcripts can quietly contain credentials, identity data and private context.</p>
-              <p><span>The system</span>Classifies every transcript as SAFE, REDACT, REVIEW or BLOCK, with browser recording and CLI support.</p>
-              <p><span>The proof</span>Local-first, open source and built around visible decisions.</p>
+          <li class="project" id="voicesafekit">
+            <div class="project-text">
+              <p class="project-meta"><span>04</span> voice privacy</p>
+              <h3>VoiceSafeKit</h3>
+              <p class="project-thesis">A safety gate for voice assistants, before sensitive words reach an LLM.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Raw voice transcripts can quietly contain credentials, identity data and private context.</dd></div>
+                <div><dt>what i built</dt><dd>Classifies every transcript as SAFE, REDACT, REVIEW or BLOCK, with browser recording and CLI support.</dd></div>
+                <div><dt>proof</dt><dd>Local-first, open source and built around visible decisions.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener">open the demo ↗</a>
+                <a class="link" href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener">source ↗</a>
+              </p>
             </div>
-            <ul class="tag-list" aria-label="VoiceSafeKit technologies">
-              <li>Python</li><li>Local AI</li><li>Privacy</li><li>Voice</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener">Launch demo <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/VoiceSafeKit/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/voicesafekit-720.jpg" srcset="/assets/shots/voicesafekit-720.jpg 720w, /assets/shots/voicesafekit.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="codesentry"
-            data-mode="scan"
-            data-project="CodeSentry"
-            data-index="05"
-            data-accent="#1de1ff"
-            data-caption="A local model scans, reasons and repairs"
-          >
-            <p class="project-index">05 <span>Developer intelligence</span></p>
-            <h3>Code<wbr>Sentry</h3>
-            <p class="project-thesis">Local AI code review that finds the risk and proposes the fix.</p>
-            <div class="project-facts">
-              <p><span>The noise</span>Syntax failures, logic bugs and security risks buried across a codebase.</p>
-              <p><span>The system</span>Local LLM review, auto-fix routes, cached scans, Markdown reports and CI checks.</p>
-              <p><span>The proof</span>Private by design, with a working browser experience.</p>
+          <li class="project" id="codesentry">
+            <div class="project-text">
+              <p class="project-meta"><span>05</span> developer intelligence</p>
+              <h3>CodeSentry</h3>
+              <p class="project-thesis">Local AI code review that finds the risk and proposes the fix.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Syntax failures, logic bugs and security risks buried across a codebase.</dd></div>
+                <div><dt>what i built</dt><dd>Local LLM review, auto-fix routes, cached scans, Markdown reports and CI checks.</dd></div>
+                <div><dt>proof</dt><dd>Private by design, with a working browser experience.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener">open the demo ↗</a>
+                <a class="link" href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener">source ↗</a>
+              </p>
             </div>
-            <ul class="tag-list" aria-label="CodeSentry technologies">
-              <li>Python</li><li>Ollama</li><li>GitHub Actions</li><li>Static analysis</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener">Launch demo <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/CodeSentry/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/codesentry-720.jpg" srcset="/assets/shots/codesentry-720.jpg 720w, /assets/shots/codesentry.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="workflowforge"
-            data-mode="flow"
-            data-project="WorkflowForge"
-            data-index="06"
-            data-accent="#c8ff35"
-            data-caption="Operational context becomes an executable map"
-          >
-            <p class="project-index">06 <span>Workflow intelligence</span></p>
-            <h3>Workflow<wbr>Forge</h3>
-            <p class="project-thesis">Turns operational chaos into a map teams can actually execute.</p>
-            <div class="project-facts">
-              <p><span>The noise</span>Scattered documents, tribal knowledge and invisible bottlenecks.</p>
-              <p><span>The system</span>Python workflow mapping, bottleneck analysis, Mermaid diagrams and ranked automation opportunities.</p>
-              <p><span>The proof</span>Open source with a live, explorable demo.</p>
+          <li class="project" id="workflowforge">
+            <div class="project-text">
+              <p class="project-meta"><span>06</span> workflow intelligence</p>
+              <h3>WorkflowForge</h3>
+              <p class="project-thesis">Turns operational chaos into a map teams can actually execute.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Scattered documents, tribal knowledge and invisible bottlenecks.</dd></div>
+                <div><dt>what i built</dt><dd>Python workflow mapping, bottleneck analysis, Mermaid diagrams and ranked automation opportunities.</dd></div>
+                <div><dt>proof</dt><dd>Open source with a live, explorable demo.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener">open the demo ↗</a>
+                <a class="link" href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener">source ↗</a>
+              </p>
             </div>
-            <ul class="tag-list" aria-label="WorkflowForge technologies">
-              <li>Python</li><li>Workflow graphs</li><li>Automation</li><li>Mermaid</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener">Launch demo <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/WorkflowForge/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/workflowforge-720.jpg" srcset="/assets/shots/workflowforge-720.jpg 720w, /assets/shots/workflowforge.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="intent-graph"
-            data-mode="core"
-            data-project="Intent Graph"
-            data-index="07"
-            data-accent="#8a5cff"
-            data-caption="A mental model becomes a structured execution contract"
-          >
-            <p class="project-index">07 <span>Private intent system</span></p>
-            <h3>Intent<br>Graph</h3>
-            <p class="project-thesis">Preserving intent before language flattens it.</p>
-            <div class="project-facts">
-              <p><span>The problem</span>Humans think in mental models, but turning those models into prose or prompts quietly loses relationships, constraints and success conditions.</p>
-              <p><span>The system</span>An outcome-centred visual workspace compiles connected inputs, actions, rules, risks and tests into a machine-readable Intent Object.</p>
-              <p><span>The proof</span>A local compiler, Intent Mentor, validation gates, version history and graph diffs turn messy ideas into Codex-ready execution contracts.</p>
+          <li class="project" id="intent-graph">
+            <div class="project-text">
+              <p class="project-meta"><span>07</span> private intent system</p>
+              <h3>Intent Graph</h3>
+              <p class="project-thesis">Preserving intent before language flattens it.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Humans think in mental models, but turning those models into prose or prompts quietly loses relationships, constraints and success conditions.</dd></div>
+                <div><dt>what i built</dt><dd>An outcome-centred visual workspace compiles connected inputs, actions, rules, risks and tests into a machine-readable Intent Object.</dd></div>
+                <div><dt>proof</dt><dd>A local compiler, Intent Mentor, validation gates, version history and graph diffs turn messy ideas into Codex-ready execution contracts.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/Intent-Graph-Preview/" target="_blank" rel="noopener">open the preview ↗</a>
+              </p>
+              <p class="project-note">portfolio preview · limited demonstration only, not the full private system</p>
             </div>
-            <ul class="tag-list" aria-label="Intent Graph product concepts">
-              <li>Visual compiler</li><li>Intent mentor</li><li>Intent objects</li><li>Validation gates</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/Intent-Graph-Preview/" target="_blank" rel="noopener" aria-describedby="intent-graph-preview-note">Launch preview <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-preview-note" id="intent-graph-preview-note"><i aria-hidden="true">P</i><span><strong>Portfolio preview</strong>Limited demonstration only — not the full private system.</span></p>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/Intent-Graph-Preview/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/intentgraph-720.jpg" srcset="/assets/shots/intentgraph-720.jpg 720w, /assets/shots/intentgraph.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="mlt-terminal"
-            data-mode="market"
-            data-project="MLT Terminal"
-            data-index="08"
-            data-accent="#c8ff35"
-            data-caption="Market evidence resolves into a disciplined regime score"
-          >
-            <p class="project-index">08 <span>Private quantitative platform</span></p>
-            <h3>MLT<br>Terminal</h3>
-            <p class="project-thesis">Directional quality, not prediction theatre.</p>
-            <div class="project-facts">
-              <p><span>The problem</span>Technical indicators produce conflicting signals and false certainty about where markets go next.</p>
-              <p><span>The system</span>Scores money flow, momentum curvature, squeeze conditions, trend context and structure across multiple timeframes.</p>
-              <p><span>The evidence</span>Fixed-horizon replay and reliability matrices test every regime call against historical outcomes.</p>
+          <li class="project" id="mlt-terminal">
+            <div class="project-text">
+              <p class="project-meta"><span>08</span> private quantitative platform</p>
+              <h3>MLT Terminal</h3>
+              <p class="project-thesis">Directional quality, not prediction theatre.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Technical indicators produce conflicting signals and false certainty about where markets go next.</dd></div>
+                <div><dt>what i built</dt><dd>Scores money flow, momentum curvature, squeeze conditions, trend context and structure across multiple timeframes.</dd></div>
+                <div><dt>proof</dt><dd>Fixed-horizon replay and reliability matrices test every regime call against historical outcomes.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mlt-terminal-demo.vercel.app/" target="_blank" rel="noopener">open the preview ↗</a>
+              </p>
+              <p class="project-note">portfolio preview · limited demonstration only, not the full private platform</p>
             </div>
-            <ul class="tag-list" aria-label="MLT Terminal technologies">
-              <li>TypeScript</li><li>FastAPI</li><li>Backtesting</li><li>Regime analysis</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mlt-terminal-demo.vercel.app/" target="_blank" rel="noopener" aria-describedby="mlt-terminal-preview-note">Launch preview <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-preview-note" id="mlt-terminal-preview-note"><i aria-hidden="true">P</i><span><strong>Portfolio preview</strong>Limited demonstration only — not the full private platform.</span></p>
-          </article>
+            <a class="shot" href="https://mlt-terminal-demo.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/mltterminal-720.jpg" srcset="/assets/shots/mltterminal-720.jpg 720w, /assets/shots/mltterminal.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="mlt-journal"
-            data-mode="journal"
-            data-project="MLT Journal"
-            data-index="09"
-            data-accent="#ff4f7b"
-            data-caption="Every trade becomes structured evidence about process"
-          >
-            <p class="project-index">09 <span>Trading-journal analytics</span></p>
-            <h3>MLT<br>Journal</h3>
-            <p class="project-thesis">A trading-journal analytics tool that turns each trade into structured, reviewable evidence.</p>
-            <div class="journal-inline-visual" aria-hidden="true">
-              <div><b>MLT JOURNAL</b><span>LOCAL · PRIVATE</span></div>
-              <p><strong>39+</strong><span>TRADE FIELDS</span><strong>3</strong><span>WORKFLOWS</span></p>
-              <small><b>SETUP · SESSION · RULES · REVIEW</b><strong>LOGGED</strong></small>
+          <li class="project" id="mlt-journal">
+            <div class="project-text">
+              <p class="project-meta"><span>09</span> trading-journal analytics</p>
+              <h3>MLT Journal</h3>
+              <p class="project-thesis">A trading-journal analytics tool that turns each trade into structured, reviewable evidence.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Trader memory is selective: results get separated from setup quality, psychology, rule compliance and market context.</dd></div>
+                <div><dt>what i built</dt><dd>A fully local Flask + React journal with 39+ trade fields, screenshots, live, backtest and forward-test workflows.</dd></div>
+                <div><dt>proof</dt><dd>Journal analytics, setup and session breakdowns, psychology review, SQLite privacy and an optional MT5 bridge.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/MLT-Journal/" target="_blank" rel="noopener">open the demo ↗</a>
+                <a class="link" href="https://github.com/MohamadKanso/MLT-Journal" target="_blank" rel="noopener">source ↗</a>
+              </p>
             </div>
-            <div class="project-facts">
-              <p><span>The problem</span>Trader memory is selective: results get separated from setup quality, psychology, rule compliance and market context.</p>
-              <p><span>The system</span>A fully local Flask + React journal with 39+ trade fields, screenshots, live, backtest and forward-test workflows.</p>
-              <p><span>The proof</span>Journal analytics, setup and session breakdowns, psychology review, SQLite privacy and an optional MT5 bridge.</p>
-            </div>
-            <ul class="tag-list" aria-label="MLT Journal technologies">
-              <li>Flask</li><li>React</li><li>SQLite</li><li>Chart.js</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/MLT-Journal/" target="_blank" rel="noopener">Launch demo <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-              <a href="https://github.com/MohamadKanso/MLT-Journal" target="_blank" rel="noopener">Source ↗</a>
-            </div>
-          </article>
+            <a class="shot" href="https://mohamadkanso.github.io/MLT-Journal/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/mltjournal-720.jpg" srcset="/assets/shots/mltjournal-720.jpg 720w, /assets/shots/mltjournal.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
 
-          <article
-            class="project-chapter signal-scene"
-            id="life-orbit"
-            data-mode="orbit"
-            data-project="Life Orbit"
-            data-index="10"
-            data-accent="#1de1ff"
-            data-caption="People, intentions and time become a living personal orbit"
-          >
-            <p class="project-index">10 <span>Private life system</span></p>
-            <h3>Life<br>Orbit</h3>
-            <p class="project-thesis">A calmer social layer for real life.</p>
-            <div class="project-facts">
-              <p><span>The problem</span>Goals, routines, relationships and time live in disconnected tools while social products optimise for performance.</p>
-              <p><span>The system</span>People, goals, tasks and events orbit a person as living context, with flexible privacy and availability sharing.</p>
-              <p><span>The intent</span>Use intelligence to help people coordinate better without turning life into another public feed.</p>
+          <li class="project" id="life-orbit">
+            <div class="project-text">
+              <p class="project-meta"><span>10</span> private life system</p>
+              <h3>Life Orbit</h3>
+              <p class="project-thesis">A calmer social layer for real life.</p>
+              <dl class="project-facts">
+                <div><dt>problem</dt><dd>Goals, routines, relationships and time live in disconnected tools while social products optimise for performance.</dd></div>
+                <div><dt>what i built</dt><dd>People, goals, tasks and events orbit a person as living context, with flexible privacy and availability sharing.</dd></div>
+                <div><dt>intent</dt><dd>Use intelligence to help people coordinate better without turning life into another public feed.</dd></div>
+              </dl>
+              <p class="project-links">
+                <a class="link link-strong" href="https://mohamadkanso.github.io/life-orbit-preview/?v=20260714" target="_blank" rel="noopener">open the preview ↗</a>
+              </p>
+              <p class="project-note">private repository · safe demo mode</p>
             </div>
-            <ul class="tag-list" aria-label="Life Orbit product concepts">
-              <li>Context graph</li><li>Life systems</li><li>Privacy</li><li>Coordination</li>
-            </ul>
-            <div class="project-links">
-              <a class="project-action magnetic" href="https://mohamadkanso.github.io/life-orbit-preview/?v=20260714" target="_blank" rel="noopener">Launch preview <em>TRY IT NOW</em><span aria-hidden="true">↗</span></a>
-            </div>
-            <p class="project-private-state"><i aria-hidden="true"></i>Private repository · Safe demo mode</p>
-          </article>
-        </div>
+            <a class="shot" href="https://mohamadkanso.github.io/life-orbit-preview/?v=20260714" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="/assets/shots/lifeorbit-720.jpg" srcset="/assets/shots/lifeorbit-720.jpg 720w, /assets/shots/lifeorbit.jpg 1280w" sizes="(min-width: 980px) 52vw, 100vw" width="1280" height="800" alt="" loading="lazy" decoding="async">
+            </a>
+          </li>
+        </ol>
 
-        <aside class="project-stage" aria-label="Living project visual">
-          <div class="stage-frame" data-visual="core">
-            <div class="stage-chrome">
-              <span>LIVE SIGNAL</span>
-              <span id="stage-status">SYSTEM 01 / 10</span>
-            </div>
-            <div class="stage-journal-ui" aria-hidden="true">
-              <div class="journal-ui-rail"><i></i><i></i><i></i><i></i><i></i></div>
-              <div class="journal-ui-main">
-                <div class="journal-ui-head"><b>MLT JOURNAL</b><span>LOCAL · PRIVATE</span></div>
-                <div class="journal-ui-stats">
-                  <p><span>TRADE FIELDS</span><strong>39+</strong></p>
-                  <p><span>WORKFLOWS</span><strong>3</strong></p>
-                  <p><span>STORAGE</span><strong>LOCAL</strong></p>
-                </div>
-                <div class="journal-ui-trades">
-                  <p><b>GBPUSD</b><span>London · A+</span><strong>REVIEWED</strong></p>
-                  <p><b>XAUUSD</b><span>New York · A</span><strong>REVIEWED</strong></p>
-                  <p><b>EURUSD</b><span>London · B</span><strong>LOGGED</strong></p>
-                </div>
+        <div class="more">
+          <div class="more-head">
+            <p class="label">02 · more builds</p>
+            <h2 class="reveal-lines">The lab stays <em>switched on.</em></h2>
+            <p class="section-note">Local agents, voice interfaces, research systems and tools built to answer questions I could not leave alone.</p>
+          </div>
+          <ul class="more-list">
+            <li>
+              <a href="https://mohamadkanso.github.io/MurmurX/" target="_blank" rel="noopener">
+                <img src="/assets/shots/murmurx-720.jpg" width="720" height="450" alt="" loading="lazy" decoding="async">
+                <span class="more-meta">offline voice ai · live demo</span>
+                <strong>MurmurX</strong>
+                <span>Speak to a real browser-local Qwen model. Try the voice lab ↗</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/MohamadKanso/Dissertation" target="_blank" rel="noopener">
+                <span class="more-meta">msci research · 76%</span>
+                <strong>Bitcoin ML System</strong>
+                <span>LSTM, indicators and walk-forward testing. ↗</span>
+              </a>
+            </li>
+            <li>
+              <div>
+                <span class="more-meta">private prototype</span>
+                <strong>Enterprise AI Assistant</strong>
+                <span>RBAC, approved tools, PostgreSQL retrieval and human review.</span>
               </div>
-            </div>
-            <div class="stage-reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-            <div class="stage-caption">
-              <span id="stage-index">01</span>
-              <div><strong id="stage-title">Hermes Agent</strong><p id="stage-copy">27 contribution paths into an open-source agent's main branch</p></div>
-            </div>
-            <div class="stage-progress" aria-hidden="true"><i id="stage-progress-bar"></i></div>
-          </div>
-          <p class="stage-hint"><span aria-hidden="true">●</span> The same engine changes topology with every system.</p>
-        </aside>
-      </section>
-
-      <section class="more-work signal-scene theme-scene" data-mode="market" data-theme="violet">
-        <div class="section-number reveal">02 / MORE BUILDS</div>
-        <div class="section-heading-grid">
-          <h2 class="display-heading reveal">The lab stays<br><em>switched on.</em></h2>
-          <p class="section-lede reveal">Local agents, voice interfaces, research systems and tools built to answer questions I could not leave alone.</p>
-        </div>
-
-        <div class="system-grid">
-          <a class="system-card tilt reveal has-live-demo" href="https://mohamadkanso.github.io/MurmurX/" target="_blank" rel="noopener">
-            <span class="card-number">A / 03</span>
-            <i class="card-try-badge">TRY IT NOW</i>
-            <div class="mini-visual wave-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="card-copy"><p>Offline voice AI</p><h3>MurmurX</h3><span>Speak to a real browser-local Qwen model. Try the voice lab ↗</span></div>
-          </a>
-          <a class="system-card tilt reveal" href="https://github.com/MohamadKanso/Dissertation" target="_blank" rel="noopener">
-            <span class="card-number">B / 03</span>
-            <div class="mini-visual chart-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="card-copy"><p>MSci research · 76%</p><h3>Bitcoin ML System</h3><span>LSTM, indicators and walk-forward testing. ↗</span></div>
-          </a>
-          <article class="system-card private-card tilt reveal">
-            <span class="card-number">C / 03</span>
-            <div class="mini-visual access-visual" aria-hidden="true"><i>ROLE</i><i>TOOL</i><i>TRACE</i><i>HUMAN</i></div>
-            <div class="card-copy"><p>Private prototype</p><h3>Enterprise AI Assistant</h3><span>RBAC, approved tools, PostgreSQL retrieval and human review.</span></div>
-          </article>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="approach signal-scene theme-scene" id="approach" data-mode="core" data-theme="porcelain">
-        <div class="section-number reveal">03 / HOW I THINK</div>
-        <div class="approach-layout">
-          <div class="approach-copy">
-            <h2 class="display-heading reveal">Press any layer.<br><em>See the system think.</em></h2>
-            <p class="reveal">Great AI is rarely one model. It is a chain of choices about context, structure, constraints and evidence.</p>
-          </div>
-
-          <div class="system-composer reveal" data-active-layer="context">
-            <div class="composer-visual" aria-hidden="true">
-              <span class="composer-core">USEFUL<br>OUTPUT</span>
-              <i class="route route-a"></i><i class="route route-b"></i><i class="route route-c"></i><i class="route route-d"></i>
-            </div>
-            <div class="composer-controls" role="tablist" aria-label="Engineering approach layers">
-              <button id="approach-tab-context" type="button" role="tab" aria-controls="composer-output" aria-selected="true" data-layer="context"><span>01</span><b>Context</b><small>Start with the real mess</small></button>
-              <button id="approach-tab-structure" type="button" role="tab" aria-controls="composer-output" aria-selected="false" data-layer="structure"><span>02</span><b>Structure</b><small>Make the facts explicit</small></button>
-              <button id="approach-tab-guardrails" type="button" role="tab" aria-controls="composer-output" aria-selected="false" data-layer="guardrails"><span>03</span><b>Guardrails</b><small>Design for safe failure</small></button>
-              <button id="approach-tab-evidence" type="button" role="tab" aria-controls="composer-output" aria-selected="false" data-layer="evidence"><span>04</span><b>Evidence</b><small>Measure what shipped</small></button>
-            </div>
-            <div class="composer-output" id="composer-output" role="tabpanel" aria-labelledby="approach-tab-context" aria-live="polite" tabindex="0">
-              <span id="composer-label">LAYER 01 / CONTEXT</span>
-              <p id="composer-text">I begin with the actual inputs, users, risks and constraints—not a model looking for a problem.</p>
-              <strong id="composer-projects">Proven in WorkflowForge · IncidentForge</strong>
-            </div>
-          </div>
+      <!-- approach -->
+      <section class="approach" id="approach" aria-labelledby="approach-title">
+        <div class="section-head">
+          <p class="label">03 · how i think</p>
+          <h2 id="approach-title" class="reveal-lines">Four layers. <em>One useful output.</em></h2>
+          <p class="section-note">Great AI is rarely one model. It is a chain of choices about context, structure, constraints and evidence.</p>
         </div>
+        <ol class="layers">
+          <li><span class="layer-n">01</span><h3>Context</h3><p>I begin with the actual inputs, users, risks and constraints, not a model looking for a problem.</p><small>proven in workflowforge · incidentforge</small></li>
+          <li><span class="layer-n">02</span><h3>Structure</h3><p>I turn ambiguous material into typed facts, explicit routes and components that can be inspected.</p><small>proven in signalbrief · enterprise ai assistant</small></li>
+          <li><span class="layer-n">03</span><h3>Guardrails</h3><p>I design the unsafe, uncertain and human-review paths before the happy path gets impressive.</p><small>proven in voicesafekit · codesentry</small></li>
+          <li><span class="layer-n">04</span><h3>Evidence</h3><p>I use evaluation, traces, observability and measurable outcomes to prove the system works outside the demo.</p><small>proven in incidentforge · cognizant delivery</small></li>
+        </ol>
       </section>
 
-      <section class="proof-section signal-scene theme-scene" id="proof" data-mode="shock" data-theme="warm">
-        <div class="section-number reveal">04 / PROOF, NOT CLAIMS</div>
-        <div class="section-heading-grid">
-          <h2 class="display-heading reveal">The work<br><em>leaves receipts.</em></h2>
-          <p class="section-lede reveal">Commercial delivery, public systems, academic depth and recognition for turning up when the problem gets difficult.</p>
+      <!-- experience -->
+      <section class="experience" id="experience" aria-labelledby="experience-title">
+        <div class="section-head">
+          <p class="label">04 · proof, not claims</p>
+          <h2 id="experience-title" class="reveal-lines">The work <em>leaves receipts.</em></h2>
+          <p class="section-note">Commercial delivery, public systems, academic depth and recognition for turning up when the problem gets difficult.</p>
         </div>
 
-        <div class="experience-grid">
-          <article class="experience-lead reveal">
-            <p class="experience-date">Aug 2026 — now</p>
-            <h3>7IM</h3>
-            <p class="experience-role">Senior Forward Deployed AI Associate</p>
+        <ol class="ledger">
+          <li>
+            <p class="ledger-date">aug 2026 — now</p>
+            <div class="ledger-org"><h3>7IM</h3><p>Senior Forward Deployed AI Associate</p></div>
             <ul>
               <li>Design and deploy AI agents across private wealth, sales and M&amp;A.</li>
               <li>Co-lead the firm's AI agent governance framework: lifecycle, release gates, inventory and controls.</li>
             </ul>
-          </article>
-          <article class="experience-side reveal">
-            <p class="experience-date">Sep 2026 — now · open source</p>
-            <h3>Hermes Agent</h3>
-            <p>27 contributions landed in the Nous Research agent, with 21 authored and 13 co-authored commits on main. <a href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">See the record ↗</a></p>
-          </article>
-          <article class="experience-lead reveal">
-            <p class="experience-date">May 2025 — Aug 2026</p>
-            <h3>Cognizant</h3>
-            <p class="experience-role">Graduate, Artificial Intelligence &amp; Analytics</p>
-            <p class="experience-reference-note">Employment verification available on request.</p>
+          </li>
+          <li>
+            <p class="ledger-date">sep 2026 — now · open source</p>
+            <div class="ledger-org"><h3>Hermes Agent</h3><p>Contributor · Nous Research</p></div>
+            <ul>
+              <li>27 contributions landed in the Nous Research agent, with 21 authored and 13 co-authored commits on main.</li>
+              <li><a class="link" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">see the record ↗</a></li>
+            </ul>
+          </li>
+          <li>
+            <p class="ledger-date">may 2025 — aug 2026</p>
+            <div class="ledger-org"><h3>Cognizant</h3><p>Graduate, Artificial Intelligence &amp; Analytics</p><p class="ledger-note">employment verification available on request</p></div>
             <ul>
               <li>Built RAG enterprise search and Q&amp;A prototypes with metadata-aware retrieval, grounding and access controls.</li>
               <li>Designed structured-data assistants with approved tool calls, RBAC, traceability and human review.</li>
               <li>Improved ADF-to-Databricks pipelines, cutting latency 40% across 50M-record datasets.</li>
             </ul>
-          </article>
-          <article class="experience-side reveal">
-            <p class="experience-date">Sep 2024 — Apr 2025</p>
-            <h3>Independent ML + AI engineering</h3>
-            <p>Built local voice AI, financial time-series systems and applied ML experiments with privacy and evaluation in the loop.</p>
-          </article>
-        </div>
+          </li>
+          <li>
+            <p class="ledger-date">sep 2024 — apr 2025</p>
+            <div class="ledger-org"><h3>Independent ML + AI engineering</h3></div>
+            <ul>
+              <li>Built local voice AI, financial time-series systems and applied ML experiments with privacy and evaluation in the loop.</li>
+            </ul>
+          </li>
+        </ol>
 
-        <div class="award-gallery">
-          <button
-            class="award-card award-main tilt reveal"
-            type="button"
-            data-award-src="assets/awards/cognizant-impact-award-2026-public.png"
-            data-award-alt="Cognizant Impact Award 2026 public portfolio version"
-          >
-            <img src="assets/awards/thumbs/cognizant-impact-award-2026.webp" alt="" width="1400" height="972" loading="lazy" decoding="async">
-            <span class="award-overlay"><small>Flagship recognition · 2026</small><strong>Impact Award</strong><em>Commercial delivery impact ↗</em></span>
+        <div class="awards" aria-label="Awards">
+          <button class="award award-main" type="button" data-award="/assets/awards/cognizant-impact-award-2026-public.png" data-award-alt="Cognizant Impact Award 2026, public portfolio version">
+            <img src="/assets/awards/thumbs/cognizant-impact-award-2026.webp" alt="" width="1400" height="972" loading="lazy" decoding="async">
+            <span><small>flagship recognition · 2026</small><strong>Impact Award</strong><em>commercial delivery impact ↗</em></span>
           </button>
-          <button
-            class="award-card tilt reveal"
-            type="button"
-            data-award-src="assets/awards/cognizant-guinness-generative-ai-hackathon.png?v=20260714-personal"
-            data-award-alt="Cognizant and Guinness World Records Generative AI Hackathon participation certificate for Mohamad Kanso"
-          >
-            <img src="assets/awards/thumbs/cognizant-guinness-generative-ai-hackathon.webp?v=20260714-personal" alt="" width="1100" height="775" loading="lazy" decoding="async">
-            <span class="award-overlay"><small>Cognizant · 2025</small><strong>Generative AI Hackathon</strong><em>Guinness World Records attempt ↗</em></span>
+          <button class="award" type="button" data-award="/assets/awards/cognizant-guinness-generative-ai-hackathon.png?v=20260714-personal" data-award-alt="Cognizant and Guinness World Records Generative AI Hackathon participation certificate for Mohamad Kanso">
+            <img src="/assets/awards/thumbs/cognizant-guinness-generative-ai-hackathon.webp?v=20260714-personal" alt="" width="1100" height="775" loading="lazy" decoding="async">
+            <span><small>cognizant · 2025</small><strong>Generative AI Hackathon</strong><em>guinness world records attempt ↗</em></span>
           </button>
-          <button
-            class="award-card award-badge tilt reveal"
-            type="button"
-            data-award-src="assets/awards/cognizant-vibecode-hackathon-cursor.png"
-            data-award-alt="Cognizant VibeCode Hackathon winner badge"
-          >
-            <img src="assets/awards/thumbs/cognizant-vibecode-hackathon-cursor.webp" alt="" width="388" height="388" loading="lazy" decoding="async">
-            <span class="award-overlay"><small>Cognizant · 2025</small><strong>Vibe Coding Winner</strong><em>AI coding initiative ↗</em></span>
+          <button class="award" type="button" data-award="/assets/awards/cognizant-vibecode-hackathon-cursor.png" data-award-alt="Cognizant VibeCode Hackathon winner badge">
+            <img src="/assets/awards/thumbs/cognizant-vibecode-hackathon-cursor.webp" alt="" width="388" height="388" loading="lazy" decoding="async">
+            <span><small>cognizant · 2025</small><strong>Vibe Coding Winner</strong><em>ai coding initiative ↗</em></span>
           </button>
         </div>
+        <ul class="recognition" aria-label="Additional recognition">
+          <li>Team Award — Owning It <b>2025</b></li>
+          <li>Computer Vision Challenge Winner <b>2023</b></li>
+          <li>Senior Maths Challenge Silver <b>2020</b></li>
+        </ul>
+      </section>
 
-        <div class="recognition-strip reveal" aria-label="Additional recognition">
-          <span>Team Award — Owning It <b>2025</b></span>
-          <span>Computer Vision Challenge Winner <b>2023</b></span>
-          <span>Senior Maths Challenge Silver <b>2020</b></span>
+      <!-- about -->
+      <section class="about" id="about" aria-labelledby="about-title">
+        <p class="label">05 · the human</p>
+        <h2 id="about-title" class="about-statement reveal-lines">I care about the moment an ambitious idea becomes <em>real, legible and useful.</em></h2>
+        <div class="about-body">
+          <p>I am a Senior Forward Deployed AI Associate at 7IM in London, designing and deploying AI agents and co-leading how the firm governs them. Before that I built RAG, agent and data-engineering systems at Cognizant, and in the open I contribute to Hermes Agent, where 27 of my contributions have landed upstream. I like problems with messy edges: the ones where evaluation, guardrails and product judgement matter as much as the model.</p>
+          <dl class="facts">
+            <div><dt>now</dt><dd>7IM · Forward Deployed AI</dd></div>
+            <div><dt>education</dt><dd>MSci Data Science · City, University of London</dd></div>
+            <div><dt>focus</dt><dd>AI agents · evaluation · governance · RAG</dd></div>
+            <div><dt>based</dt><dd>London, United Kingdom</dd></div>
+          </dl>
+          <p class="about-links">
+            <a class="link link-strong" href="/assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>download cv ↓</a>
+            <a class="link" href="/assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">read dissertation ↗</a>
+          </p>
         </div>
       </section>
 
-      <section class="about signal-scene theme-scene" id="about" data-mode="orbit" data-theme="ink">
-        <div class="section-number reveal">05 / THE HUMAN</div>
-        <div class="about-grid">
-          <div class="about-statement reveal">
-            <p class="eyebrow">Behind the systems</p>
-            <h2>I care about the moment an ambitious idea becomes <em>real, legible and useful.</em></h2>
+      <!-- atlas -->
+      <section class="atlas" id="atlas" aria-labelledby="atlas-title">
+        <div class="section-head">
+          <p class="label">06 · open-source atlas</p>
+          <h2 id="atlas-title" class="reveal-lines">Every public <em>experiment.</em></h2>
+        </div>
+        <div class="atlas-tools">
+          <label for="repo-search">search the archive</label>
+          <input id="repo-search" type="search" placeholder="project, language, idea" autocomplete="off">
+          <div class="atlas-filters" role="group" aria-label="Filter repositories">
+            <button type="button" data-filter="all" aria-pressed="true">all</button>
+            <button type="button" data-filter="Python" aria-pressed="false">python</button>
+            <button type="button" data-filter="JavaScript" aria-pressed="false">javascript</button>
+            <button type="button" data-filter="live" aria-pressed="false">live web</button>
           </div>
-          <div class="about-details reveal">
-            <p>
-              I am a Senior Forward Deployed AI Associate at 7IM in London, designing and deploying AI agents and co-leading how the firm governs them. Before that I built RAG, agent and data-engineering systems at Cognizant, and in the open I contribute to Hermes Agent, where 27 of my contributions have landed upstream. I like problems with messy edges: the ones where evaluation, guardrails and product judgement matter as much as the model.
-            </p>
-            <dl>
-              <div><dt>Now</dt><dd>7IM · Forward Deployed AI</dd></div>
-              <div><dt>Education</dt><dd>MSci Data Science · City, University of London</dd></div>
-              <div><dt>Focus</dt><dd>AI agents · evaluation · governance · RAG</dd></div>
-              <div><dt>Based</dt><dd>London, United Kingdom</dd></div>
-            </dl>
-            <div class="about-actions">
-              <a class="primary-action magnetic" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download><span>Download CV</span><b aria-hidden="true">↓</b></a>
-              <a href="assets/docs/bitcoin-trading-bot-dissertation.pdf" target="_blank" rel="noopener">Read dissertation ↗</a>
-            </div>
-          </div>
+        </div>
+        <ul class="repos" id="repo-list" aria-live="polite">
+          <li><a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener"><span>WorkflowForge</span><small>python · workflow intelligence</small></a></li>
+          <li><a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener"><span>VoiceSafeKit</span><small>python · voice privacy</small></a></li>
+          <li><a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener"><span>CodeSentry</span><small>python · local code intelligence</small></a></li>
+          <li><a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener"><span>SignalBrief</span><small>python · agent research</small></a></li>
+        </ul>
+        <div class="atlas-foot">
+          <p id="repo-summary">loading the complete public archive</p>
+          <button class="link" id="repo-expand" type="button" hidden>show every repository</button>
+          <a class="link" href="https://github.com/MohamadKanso?tab=repositories" target="_blank" rel="noopener">open github profile ↗</a>
         </div>
       </section>
 
-      <section class="archive signal-scene theme-scene" id="project-archive" data-mode="flow" data-theme="porcelain">
-        <div class="section-number reveal">06 / OPEN-SOURCE ATLAS</div>
-        <div class="archive-heading">
-          <h2 class="display-heading reveal">Every public<br><em>experiment.</em></h2>
-          <div class="archive-tools reveal">
-            <label for="repo-search">Search the archive</label>
-            <div class="search-field"><input id="repo-search" type="search" placeholder="Project, language, idea…" autocomplete="off"><span aria-hidden="true">⌕</span></div>
-            <div class="filter-list" aria-label="Filter repositories">
-              <button type="button" class="active" data-filter="all" aria-pressed="true">All</button>
-              <button type="button" data-filter="Python" aria-pressed="false">Python</button>
-              <button type="button" data-filter="JavaScript" aria-pressed="false">JavaScript</button>
-              <button type="button" data-filter="HTML" aria-pressed="false">Live web</button>
-            </div>
-          </div>
-        </div>
-        <div id="repo-list" class="repo-list" aria-live="polite">
-          <a href="https://github.com/MohamadKanso/WorkflowForge" target="_blank" rel="noopener"><span>WorkflowForge</span><small>Python · workflow intelligence</small><b>↗</b></a>
-          <a href="https://github.com/MohamadKanso/VoiceSafeKit" target="_blank" rel="noopener"><span>VoiceSafeKit</span><small>Python · voice privacy</small><b>↗</b></a>
-          <a href="https://github.com/MohamadKanso/CodeSentry" target="_blank" rel="noopener"><span>CodeSentry</span><small>Python · local code intelligence</small><b>↗</b></a>
-          <a href="https://github.com/MohamadKanso/SignalBrief" target="_blank" rel="noopener"><span>SignalBrief</span><small>Python · agent research</small><b>↗</b></a>
-        </div>
-        <div class="archive-footer reveal">
-          <p id="repo-summary">Loading the complete public archive…</p>
-          <button id="repo-expand" type="button" hidden>Show every repository</button>
-          <a href="https://github.com/MohamadKanso?tab=repositories" target="_blank" rel="noopener">Open GitHub profile ↗</a>
-        </div>
-      </section>
-
-      <section class="contact signal-scene theme-scene" id="contact" data-mode="kanso" data-theme="cobalt">
-        <div class="contact-top">
-          <div class="section-number reveal">07 / OUTPUT</div>
-          <p class="reveal">You made it through the signal.</p>
-        </div>
-        <div class="contact-main">
-          <h2 class="contact-title reveal">Have a difficult<br><em>system?</em></h2>
-          <a class="contact-email magnetic reveal" href="mailto:kanso1245@gmail.com">
-            <span>Tell me what is messy.</span><b aria-hidden="true">↗</b>
-          </a>
-        </div>
-        <div class="contact-footer reveal">
-          <p>Mohamad Kanso<br>Forward Deployed AI · 7IM<br>London, UK</p>
-          <div>
-            <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="https://github.com/MohamadKanso" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>CV ↓</a>
-          </div>
-          <button id="replay-signal" type="button">Replay the signal <span aria-hidden="true">↑</span></button>
-        </div>
+      <!-- contact -->
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <p class="label">07 · contact</p>
+        <h2 id="contact-title" class="reveal-lines">Have a difficult <em>system?</em></h2>
+        <a class="contact-mail" href="mailto:kanso1245@gmail.com">Tell me what is messy. <span aria-hidden="true">↗</span></a>
       </section>
     </main>
 
-    <dialog class="quick-dialog" id="quick-dialog" aria-labelledby="quick-title">
-      <div class="dialog-top">
-        <span>THE 60-SECOND VIEW</span>
-        <button type="button" data-close-dialog aria-label="Close quick view">Close ×</button>
-      </div>
-      <div class="quick-intro">
-        <p>Mohamad Kanso · Forward Deployed AI · 7IM</p>
-        <h2 id="quick-title">I build AI agents that hold up in the real world.</h2>
-      </div>
-      <div class="quick-grid">
-        <article><strong>7IM</strong><span>Senior Forward Deployed AI Associate: agents across private wealth, sales and M&amp;A, and co-lead of agent governance</span></article>
-        <article><strong>27</strong><span>contributions landed in Hermes Agent, with 34 commits credited on main <a href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">record ↗</a></span></article>
-        <article><strong>40%</strong><span>lower pipeline latency across 50M-record datasets at Cognizant</span></article>
-        <article><strong>10 live</strong><span>agent, evaluation and safety systems you can open in the browser</span></article>
-      </div>
-      <div class="quick-projects">
-        <span>Highest-impact work</span>
-        <a href="#hermes-agent"><b>Hermes Agent</b><small>open-source agent contributions</small><i>↓</i></a>
-        <a href="#signalbrief"><b>SignalBrief</b><small>multi-agent executive briefings</small><i>↓</i></a>
-        <a href="#incidentforge"><b>IncidentForge</b><small>evaluation for AI SRE agents</small><i>↓</i></a>
-        <a href="#voicesafekit"><b>VoiceSafeKit</b><small>safety gate for voice assistants</small><i>↓</i></a>
-      </div>
-      <div class="quick-actions">
-        <a class="primary-action" href="assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download><span>Download CV</span><b aria-hidden="true">↓</b></a>
-        <a href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:kanso1245@gmail.com">Email ↗</a>
-      </div>
+    <footer class="footer">
+      <p class="wordmark wordmark-foot" aria-hidden="true">m<span>/</span>k</p>
+      <p>Mohamad Kanso<br>Forward Deployed AI · 7IM<br>London, UK</p>
+      <p class="footer-links">
+        <a class="link" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">linkedin ↗</a>
+        <a class="link" href="https://github.com/MohamadKanso" target="_blank" rel="noopener">github ↗</a>
+        <a class="link" href="/assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>cv ↓</a>
+        <a class="link" href="#top">back to top ↑</a>
+      </p>
+    </footer>
+
+    <dialog class="brief" id="brief" aria-labelledby="brief-title">
+      <div class="brief-top"><p class="label">in brief · the 60-second view</p><button type="button" class="tool" data-close>close ×</button></div>
+      <p class="brief-who">Mohamad Kanso · Forward Deployed AI · 7IM</p>
+      <h2 id="brief-title">I build AI agents that hold up in the real world.</h2>
+      <dl class="brief-grid">
+        <div><dt>7IM</dt><dd>Senior Forward Deployed AI Associate: agents across private wealth, sales and M&amp;A, and co-lead of agent governance</dd></div>
+        <div><dt>27</dt><dd>contributions landed in Hermes Agent, with 34 commits credited on main · <a class="link" href="https://mohamadkanso.github.io/hermes-contributions/" target="_blank" rel="noopener">record ↗</a></dd></div>
+        <div><dt>40%</dt><dd>lower pipeline latency across 50M-record datasets at Cognizant</dd></div>
+        <div><dt>10 live</dt><dd>agent, evaluation and safety systems you can open in the browser</dd></div>
+      </dl>
+      <p class="brief-label">highest-impact work</p>
+      <ul class="brief-work">
+        <li><a href="#hermes-agent" data-close><b>Hermes Agent</b><span>open-source agent contributions</span></a></li>
+        <li><a href="#signalbrief" data-close><b>SignalBrief</b><span>multi-agent executive briefings</span></a></li>
+        <li><a href="#incidentforge" data-close><b>IncidentForge</b><span>evaluation for AI SRE agents</span></a></li>
+        <li><a href="#voicesafekit" data-close><b>VoiceSafeKit</b><span>safety gate for voice assistants</span></a></li>
+      </ul>
+      <p class="brief-actions">
+        <a class="link link-strong" href="/assets/cv/mohamad-kanso-data-ai-engineer-cv.pdf" download>download cv ↓</a>
+        <a class="link" href="https://www.linkedin.com/in/mohamadkanso/" target="_blank" rel="noopener">linkedin ↗</a>
+        <a class="link" href="mailto:kanso1245@gmail.com">email ↗</a>
+      </p>
     </dialog>
 
-    <dialog class="award-dialog" id="award-dialog" aria-label="Award preview">
-      <button type="button" data-close-award aria-label="Close award preview">Close ×</button>
-      <img id="award-dialog-image" alt="">
-      <p id="award-dialog-caption"></p>
+    <dialog class="lightbox" id="lightbox" aria-label="Award preview">
+      <button type="button" class="tool" data-close>close ×</button>
+      <img id="lightbox-img" alt="">
+      <p id="lightbox-caption"></p>
     </dialog>
 
-    <div class="signal-toast" id="signal-toast" role="status" aria-live="polite"></div>
-
-    <noscript>
-      <div class="noscript-note">This portfolio is still fully readable, but its living signal needs JavaScript to move.</div>
-    </noscript>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

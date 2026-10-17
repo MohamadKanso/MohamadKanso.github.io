@@ -1,0 +1,283 @@
+{
+  "source": "https://mohamadkanso.github.io/hermes-contributions/",
+  "checkedAt": "2026-10-17T13:03:16.578Z",
+  "metrics": {
+    "landed": 27,
+    "authoredMain": 21,
+    "coauthoredMain": 13,
+    "prs": 95,
+    "directMerges": 1
+  },
+  "paths": [
+    {
+      "original": 110933,
+      "via": 111344,
+      "kind": "authored",
+      "direct": false,
+      "title": "preserve custom skills",
+      "date": "2026-09-15",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/111344",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/110933"
+    },
+    {
+      "original": 110859,
+      "via": 111357,
+      "kind": "authored",
+      "direct": false,
+      "title": "recover terminal sessions",
+      "date": "2026-09-15",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/111357",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/110859"
+    },
+    {
+      "original": 110966,
+      "via": 111624,
+      "kind": "authored",
+      "direct": false,
+      "title": "keep human replies visible",
+      "date": "2026-09-15",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/111624",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/110966"
+    },
+    {
+      "original": 112730,
+      "via": 113106,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "keep skill context",
+      "date": "2026-09-16",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/113106",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/112730"
+    },
+    {
+      "original": 112930,
+      "via": 113210,
+      "kind": "authored",
+      "direct": false,
+      "title": "protect active sessions",
+      "date": "2026-09-17",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/113210",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/112930"
+    },
+    {
+      "original": 112947,
+      "via": 113817,
+      "kind": "authored",
+      "direct": false,
+      "title": "tune native vision budgets",
+      "date": "2026-09-17",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/113817",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/112947"
+    },
+    {
+      "original": 112989,
+      "via": 113180,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "recover the desktop backend",
+      "date": "2026-09-17",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/113180",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/112989"
+    },
+    {
+      "original": 114473,
+      "via": 114755,
+      "kind": "authored",
+      "direct": false,
+      "title": "stop scheduler drift",
+      "date": "2026-09-18",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/114755",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/114473"
+    },
+    {
+      "original": 114218,
+      "via": 114851,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "route profile secrets",
+      "date": "2026-09-18",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/114851",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/114218"
+    },
+    {
+      "original": 114430,
+      "via": 114852,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "show useful auth hints",
+      "date": "2026-09-18",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/114852",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/114430"
+    },
+    {
+      "original": 114455,
+      "via": 114888,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "bind skills to the right project",
+      "date": "2026-09-18",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/114888",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/114455"
+    },
+    {
+      "original": 116083,
+      "via": 116346,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "make provider routing consistent",
+      "date": "2026-09-19",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116346",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/116083"
+    },
+    {
+      "original": 115498,
+      "via": 116685,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "handle concurrent telemetry",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116685",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/115498"
+    },
+    {
+      "original": 116298,
+      "via": 116748,
+      "kind": "authored",
+      "direct": false,
+      "title": "survive a replaced state database",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116748",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/116298"
+    },
+    {
+      "original": 116206,
+      "via": 116824,
+      "kind": "authored",
+      "direct": false,
+      "title": "fix wayland image paste",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116824",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/116206"
+    },
+    {
+      "original": 114999,
+      "via": 117008,
+      "kind": "authored",
+      "direct": false,
+      "title": "stop repeated copilot warnings",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/117008",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/114999"
+    },
+    {
+      "original": 116051,
+      "via": 116777,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "sort finished tasks",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116777",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/116051"
+    },
+    {
+      "original": 116454,
+      "via": 116851,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "make ctrl+d exit on mac",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116851",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/116454"
+    },
+    {
+      "original": 115511,
+      "via": 116975,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "make /undo and /retry work again",
+      "date": "2026-09-20",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/116975",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/115511"
+    },
+    {
+      "original": 117166,
+      "via": 117593,
+      "kind": "authored",
+      "direct": false,
+      "title": "make silence filtering config-only",
+      "date": "2026-09-21",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/117593",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/117166"
+    },
+    {
+      "original": 118406,
+      "via": 118920,
+      "kind": "co-authored",
+      "direct": false,
+      "title": "reject refusal summaries",
+      "date": "2026-09-22",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/118920",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/118406"
+    },
+    {
+      "original": 118990,
+      "via": 121607,
+      "kind": "authored",
+      "direct": false,
+      "title": "load the local skin first",
+      "date": "2026-09-24",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/121607",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/118990"
+    },
+    {
+      "original": 121722,
+      "via": 126145,
+      "kind": "authored",
+      "direct": false,
+      "title": "gate slash commands per profile",
+      "date": "2026-09-28",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/126145",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/121722"
+    },
+    {
+      "original": 119085,
+      "via": 119085,
+      "kind": "authored",
+      "direct": true,
+      "title": "aggregate sessions across gateways",
+      "date": "2026-09-29",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/119085",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/119085"
+    },
+    {
+      "original": 119037,
+      "via": 128455,
+      "kind": "authored",
+      "direct": false,
+      "title": "keep steering through rotation",
+      "date": "2026-09-29",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/128455",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/119037"
+    },
+    {
+      "original": 131651,
+      "via": 131888,
+      "kind": "authored",
+      "direct": false,
+      "title": "deliver late steering",
+      "date": "2026-10-03",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/131888",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/131651"
+    },
+    {
+      "original": 112833,
+      "via": 133729,
+      "kind": "authored",
+      "direct": false,
+      "title": "keep private reasoning private",
+      "date": "2026-10-06",
+      "url": "https://github.com/NousResearch/hermes-agent/pull/133729",
+      "originalUrl": "https://github.com/NousResearch/hermes-agent/pull/112833"
+    }
+  ]
+}
