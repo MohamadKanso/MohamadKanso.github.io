@@ -4121,3 +4121,39 @@ body.is-ready .title-line:nth-child(3) > span { transition-delay: 190ms; }
     transform: none;
   }
 }
+
+/* 2026-10 refresh: linked proof tiles, word tile, hermes visual */
+a.proof-stat {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: background 300ms ease;
+}
+
+a.proof-stat:hover,
+a.proof-stat:focus-visible {
+  background: rgba(11, 13, 18, .06);
+}
+
+.proof-stat.proof-word strong {
+  font-size: clamp(2.6rem, 4.6vw, 5.2rem);
+  letter-spacing: -.06em;
+}
+
+.hermes-inline-visual {
+  display: block;
+  max-width: 560px;
+  margin: 28px 0 8px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, .35);
+}
+
+.hermes-inline-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.experience-side a {
+  color: inherit;
+}

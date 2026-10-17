@@ -1,8 +1,8 @@
 # Mohamad Kanso — Portfolio
 
-[mohamadkanso.github.io](https://mohamadkanso.github.io/) is the portfolio of Mohamad Kanso, a London-based Data and AI Engineer.
+[mohamadkanso.github.io](https://mohamadkanso.github.io/) is the portfolio of Mohamad Kanso, a London-based Senior Forward Deployed AI Associate at 7IM.
 
-![Mohamad Kanso portfolio preview](assets/preview/signal-noise-social.png)
+![Mohamad Kanso portfolio preview](assets/preview/forward-deployed-social.png)
 
 ## Signal / Noise
 
@@ -12,14 +12,18 @@ The cinematic path is paired with a fast 60-second view, direct CV and contact l
 
 ## Featured work
 
-- WorkflowForge
-- VoiceSafeKit
-- CodeSentry
+- Hermes Agent — open-source contributions ([the record](https://mohamadkanso.github.io/hermes-contributions/))
 - SignalBrief
 - IncidentForge
-- Odysseus
-- MurmurX
-- Bitcoin time-series ML dissertation
+- VoiceSafeKit
+- CodeSentry
+- WorkflowForge
+- Intent Graph
+- MLT Terminal
+- MLT Journal
+- Life Orbit
+
+The social preview is rendered from `assets/preview/social-source.html` with headless Chrome; the render command is in that file.
 
 ## Local preview
 
