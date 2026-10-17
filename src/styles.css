@@ -1342,7 +1342,6 @@ body.dialog-open {
 .project {
   position: relative;
   border-top: 0;
-  --rule-scale: 1;
 }
 .section-head::before,
 .more-head::before,
@@ -1356,7 +1355,6 @@ body.dialog-open {
   height: 1px;
   background: var(--rule-strong);
   transform-origin: left center;
-  transform: scaleX(var(--rule-scale, 1));
 }
 .ledger > li::before,
 .project::before {
@@ -1366,4 +1364,44 @@ body.dialog-open {
   padding: 14px 0;
   font: 400 12px var(--mono);
   color: var(--ink-3);
+}
+
+/* ------------------------------------------------------------------ reveal states
+   Only applied by motion.ts, only to elements still below the viewport, and
+   removed by a sweep on every scroll. Without JS nothing here applies. */
+.wipe {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.25s var(--ease);
+}
+.wipe.wipe-pending {
+  clip-path: inset(0 0 100% 0);
+}
+.rise {
+  display: block;
+  transform: translateY(0);
+  transition: transform 1.1s var(--ease);
+}
+.rise.rise-pending {
+  transform: translateY(105%);
+}
+.rule-draw::before {
+  transition: transform 1.2s var(--ease);
+}
+.rule-draw.rule-pending::before {
+  transform: scaleX(0);
+}
+
+/* lenis base styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

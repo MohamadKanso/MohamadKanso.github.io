@@ -356,6 +356,14 @@ export function initGraph(motion: () => boolean) {
       progress = paths.map(() => 0);
       introStart = performance.now() + 250;
       kick();
+      // if animation frames are throttled, finish the drawing anyway
+      window.setTimeout(() => {
+        if (progress.some((p) => p < 1)) {
+          introStart = 0;
+          progress = paths.map(() => 1);
+          draw();
+        }
+      }, 2600);
     } else {
       draw();
     }
